@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "scope": "synthetic single-night rocket PvE parameter search; no GAN/neural training/PvP",
+  "sourceUpstream": "7e629424c87f3f194d071696d3ee59a8dc2c0a75",
+  "baselineCommit": "9c263d6cf353295b0b88ebae9b0e87e0a498340c",
+  "budget": {"maxEpisodes": 80, "maxSeconds": 1800},
+  "trainSeeds": [101, 202],
+  "holdoutSeeds": [303, 404, 505],
+  "profiles": ["deferred_nearest", "deferred_base"],
+  "candidateGrid": {"threatWeight": [0, 1.5], "killBonus": [0, 15], "reserveDamage": [false, true]},
+  "selection": ["survivalRate", "meanBaseHp", "meanKillPoints"],
+  "holdoutPolicyNames": ["nearest", "splash_default", "selected"],
+  "replaySelection": "first two holdout scenarios in listed order; captured during evaluation",
+  "assumptions": {
+    "initialState": "one base at 1500 HP; three level-2 rockets with adjacent stationary operators; three level-1 walls; synthetic positions, no construction/economy",
+    "wave": "20 small + 12 middle + 3 large + 1 boss at night start; seeded unique positions",
+    "robotSpeed": "one adjacent cell per turn, greedy path toward base, deterministic tie-break",
+    "robotAttack": "one attack OR move per turn; attacks any chosen defender within range 3, no line-of-sight test",
+    "robotTarget": "compare nearest-unit vs base-first priority; these are hypotheses",
+    "movement": "start-of-turn occupied cells blocked; same-target moves all canceled; vacated-cell chains unsupported",
+    "damage": "rocket hit positions read before robot movement; all damage applied at round end, lethally hit robots may still act",
+    "cooldown": "fire t, idle t+1/t+2/t+3, next fire t+4",
+    "splash": "20 center, 10 eight-neighbor, repeated impacts stack; only robots damaged",
+    "roles": "fixed operators, may be hit or killed; no replacement/movement/revival within this night",
+    "omitted": "other weapons, player-versus-player attacks, mining, shops, upgrades, tasks, treasure, full-match scoring"
+  }
+}

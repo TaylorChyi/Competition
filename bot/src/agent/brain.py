@@ -1,5 +1,7 @@
+import os
 from typing import Any
 
+from .targeting import load_policy, rocket_targets
 from .grid import next_step
 from .protocol import (
     PIONEER,
@@ -115,13 +117,28 @@ def _adjacent_mine(turn: Turn, role: Unit) -> Pos | None:
 
 def _night(turn: Turn, commands: dict[int, dict[str, Any]]) -> None:
     claimed: set[Pos] = set()
+    reserved: dict[int, int] = {}
+    policy_path = os.environ.get("COMPETITION_ROCKET_POLICY")
+    policy = load_policy(policy_path) if policy_path else None
     for role, tower in _tower_pairs(turn):
         if distance(role.pos, tower.pos) <= 1:
             if tower.cooldown > 0:
                 continue
-            target = _attack_target(turn, tower)
-            if target is not None:
-                commands[tower.unit_id] = attack_command(role.unit_id, target)
+            if tower.kind == "rocket" and policy is not None:
+                station = turn.station()
+                targets = rocket_targets(
+                    tower.pos, tower.range_of_attack(), max(1, tower.level),
+                    turn.robots, station.pos if station else tower.pos,
+                    policy, reserved, turn.width, turn.height,
+                )
+            else:
+                target = _attack_target(turn, tower)
+                count = max(1, tower.level) if tower.kind in ("rocket", "gatling") else 1
+                targets = [target] * count if target is not None else []
+            if targets:
+                command = attack_command(role.unit_id, targets[0])
+                command["targetPos"] = [pos.dump() for pos in targets]
+                commands[tower.unit_id] = command
             continue
         step = _step_toward(turn, role, tower.pos, claimed)
         if step is not None:

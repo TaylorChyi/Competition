@@ -1,0 +1,8 @@
+{
+  "status": "diagnostic only; superseded after fixing repeated path collisions",
+  "episodes": 72,
+  "elapsedSeconds": 1.794,
+  "finding": "In first visual replay, 13 of 15 baseline survivors and all 13 selected-policy survivors remained at the same position from turn 30 through turn 60. Fixed movement tie-breaking repeatedly contested the same cells.",
+  "initialMeanKillPoints": {"nearest": 32.333333333333336, "selected": 45.666666666666664},
+  "useForFinalPerformanceClaim": false
+}
