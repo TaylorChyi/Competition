@@ -92,6 +92,23 @@ def resolve_moves(proposals, entities):
             if pos not in occupied and counts[pos] == 1}
 
 
+def choose_robot_step(robot, options, base, round_no, seed, mirror):
+    """Change equal-distance choices each turn to escape repeated contests.
+
+    This is synthetic tie-breaking, NOT an inferred official movement rule.
+    Canonical x keeps the movement rule symmetric under horizontal reflection.
+    """
+    def key(p):
+        x = WIDTH - 1 - p.x if mirror else p.x
+        tie = (robot.uid * 73856093 ^ round_no * 19349663 ^ x * 83492791
+               ^ p.y * 2654435761 ^ seed) & 0xffffffff
+        tie ^= tie >> 16
+        tie = (tie * 0x7feb352d) & 0xffffffff
+        tie ^= tie >> 15
+        return separation(p, base), tie, x, p.y
+    return min(options, key=key)
+
+
 class Night:
     def __init__(self, seed, profile='deferred_nearest', mirror=False):
         self.entities = make_scenario(seed, mirror)
@@ -160,11 +177,9 @@ class Night:
             options = [p for p in options if 0 <= p.x < WIDTH and 0 <= p.y < HEIGHT
                        and p not in occupied and separation(p, base) <= separation(robot.pos, base)]
             if options:
-                # Deterministic tie-break; unknown official pathfinding is NOT inferred.
-                def move_key(p):
-                    forward = -p.x if self.mirror else p.x
-                    return separation(p, base), abs(p.y - base.pos.y), forward, p.y
-                proposals[robot.uid] = min(options, key=move_key)
+                proposals[robot.uid] = choose_robot_step(
+                    robot, options, base, self.round, self.seed, self.mirror,
+                )
         moves = resolve_moves(proposals, living)
         for uid, pos in moves.items():
             by_id[uid].pos = pos

@@ -10,7 +10,7 @@ sys.path[:0] = [str(ROOT), str(ROOT / 'bot' / 'src')]
 from agent.brain import decide
 from agent.protocol import Pos, Robot
 from agent.targeting import BASELINE, rocket_targets, splash_damage
-from lab.night_sim import Entity, Night, make_scenario, resolve_moves
+from lab.night_sim import Entity, Night, make_scenario, resolve_moves, choose_robot_step
 
 SPLASH = {'name': 'test', 'mode': 'splash', 'threatWeight': 0,
           'killBonus': 0, 'reserveDamage': True}
@@ -109,6 +109,14 @@ class EngineRules(unittest.TestCase):
         for left, right in zip(a, b):
             self.assertEqual({Pos(40-p.x, p.y) for p in left.cells()}, set(right.cells()))
             self.assertEqual(left.hp, right.hp)
+
+    def test_equal_distance_choice_can_change_after_collision(self):
+        robot = Entity(30001, 'smallRobot', Pos(20, 16), 40, 40)
+        base = Entity(1, 'station', Pos(7, 16), 1500, 1500)
+        options = [Pos(19, 15), Pos(19, 16), Pos(19, 17)]
+        choices = {choose_robot_step(robot, options, base, turn, 1101, False)
+                   for turn in range(1, 9)}
+        self.assertGreater(len(choices), 1)
 
     def test_same_policy_same_scenario_same_result(self):
         first = Night(101).run(BASELINE, record=False)

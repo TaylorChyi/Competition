@@ -1,0 +1,28 @@
+{
+  "browser": "152.0.7977.83",
+  "desktop": [
+    1440,
+    1100
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "system"
+  ],
+  "checks": [
+    "play-pause",
+    "step",
+    "seek",
+    "reset",
+    "scenario-change",
+    "end-disabled",
+    "theme-layout-stability",
+    "no-horizontal-overflow",
+    "no-page-errors"
+  ],
+  "screenshots": 4
+}

@@ -96,10 +96,11 @@ def main():
               'executionGeneratorSha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               'python': platform.python_version(), 'platform': platform.platform(),
               'elapsedSeconds': round(time.perf_counter() - started, 3), 'episodes': count,
+              'totalEpisodesIncludingDiagnostic': count + spec.get('previousDiagnosticEpisodes', 0),
               'spec': spec, 'training': training, 'selectedPolicy': selected,
               'holdout': {name: {'summary': aggregate(rows), 'rows': rows} for name, rows in held.items()},
               'replays': replays}
-    (output / 'results.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+    (output / 'results.json').write_text(json.dumps(report, ensure_ascii=False, separators=(',', ':')) + '\n')
     (output / 'selected-policy.json').write_text(json.dumps(selected, ensure_ascii=False, indent=2) + '\n')
     export_viewer(report, output)
     print(json.dumps({'episodes': count, 'elapsedSeconds': report['elapsedSeconds'],
