@@ -27,7 +27,7 @@
 
 ## 发给对方运行
 
-运行 `python3 tools/package_bot.py`，将生成的 `deliverables/competition-bot-*.zip` 发给对方。压缩包根目录含 `run.sh`；解压后执行 `bash run.sh <port>`。仅需 Bash 和 Python >=3.11，无第三方运行依赖。完整步骤见 [交付说明](docs/交付说明.md)，同一份说明也随包附带。
+运行 `python3 tools/package_bot.py`，生成 `deliverables/<版本>/CoreGeek.tar.gz`，目录结构与原始 Demo 一致；解压后 `CoreGeek/main3.py` 可直接由平台启动，也支持 `bash run.sh <port>`。另提供 `CoreGeek-flat.zip`，供平台已固定解压到 `CoreGeek/` 的情况使用。旧版开发目录 ZIP 已停用。仅需 Python >=3.11（使用脚本时还需 Bash），无第三方运行依赖。目录要求和命令见 [交付说明](docs/交付说明.md)，同一份说明也随包附带。
 
 ## 快速使用
 
