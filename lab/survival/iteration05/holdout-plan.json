@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "purpose": "Fresh holdout after tuning on the earlier validation set; original 8+20 are regression prerequisites, not independent evidence.",
+  "wave": "field",
+  "priority": "nearest",
+  "nights": 10,
+  "commerce": true,
+  "opponent": "lab/tournament/round05/alpha",
+  "seeds": [46000,46001,46002,46003,46004,46005,46006,46007,46008,46009],
+  "seats": ["challenger","defender"],
+  "pass": "All20 episodes: 1300 rounds, living base, ten positive night-end HP values, zero invalid commands and zero foreign-only shots.",
+  "releaseCondition": "Root must manually verify this fresh holdout in addition to the original regression gates before opening a tournament. This script does not authorize PvP or modify global qualification rules.",
+  "limits": "Partial local simulator; recorded survival is not official universal success. No PvP ranking."
+}

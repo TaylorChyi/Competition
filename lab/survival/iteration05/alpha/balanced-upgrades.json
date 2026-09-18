@@ -1,0 +1,5019 @@
+{
+  "judgeSha256": "91691bc4fee6b6905709e8f57ef6c44876a43fda56700acff40c9a8f85ede231",
+  "halves": [
+    {
+      "seed": 36007,
+      "seat": "challenger",
+      "self": {
+        "baseDeathRound": null,
+        "nightHp": [
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500
+        ],
+        "nightOperators": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          3,
+          2,
+          3,
+          2
+        ],
+        "kills": 427,
+        "killPoints": 546,
+        "shots": 1169,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 4,
+        "income": 440,
+        "upgrades": [
+          [
+            172,
+            "rocket",
+            2
+          ],
+          [
+            433,
+            "railgun",
+            2
+          ],
+          [
+            848,
+            "railgun",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              980
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              980
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              980
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1500
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1040
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              600
+            ],
+            "railgun_40001": [
+              1,
+              970
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              600
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              600
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              600
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              40
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [
+          [
+            625,
+            10012
+          ],
+          [
+            743,
+            10010
+          ],
+          [
+            1002,
+            10012
+          ],
+          [
+            1248,
+            10012
+          ]
+        ],
+        "nightRoleMoves": 62,
+        "readyGunsWithoutAttack": 274,
+        "readyGunsWithoutOperator": 70,
+        "p95DecisionMs": 11.492,
+        "survivedTwoNights": true,
+        "survivedNights": 10,
+        "survivalRounds": 1300
+      },
+      "snapshotDamageByNight": {
+        "1": {
+          "incomingRaw": 1740,
+          "incomingEffective": 1740,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            75,
+            79,
+            83,
+            87,
+            91,
+            95,
+            99,
+            103,
+            107,
+            111,
+            115,
+            119,
+            123,
+            127
+          ]
+        },
+        "2": {
+          "incomingRaw": 2040,
+          "incomingEffective": 2000,
+          "incomingOverkill": 40,
+          "rocketVolleys": [
+            201,
+            205,
+            209,
+            213,
+            217,
+            221,
+            225,
+            229,
+            233,
+            237,
+            241,
+            245,
+            249,
+            253,
+            257
+          ]
+        },
+        "3": {
+          "incomingRaw": 2090,
+          "incomingEffective": 2070,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            331,
+            335,
+            339,
+            343,
+            347,
+            351,
+            355,
+            359,
+            363,
+            367,
+            371,
+            375,
+            379,
+            383,
+            387
+          ]
+        },
+        "4": {
+          "incomingRaw": 2960,
+          "incomingEffective": 2890,
+          "incomingOverkill": 70,
+          "rocketVolleys": [
+            461,
+            465,
+            469,
+            473,
+            477,
+            481,
+            485,
+            489,
+            493,
+            497,
+            501,
+            505,
+            509,
+            513,
+            517
+          ]
+        },
+        "5": {
+          "incomingRaw": 2830,
+          "incomingEffective": 2710,
+          "incomingOverkill": 120,
+          "rocketVolleys": [
+            591,
+            595,
+            599,
+            603,
+            607,
+            611,
+            615,
+            619,
+            623,
+            627,
+            631,
+            635,
+            639,
+            643,
+            647
+          ]
+        },
+        "6": {
+          "incomingRaw": 2600,
+          "incomingEffective": 2550,
+          "incomingOverkill": 50,
+          "rocketVolleys": [
+            728,
+            732,
+            736,
+            740,
+            744,
+            748,
+            752,
+            756,
+            760,
+            764,
+            768,
+            772,
+            776,
+            780
+          ]
+        },
+        "7": {
+          "incomingRaw": 3360,
+          "incomingEffective": 3340,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            851,
+            855,
+            859,
+            863,
+            867,
+            871,
+            875,
+            879,
+            883,
+            887,
+            891,
+            895,
+            899,
+            903,
+            907
+          ]
+        },
+        "8": {
+          "incomingRaw": 3100,
+          "incomingEffective": 3070,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            989,
+            993,
+            997,
+            1001,
+            1005,
+            1009,
+            1013,
+            1017,
+            1021,
+            1025,
+            1029,
+            1033,
+            1037
+          ]
+        },
+        "9": {
+          "incomingRaw": 3170,
+          "incomingEffective": 3110,
+          "incomingOverkill": 60,
+          "rocketVolleys": [
+            1119,
+            1123,
+            1127,
+            1131,
+            1135,
+            1139,
+            1143,
+            1147,
+            1151,
+            1155,
+            1159,
+            1163,
+            1167
+          ]
+        },
+        "10": {
+          "incomingRaw": 3090,
+          "incomingEffective": 3000,
+          "incomingOverkill": 90,
+          "rocketVolleys": [
+            1241,
+            1245,
+            1249,
+            1253,
+            1257,
+            1261,
+            1265,
+            1269,
+            1273,
+            1277,
+            1281,
+            1285,
+            1289,
+            1293,
+            1297
+          ]
+        }
+      }
+    },
+    {
+      "seed": 36002,
+      "seat": "challenger",
+      "self": {
+        "baseDeathRound": null,
+        "nightHp": [
+          1500,
+          1500,
+          1320,
+          1320,
+          1320,
+          1300,
+          1300,
+          265,
+          3000,
+          3000
+        ],
+        "nightOperators": [
+          3,
+          2,
+          2,
+          3,
+          1,
+          3,
+          3,
+          1,
+          3,
+          2
+        ],
+        "kills": 405,
+        "killPoints": 496,
+        "shots": 1139,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 11,
+        "income": 390,
+        "upgrades": [
+          [
+            327,
+            "rocket",
+            2
+          ],
+          [
+            808,
+            "railgun",
+            2
+          ],
+          [
+            1108,
+            "station",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              1000
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              980
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1320
+            ],
+            "railgun_40000": [
+              1,
+              0
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1320
+            ],
+            "railgun_40000": [
+              1,
+              0
+            ],
+            "railgun_40001": [
+              1,
+              905
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40024": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1320
+            ],
+            "railgun_40000": [
+              1,
+              0
+            ],
+            "railgun_40001": [
+              1,
+              345
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40024": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1300
+            ],
+            "railgun_40000": [
+              1,
+              0
+            ],
+            "railgun_40001": [
+              1,
+              345
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40024": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1300
+            ],
+            "railgun_40000": [
+              1,
+              0
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40024": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              265
+            ],
+            "railgun_40000": [
+              1,
+              0
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40024": [
+              1,
+              150
+            ]
+          },
+          {
+            "station_10013": [
+              2,
+              3000
+            ],
+            "railgun_40000": [
+              1,
+              0
+            ],
+            "railgun_40001": [
+              2,
+              1490
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40024": [
+              1,
+              0
+            ],
+            "railgun_40037": [
+              1,
+              80
+            ]
+          },
+          {
+            "station_10013": [
+              2,
+              3000
+            ],
+            "railgun_40000": [
+              1,
+              0
+            ],
+            "railgun_40001": [
+              2,
+              1490
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40024": [
+              1,
+              0
+            ],
+            "railgun_40037": [
+              1,
+              0
+            ],
+            "railgun_40042": [
+              1,
+              1000
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [
+          [
+            208,
+            10012
+          ],
+          [
+            387,
+            10012
+          ],
+          [
+            594,
+            10012
+          ],
+          [
+            636,
+            10011
+          ],
+          [
+            1015,
+            10011
+          ],
+          [
+            1019,
+            10012
+          ],
+          [
+            1242,
+            10012
+          ]
+        ],
+        "nightRoleMoves": 21,
+        "readyGunsWithoutAttack": 269,
+        "readyGunsWithoutOperator": 85,
+        "p95DecisionMs": 5.989,
+        "survivedTwoNights": true,
+        "survivedNights": 10,
+        "survivalRounds": 1300
+      },
+      "snapshotDamageByNight": {
+        "1": {
+          "incomingRaw": 1180,
+          "incomingEffective": 1180,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            71,
+            75,
+            79,
+            83,
+            87,
+            91,
+            95,
+            99,
+            103,
+            107,
+            111,
+            115,
+            119
+          ]
+        },
+        "2": {
+          "incomingRaw": 1290,
+          "incomingEffective": 1290,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            201,
+            205,
+            209,
+            213,
+            217,
+            221,
+            225,
+            229,
+            233,
+            237,
+            241,
+            245,
+            249,
+            253,
+            257
+          ]
+        },
+        "3": {
+          "incomingRaw": 2310,
+          "incomingEffective": 2310,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            331,
+            335,
+            339,
+            343,
+            347,
+            351,
+            355,
+            359,
+            363,
+            367,
+            371,
+            375,
+            379,
+            383,
+            387
+          ]
+        },
+        "4": {
+          "incomingRaw": 2340,
+          "incomingEffective": 2320,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            461,
+            465,
+            469,
+            473,
+            477,
+            481,
+            485,
+            489,
+            493,
+            497,
+            501,
+            505,
+            509,
+            513,
+            517
+          ]
+        },
+        "5": {
+          "incomingRaw": 1710,
+          "incomingEffective": 1710,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            591,
+            595,
+            599,
+            603,
+            607,
+            611,
+            615,
+            619,
+            623,
+            627,
+            631,
+            635,
+            639,
+            643,
+            647
+          ]
+        },
+        "6": {
+          "incomingRaw": 2480,
+          "incomingEffective": 2450,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            721,
+            725,
+            729,
+            733,
+            737,
+            741,
+            745,
+            749,
+            753,
+            757,
+            761,
+            765,
+            769,
+            773,
+            777
+          ]
+        },
+        "7": {
+          "incomingRaw": 3280,
+          "incomingEffective": 3180,
+          "incomingOverkill": 100,
+          "rocketVolleys": [
+            851,
+            855,
+            859,
+            863,
+            867,
+            871,
+            875,
+            879,
+            883,
+            887,
+            891,
+            895,
+            899,
+            903,
+            907
+          ]
+        },
+        "8": {
+          "incomingRaw": 2600,
+          "incomingEffective": 2540,
+          "incomingOverkill": 60,
+          "rocketVolleys": [
+            981,
+            985,
+            989,
+            993,
+            997,
+            1001,
+            1005,
+            1009,
+            1013,
+            1017,
+            1021,
+            1025,
+            1029,
+            1033,
+            1037
+          ]
+        },
+        "9": {
+          "incomingRaw": 3370,
+          "incomingEffective": 3300,
+          "incomingOverkill": 70,
+          "rocketVolleys": [
+            1112,
+            1116,
+            1120,
+            1124,
+            1128,
+            1132,
+            1136,
+            1140,
+            1144,
+            1148,
+            1152,
+            1156,
+            1160,
+            1164,
+            1168
+          ]
+        },
+        "10": {
+          "incomingRaw": 2860,
+          "incomingEffective": 2830,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            1242,
+            1246,
+            1250,
+            1254,
+            1258,
+            1262,
+            1266,
+            1270,
+            1274,
+            1278,
+            1282,
+            1286,
+            1290,
+            1294,
+            1298
+          ]
+        }
+      }
+    },
+    {
+      "seed": 22000,
+      "seat": "challenger",
+      "self": {
+        "baseDeathRound": 910,
+        "nightHp": [
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1320,
+          0,
+          0,
+          0,
+          0
+        ],
+        "nightOperators": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "kills": 238,
+        "killPoints": 294,
+        "shots": 811,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 26,
+        "income": 214,
+        "upgrades": [
+          [
+            308,
+            "rocket",
+            2
+          ],
+          [
+            698,
+            "railgun",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              1000
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              960
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              960
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              960
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              960
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1320
+            ],
+            "railgun_40000": [
+              2,
+              0
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              0
+            ],
+            "railgun_40000": [
+              2,
+              0
+            ],
+            "railgun_40001": [
+              1,
+              0
+            ],
+            "rocket_40002": [
+              2,
+              0
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              0
+            ],
+            "railgun_40000": [
+              2,
+              0
+            ],
+            "railgun_40001": [
+              1,
+              0
+            ],
+            "rocket_40002": [
+              2,
+              0
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              0
+            ],
+            "railgun_40000": [
+              2,
+              0
+            ],
+            "railgun_40001": [
+              1,
+              0
+            ],
+            "rocket_40002": [
+              2,
+              0
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              0
+            ],
+            "railgun_40000": [
+              2,
+              0
+            ],
+            "railgun_40001": [
+              1,
+              0
+            ],
+            "rocket_40002": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [
+          [
+            592,
+            10012
+          ],
+          [
+            732,
+            10010
+          ],
+          [
+            760,
+            10011
+          ],
+          [
+            855,
+            10011
+          ]
+        ],
+        "nightRoleMoves": 13,
+        "readyGunsWithoutAttack": 144,
+        "readyGunsWithoutOperator": 38,
+        "p95DecisionMs": 3.129,
+        "survivedTwoNights": true,
+        "survivedNights": 6,
+        "survivalRounds": 910
+      },
+      "snapshotDamageByNight": {
+        "1": {
+          "incomingRaw": 1690,
+          "incomingEffective": 1690,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            71,
+            75,
+            79,
+            83,
+            87,
+            91,
+            95,
+            99,
+            103,
+            107,
+            111,
+            115,
+            119,
+            123,
+            127
+          ]
+        },
+        "2": {
+          "incomingRaw": 1740,
+          "incomingEffective": 1740,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            201,
+            205,
+            209,
+            213,
+            217,
+            221,
+            225,
+            229,
+            233,
+            237,
+            241,
+            245,
+            249,
+            253,
+            257
+          ]
+        },
+        "3": {
+          "incomingRaw": 2290,
+          "incomingEffective": 2260,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            331,
+            335,
+            339,
+            343,
+            347,
+            351,
+            355,
+            359,
+            363,
+            367,
+            371,
+            375,
+            379,
+            383,
+            387
+          ]
+        },
+        "4": {
+          "incomingRaw": 2480,
+          "incomingEffective": 2430,
+          "incomingOverkill": 50,
+          "rocketVolleys": [
+            461,
+            465,
+            469,
+            473,
+            477,
+            481,
+            485,
+            489,
+            493,
+            497,
+            501,
+            505,
+            509,
+            513,
+            517
+          ]
+        },
+        "5": {
+          "incomingRaw": 2050,
+          "incomingEffective": 2030,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            591,
+            595,
+            599,
+            603,
+            607,
+            611,
+            615,
+            619,
+            623,
+            627,
+            631,
+            635,
+            639,
+            643,
+            647
+          ]
+        },
+        "6": {
+          "incomingRaw": 2420,
+          "incomingEffective": 2410,
+          "incomingOverkill": 10,
+          "rocketVolleys": [
+            721,
+            725,
+            729,
+            733,
+            737,
+            741,
+            745,
+            749,
+            753,
+            757,
+            761,
+            765,
+            769,
+            773,
+            777
+          ]
+        },
+        "7": {
+          "incomingRaw": 2360,
+          "incomingEffective": 2300,
+          "incomingOverkill": 60,
+          "rocketVolleys": [
+            852,
+            856,
+            860,
+            864,
+            868,
+            872,
+            876,
+            880,
+            884,
+            888,
+            892,
+            896,
+            900,
+            904,
+            908
+          ]
+        }
+      }
+    },
+    {
+      "seed": 22000,
+      "seat": "defender",
+      "self": {
+        "baseDeathRound": null,
+        "nightHp": [
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1480,
+          1480,
+          1240,
+          1240
+        ],
+        "nightOperators": [
+          3,
+          3,
+          3,
+          2,
+          1,
+          3,
+          2,
+          2,
+          1,
+          3
+        ],
+        "kills": 369,
+        "killPoints": 456,
+        "shots": 1126,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 42,
+        "income": 300,
+        "upgrades": [
+          [
+            193,
+            "rocket",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              1000
+            ],
+            "railgun_41001": [
+              1,
+              945
+            ],
+            "rocket_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              950
+            ],
+            "railgun_41001": [
+              1,
+              945
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              220
+            ],
+            "railgun_41001": [
+              1,
+              945
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              65
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41017": [
+              1,
+              460
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41017": [
+              1,
+              0
+            ],
+            "railgun_41024": [
+              1,
+              720
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41017": [
+              1,
+              0
+            ],
+            "railgun_41024": [
+              1,
+              0
+            ],
+            "railgun_41025": [
+              1,
+              125
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1480
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41017": [
+              1,
+              0
+            ],
+            "railgun_41024": [
+              1,
+              0
+            ],
+            "railgun_41025": [
+              1,
+              0
+            ],
+            "railgun_41027": [
+              1,
+              1000
+            ],
+            "railgun_41028": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1480
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41017": [
+              1,
+              0
+            ],
+            "railgun_41024": [
+              1,
+              0
+            ],
+            "railgun_41025": [
+              1,
+              0
+            ],
+            "railgun_41027": [
+              1,
+              1000
+            ],
+            "railgun_41028": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1240
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41017": [
+              1,
+              0
+            ],
+            "railgun_41024": [
+              1,
+              0
+            ],
+            "railgun_41025": [
+              1,
+              0
+            ],
+            "railgun_41027": [
+              1,
+              700
+            ],
+            "railgun_41028": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1240
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41017": [
+              1,
+              0
+            ],
+            "railgun_41024": [
+              1,
+              0
+            ],
+            "railgun_41025": [
+              1,
+              0
+            ],
+            "railgun_41027": [
+              1,
+              700
+            ],
+            "railgun_41028": [
+              1,
+              0
+            ],
+            "railgun_41045": [
+              1,
+              980
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [
+          [
+            498,
+            20010
+          ],
+          [
+            607,
+            20010
+          ],
+          [
+            632,
+            20012
+          ],
+          [
+            858,
+            20012
+          ],
+          [
+            987,
+            20012
+          ],
+          [
+            1115,
+            20012
+          ],
+          [
+            1166,
+            20011
+          ]
+        ],
+        "nightRoleMoves": 21,
+        "readyGunsWithoutAttack": 255,
+        "readyGunsWithoutOperator": 83,
+        "p95DecisionMs": 30.517,
+        "survivedTwoNights": true,
+        "survivedNights": 10,
+        "survivalRounds": 1300
+      },
+      "snapshotDamageByNight": {
+        "1": {
+          "incomingRaw": 1020,
+          "incomingEffective": 1020,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            71,
+            75,
+            79,
+            83,
+            87,
+            91,
+            95,
+            99,
+            103,
+            107,
+            111,
+            115,
+            119,
+            123,
+            127
+          ]
+        },
+        "2": {
+          "incomingRaw": 2030,
+          "incomingEffective": 1990,
+          "incomingOverkill": 40,
+          "rocketVolleys": [
+            201,
+            205,
+            209,
+            213,
+            217,
+            221,
+            225,
+            229,
+            233,
+            237,
+            241,
+            245,
+            249,
+            253,
+            257
+          ]
+        },
+        "3": {
+          "incomingRaw": 2400,
+          "incomingEffective": 2390,
+          "incomingOverkill": 10,
+          "rocketVolleys": [
+            331,
+            335,
+            339,
+            343,
+            347,
+            351,
+            355,
+            359,
+            363,
+            367,
+            371,
+            375,
+            379,
+            383,
+            387
+          ]
+        },
+        "4": {
+          "incomingRaw": 2120,
+          "incomingEffective": 2090,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            466,
+            470,
+            474,
+            478,
+            482,
+            486,
+            490,
+            494,
+            498,
+            502,
+            506,
+            510,
+            514,
+            518
+          ]
+        },
+        "5": {
+          "incomingRaw": 2040,
+          "incomingEffective": 2020,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            591,
+            595,
+            599,
+            603,
+            607,
+            611,
+            615,
+            619,
+            623,
+            627,
+            631,
+            635,
+            639,
+            643,
+            647
+          ]
+        },
+        "6": {
+          "incomingRaw": 2590,
+          "incomingEffective": 2540,
+          "incomingOverkill": 50,
+          "rocketVolleys": [
+            721,
+            725,
+            729,
+            733,
+            737,
+            741,
+            745,
+            749,
+            753,
+            757,
+            761,
+            765,
+            769,
+            773,
+            777
+          ]
+        },
+        "7": {
+          "incomingRaw": 2270,
+          "incomingEffective": 2230,
+          "incomingOverkill": 40,
+          "rocketVolleys": [
+            851,
+            855,
+            859,
+            863,
+            867,
+            871,
+            875,
+            879,
+            883,
+            887,
+            891,
+            895,
+            899,
+            903,
+            907
+          ]
+        },
+        "8": {
+          "incomingRaw": 2310,
+          "incomingEffective": 2300,
+          "incomingOverkill": 10,
+          "rocketVolleys": [
+            981,
+            985,
+            989,
+            993,
+            997,
+            1001,
+            1005,
+            1009,
+            1013,
+            1017,
+            1021,
+            1025,
+            1029,
+            1033,
+            1037
+          ]
+        },
+        "9": {
+          "incomingRaw": 2430,
+          "incomingEffective": 2400,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            1111,
+            1115,
+            1119,
+            1123,
+            1127,
+            1131,
+            1135,
+            1139,
+            1143,
+            1147,
+            1151,
+            1155,
+            1159,
+            1163,
+            1167
+          ]
+        },
+        "10": {
+          "incomingRaw": 2780,
+          "incomingEffective": 2760,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            1247,
+            1251,
+            1255,
+            1259,
+            1263,
+            1267,
+            1271,
+            1275,
+            1279,
+            1283,
+            1287,
+            1291,
+            1295,
+            1299
+          ]
+        }
+      }
+    },
+    {
+      "seed": 22001,
+      "seat": "challenger",
+      "self": {
+        "baseDeathRound": null,
+        "nightHp": [
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500
+        ],
+        "nightOperators": [
+          3,
+          3,
+          2,
+          2,
+          3,
+          3,
+          2,
+          3,
+          1,
+          2
+        ],
+        "kills": 367,
+        "killPoints": 455,
+        "shots": 1074,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 42,
+        "income": 367,
+        "upgrades": [
+          [
+            455,
+            "rocket",
+            2
+          ],
+          [
+            698,
+            "railgun",
+            2
+          ],
+          [
+            1069,
+            "railgun",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              995
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              995
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              715
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              635
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              635
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1490
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1490
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1490
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              0
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              0
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40043": [
+              1,
+              1000
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [
+          [
+            342,
+            10012
+          ],
+          [
+            473,
+            10012
+          ],
+          [
+            855,
+            10010
+          ],
+          [
+            1114,
+            10010
+          ],
+          [
+            1144,
+            10012
+          ],
+          [
+            1250,
+            10012
+          ]
+        ],
+        "nightRoleMoves": 49,
+        "readyGunsWithoutAttack": 339,
+        "readyGunsWithoutOperator": 112,
+        "p95DecisionMs": 14.005,
+        "survivedTwoNights": true,
+        "survivedNights": 10,
+        "survivalRounds": 1300
+      },
+      "snapshotDamageByNight": {
+        "1": {
+          "incomingRaw": 1720,
+          "incomingEffective": 1720,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            71,
+            75,
+            79,
+            83,
+            87,
+            91,
+            95,
+            99,
+            103,
+            107,
+            111,
+            115,
+            119,
+            123,
+            127
+          ]
+        },
+        "2": {
+          "incomingRaw": 1040,
+          "incomingEffective": 1040,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            204,
+            208,
+            212,
+            216,
+            220,
+            224,
+            228,
+            232,
+            236,
+            240,
+            244,
+            248,
+            252,
+            256,
+            260
+          ]
+        },
+        "3": {
+          "incomingRaw": 1300,
+          "incomingEffective": 1300,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            331,
+            335,
+            339,
+            343,
+            347,
+            351,
+            355,
+            359,
+            363,
+            367,
+            371,
+            375,
+            379,
+            383,
+            387
+          ]
+        },
+        "4": {
+          "incomingRaw": 2080,
+          "incomingEffective": 2010,
+          "incomingOverkill": 70,
+          "rocketVolleys": [
+            461,
+            465,
+            469,
+            473,
+            477,
+            481,
+            485,
+            489,
+            493,
+            497,
+            501,
+            505,
+            509,
+            513,
+            517
+          ]
+        },
+        "5": {
+          "incomingRaw": 2410,
+          "incomingEffective": 2400,
+          "incomingOverkill": 10,
+          "rocketVolleys": [
+            599,
+            603,
+            607,
+            611,
+            615,
+            619,
+            623,
+            627,
+            631,
+            635,
+            639,
+            643,
+            647
+          ]
+        },
+        "6": {
+          "incomingRaw": 2980,
+          "incomingEffective": 2900,
+          "incomingOverkill": 80,
+          "rocketVolleys": [
+            721,
+            725,
+            729,
+            733,
+            737,
+            741,
+            745,
+            749,
+            753,
+            757,
+            761,
+            765,
+            769,
+            773,
+            777
+          ]
+        },
+        "7": {
+          "incomingRaw": 2720,
+          "incomingEffective": 2640,
+          "incomingOverkill": 80,
+          "rocketVolleys": [
+            857,
+            861,
+            865,
+            869,
+            873,
+            877,
+            881,
+            885,
+            889,
+            893,
+            897,
+            901,
+            905,
+            909
+          ]
+        },
+        "8": {
+          "incomingRaw": 3250,
+          "incomingEffective": 3180,
+          "incomingOverkill": 70,
+          "rocketVolleys": [
+            981,
+            985,
+            989,
+            993,
+            997,
+            1001,
+            1005,
+            1009,
+            1013,
+            1017,
+            1021,
+            1025,
+            1029,
+            1033,
+            1037
+          ]
+        },
+        "9": {
+          "incomingRaw": 2590,
+          "incomingEffective": 2540,
+          "incomingOverkill": 50,
+          "rocketVolleys": [
+            1117,
+            1121,
+            1125,
+            1129,
+            1133,
+            1137,
+            1141,
+            1145,
+            1149,
+            1153,
+            1157,
+            1161,
+            1165,
+            1169
+          ]
+        },
+        "10": {
+          "incomingRaw": 2810,
+          "incomingEffective": 2780,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            1246,
+            1250,
+            1254,
+            1258,
+            1262,
+            1266,
+            1270,
+            1274,
+            1278,
+            1282,
+            1286,
+            1290,
+            1294,
+            1298
+          ]
+        }
+      }
+    },
+    {
+      "seed": 22001,
+      "seat": "defender",
+      "self": {
+        "baseDeathRound": null,
+        "nightHp": [
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500
+        ],
+        "nightOperators": [
+          3,
+          3,
+          3,
+          2,
+          2,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "kills": 412,
+        "killPoints": 534,
+        "shots": 1219,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 61,
+        "income": 461,
+        "upgrades": [
+          [
+            175,
+            "rocket",
+            2
+          ],
+          [
+            698,
+            "railgun",
+            2
+          ],
+          [
+            964,
+            "railgun",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              995
+            ],
+            "railgun_41001": [
+              1,
+              990
+            ],
+            "rocket_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              995
+            ],
+            "railgun_41001": [
+              1,
+              990
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              455
+            ],
+            "railgun_41001": [
+              1,
+              990
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              45
+            ],
+            "railgun_41001": [
+              1,
+              990
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              990
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41013": [
+              1,
+              455
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              990
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41013": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              990
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41013": [
+              2,
+              1020
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              2,
+              1500
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41013": [
+              2,
+              660
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              2,
+              1500
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41013": [
+              2,
+              660
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              2,
+              1500
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41013": [
+              2,
+              580
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [
+          [
+            503,
+            20010
+          ],
+          [
+            622,
+            20011
+          ],
+          [
+            1114,
+            20012
+          ],
+          [
+            1296,
+            20010
+          ]
+        ],
+        "nightRoleMoves": 85,
+        "readyGunsWithoutAttack": 225,
+        "readyGunsWithoutOperator": 24,
+        "p95DecisionMs": 4.633,
+        "survivedTwoNights": true,
+        "survivedNights": 10,
+        "survivalRounds": 1300
+      },
+      "snapshotDamageByNight": {
+        "1": {
+          "incomingRaw": 1850,
+          "incomingEffective": 1850,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            71,
+            75,
+            79,
+            83,
+            87,
+            91,
+            95,
+            99,
+            103,
+            107,
+            111,
+            115,
+            119,
+            123,
+            127
+          ]
+        },
+        "2": {
+          "incomingRaw": 1710,
+          "incomingEffective": 1700,
+          "incomingOverkill": 10,
+          "rocketVolleys": [
+            201,
+            205,
+            209,
+            213,
+            217,
+            221,
+            225,
+            229,
+            233,
+            237,
+            241,
+            245,
+            249,
+            253,
+            257
+          ]
+        },
+        "3": {
+          "incomingRaw": 2390,
+          "incomingEffective": 2370,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            331,
+            335,
+            339,
+            343,
+            347,
+            351,
+            355,
+            359,
+            363,
+            367,
+            371,
+            375,
+            379,
+            383,
+            387
+          ]
+        },
+        "4": {
+          "incomingRaw": 2200,
+          "incomingEffective": 2150,
+          "incomingOverkill": 50,
+          "rocketVolleys": [
+            461,
+            465,
+            469,
+            473,
+            477,
+            481,
+            485,
+            489,
+            493,
+            497,
+            501,
+            505,
+            509,
+            513,
+            517
+          ]
+        },
+        "5": {
+          "incomingRaw": 2280,
+          "incomingEffective": 2240,
+          "incomingOverkill": 40,
+          "rocketVolleys": [
+            592,
+            596,
+            600,
+            604,
+            608,
+            612,
+            616,
+            620,
+            624,
+            628,
+            632,
+            636,
+            640,
+            644,
+            648
+          ]
+        },
+        "6": {
+          "incomingRaw": 2940,
+          "incomingEffective": 2890,
+          "incomingOverkill": 50,
+          "rocketVolleys": [
+            721,
+            725,
+            729,
+            733,
+            737,
+            741,
+            745,
+            749,
+            753,
+            757,
+            761,
+            765,
+            769,
+            773,
+            777
+          ]
+        },
+        "7": {
+          "incomingRaw": 3260,
+          "incomingEffective": 3200,
+          "incomingOverkill": 60,
+          "rocketVolleys": [
+            854,
+            858,
+            862,
+            866,
+            870,
+            874,
+            878,
+            882,
+            886,
+            890,
+            894,
+            898,
+            902,
+            906,
+            910
+          ]
+        },
+        "8": {
+          "incomingRaw": 3700,
+          "incomingEffective": 3650,
+          "incomingOverkill": 50,
+          "rocketVolleys": [
+            981,
+            985,
+            989,
+            993,
+            997,
+            1001,
+            1005,
+            1009,
+            1013,
+            1017,
+            1021,
+            1025,
+            1029,
+            1033,
+            1037
+          ]
+        },
+        "9": {
+          "incomingRaw": 2630,
+          "incomingEffective": 2580,
+          "incomingOverkill": 50,
+          "rocketVolleys": [
+            1111,
+            1115,
+            1119,
+            1123,
+            1127,
+            1131,
+            1135,
+            1139,
+            1143,
+            1147,
+            1151,
+            1155,
+            1159,
+            1163,
+            1167
+          ]
+        },
+        "10": {
+          "incomingRaw": 2840,
+          "incomingEffective": 2830,
+          "incomingOverkill": 10,
+          "rocketVolleys": [
+            1242,
+            1246,
+            1250,
+            1254,
+            1258,
+            1262,
+            1266,
+            1270,
+            1274,
+            1278,
+            1282,
+            1286,
+            1290,
+            1294,
+            1298
+          ]
+        }
+      }
+    },
+    {
+      "seed": 22002,
+      "seat": "challenger",
+      "self": {
+        "baseDeathRound": null,
+        "nightHp": [
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500
+        ],
+        "nightOperators": [
+          3,
+          3,
+          3,
+          2,
+          3,
+          3,
+          2,
+          3,
+          3,
+          2
+        ],
+        "kills": 417,
+        "killPoints": 527,
+        "shots": 1252,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 8,
+        "income": 334,
+        "upgrades": [
+          [
+            310,
+            "rocket",
+            2
+          ],
+          [
+            695,
+            "railgun",
+            2
+          ],
+          [
+            1104,
+            "railgun",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              805
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              805
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              805
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              805
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              805
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1500
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1500
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1300
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1300
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              160
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [
+          [
+            477,
+            10012
+          ],
+          [
+            881,
+            10010
+          ],
+          [
+            1242,
+            10010
+          ]
+        ],
+        "nightRoleMoves": 34,
+        "readyGunsWithoutAttack": 181,
+        "readyGunsWithoutOperator": 83,
+        "p95DecisionMs": 11.204,
+        "survivedTwoNights": true,
+        "survivedNights": 10,
+        "survivalRounds": 1300
+      },
+      "snapshotDamageByNight": {
+        "1": {
+          "incomingRaw": 1620,
+          "incomingEffective": 1620,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            71,
+            75,
+            79,
+            83,
+            87,
+            91,
+            95,
+            99,
+            103,
+            107,
+            111,
+            115,
+            119,
+            123,
+            127
+          ]
+        },
+        "2": {
+          "incomingRaw": 1100,
+          "incomingEffective": 1100,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            201,
+            205,
+            209,
+            213,
+            217,
+            221,
+            225,
+            229,
+            233,
+            237,
+            241,
+            245,
+            249
+          ]
+        },
+        "3": {
+          "incomingRaw": 2370,
+          "incomingEffective": 2360,
+          "incomingOverkill": 10,
+          "rocketVolleys": [
+            331,
+            335,
+            339,
+            343,
+            347,
+            351,
+            355,
+            359,
+            363,
+            367,
+            371,
+            375,
+            379,
+            383,
+            387
+          ]
+        },
+        "4": {
+          "incomingRaw": 2160,
+          "incomingEffective": 2130,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            461,
+            465,
+            469,
+            473,
+            477,
+            481,
+            485,
+            489,
+            493,
+            497,
+            501,
+            505,
+            509,
+            513,
+            517
+          ]
+        },
+        "5": {
+          "incomingRaw": 2460,
+          "incomingEffective": 2420,
+          "incomingOverkill": 40,
+          "rocketVolleys": [
+            593,
+            597,
+            601,
+            605,
+            609,
+            613,
+            617,
+            621,
+            625,
+            629,
+            633,
+            637,
+            641,
+            645,
+            649
+          ]
+        },
+        "6": {
+          "incomingRaw": 3120,
+          "incomingEffective": 3020,
+          "incomingOverkill": 100,
+          "rocketVolleys": [
+            721,
+            725,
+            729,
+            733,
+            737,
+            741,
+            745,
+            749,
+            753,
+            757,
+            761,
+            765,
+            769,
+            773,
+            777
+          ]
+        },
+        "7": {
+          "incomingRaw": 3000,
+          "incomingEffective": 2920,
+          "incomingOverkill": 80,
+          "rocketVolleys": [
+            857,
+            861,
+            865,
+            869,
+            873,
+            877,
+            881,
+            885,
+            889,
+            893,
+            897,
+            901,
+            905,
+            909
+          ]
+        },
+        "8": {
+          "incomingRaw": 3430,
+          "incomingEffective": 3340,
+          "incomingOverkill": 90,
+          "rocketVolleys": [
+            981,
+            985,
+            989,
+            993,
+            997,
+            1001,
+            1005,
+            1009,
+            1013,
+            1017,
+            1021,
+            1025,
+            1029,
+            1033,
+            1037
+          ]
+        },
+        "9": {
+          "incomingRaw": 4100,
+          "incomingEffective": 4040,
+          "incomingOverkill": 60,
+          "rocketVolleys": [
+            1111,
+            1115,
+            1119,
+            1123,
+            1127,
+            1131,
+            1135,
+            1139,
+            1143,
+            1147,
+            1151,
+            1155,
+            1159,
+            1163,
+            1167
+          ]
+        },
+        "10": {
+          "incomingRaw": 2840,
+          "incomingEffective": 2840,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            1248,
+            1252,
+            1256,
+            1260,
+            1264,
+            1268,
+            1272,
+            1276,
+            1280,
+            1284,
+            1288,
+            1292,
+            1296,
+            1300
+          ]
+        }
+      }
+    },
+    {
+      "seed": 22002,
+      "seat": "defender",
+      "self": {
+        "baseDeathRound": null,
+        "nightHp": [
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1480,
+          1480,
+          1480,
+          1480
+        ],
+        "nightOperators": [
+          3,
+          3,
+          3,
+          3,
+          1,
+          2,
+          1,
+          3,
+          2,
+          2
+        ],
+        "kills": 386,
+        "killPoints": 485,
+        "shots": 1141,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 9,
+        "income": 315,
+        "upgrades": [
+          [
+            297,
+            "rocket",
+            2
+          ],
+          [
+            837,
+            "railgun",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              965
+            ],
+            "railgun_41001": [
+              1,
+              980
+            ],
+            "rocket_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              965
+            ],
+            "railgun_41001": [
+              1,
+              660
+            ],
+            "rocket_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              400
+            ],
+            "railgun_41001": [
+              1,
+              660
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              240
+            ],
+            "railgun_41001": [
+              1,
+              660
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              660
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41023": [
+              1,
+              760
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1500
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              660
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41023": [
+              1,
+              760
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1480
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              2,
+              1500
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41023": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1480
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              2,
+              1500
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41023": [
+              1,
+              0
+            ],
+            "railgun_41042": [
+              1,
+              785
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1480
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              2,
+              1500
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41023": [
+              1,
+              0
+            ],
+            "railgun_41042": [
+              1,
+              765
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              1480
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              2,
+              1500
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41023": [
+              1,
+              0
+            ],
+            "railgun_41042": [
+              1,
+              765
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [
+          [
+            597,
+            20012
+          ],
+          [
+            638,
+            20011
+          ],
+          [
+            731,
+            20012
+          ],
+          [
+            857,
+            20012
+          ],
+          [
+            878,
+            20011
+          ],
+          [
+            1117,
+            20012
+          ],
+          [
+            1245,
+            20012
+          ]
+        ],
+        "nightRoleMoves": 20,
+        "readyGunsWithoutAttack": 324,
+        "readyGunsWithoutOperator": 92,
+        "p95DecisionMs": 5.969,
+        "survivedTwoNights": true,
+        "survivedNights": 10,
+        "survivalRounds": 1300
+      },
+      "snapshotDamageByNight": {
+        "1": {
+          "incomingRaw": 1740,
+          "incomingEffective": 1740,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            71,
+            75,
+            79,
+            83,
+            87,
+            91,
+            95,
+            99,
+            103,
+            107,
+            111,
+            115,
+            119,
+            123,
+            127
+          ]
+        },
+        "2": {
+          "incomingRaw": 1730,
+          "incomingEffective": 1730,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            201,
+            205,
+            209,
+            213,
+            217,
+            221,
+            225,
+            229,
+            233,
+            237,
+            241,
+            245,
+            249,
+            253,
+            257
+          ]
+        },
+        "3": {
+          "incomingRaw": 2340,
+          "incomingEffective": 2320,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            331,
+            335,
+            339,
+            343,
+            347,
+            351,
+            355,
+            359,
+            363,
+            367,
+            371,
+            375,
+            379,
+            383,
+            387
+          ]
+        },
+        "4": {
+          "incomingRaw": 2310,
+          "incomingEffective": 2300,
+          "incomingOverkill": 10,
+          "rocketVolleys": [
+            461,
+            465,
+            469,
+            473,
+            477,
+            481,
+            485,
+            489,
+            493,
+            497,
+            501,
+            505,
+            509,
+            513,
+            517
+          ]
+        },
+        "5": {
+          "incomingRaw": 1840,
+          "incomingEffective": 1810,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            591,
+            595,
+            599,
+            603,
+            607,
+            611,
+            615,
+            619,
+            623,
+            627,
+            631,
+            635,
+            639,
+            643,
+            647
+          ]
+        },
+        "6": {
+          "incomingRaw": 2300,
+          "incomingEffective": 2290,
+          "incomingOverkill": 10,
+          "rocketVolleys": [
+            724,
+            728,
+            732,
+            736,
+            740,
+            744,
+            748,
+            752,
+            756,
+            760,
+            764,
+            768,
+            772,
+            776,
+            780
+          ]
+        },
+        "7": {
+          "incomingRaw": 2340,
+          "incomingEffective": 2250,
+          "incomingOverkill": 90,
+          "rocketVolleys": [
+            851,
+            855,
+            859,
+            863,
+            867,
+            871,
+            875,
+            879,
+            883,
+            887,
+            891,
+            895,
+            899,
+            903,
+            907
+          ]
+        },
+        "8": {
+          "incomingRaw": 3210,
+          "incomingEffective": 3150,
+          "incomingOverkill": 60,
+          "rocketVolleys": [
+            981,
+            985,
+            989,
+            993,
+            997,
+            1001,
+            1005,
+            1009,
+            1013,
+            1017,
+            1021,
+            1025,
+            1029,
+            1033,
+            1037
+          ]
+        },
+        "9": {
+          "incomingRaw": 2670,
+          "incomingEffective": 2650,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            1111,
+            1115,
+            1119,
+            1123,
+            1127,
+            1131,
+            1135,
+            1139,
+            1143,
+            1147,
+            1151,
+            1155,
+            1159,
+            1163,
+            1167
+          ]
+        },
+        "10": {
+          "incomingRaw": 2880,
+          "incomingEffective": 2850,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            1241,
+            1245,
+            1249,
+            1253,
+            1257,
+            1261,
+            1265,
+            1269,
+            1273,
+            1277,
+            1281,
+            1285,
+            1289,
+            1293,
+            1297
+          ]
+        }
+      }
+    },
+    {
+      "seed": 26006,
+      "seat": "challenger",
+      "self": {
+        "baseDeathRound": null,
+        "nightHp": [
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500,
+          1500
+        ],
+        "nightOperators": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          3,
+          3,
+          3
+        ],
+        "kills": 414,
+        "killPoints": 540,
+        "shots": 1278,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 43,
+        "income": 476,
+        "upgrades": [
+          [
+            296,
+            "rocket",
+            2
+          ],
+          [
+            558,
+            "railgun",
+            2
+          ],
+          [
+            1070,
+            "railgun",
+            2
+          ],
+          [
+            1228,
+            "railgun",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              1000
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              995
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              995
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              1,
+              935
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1500
+            ],
+            "railgun_40001": [
+              1,
+              1000
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              1100
+            ],
+            "railgun_40001": [
+              1,
+              940
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              60
+            ],
+            "railgun_40001": [
+              1,
+              940
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              0
+            ],
+            "railgun_40001": [
+              1,
+              940
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40036": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              0
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40036": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_10013": [
+              1,
+              1500
+            ],
+            "railgun_40000": [
+              2,
+              0
+            ],
+            "railgun_40001": [
+              2,
+              1500
+            ],
+            "rocket_40002": [
+              2,
+              1500
+            ],
+            "railgun_40036": [
+              2,
+              1060
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [
+          [
+            852,
+            10010
+          ]
+        ],
+        "nightRoleMoves": 18,
+        "readyGunsWithoutAttack": 161,
+        "readyGunsWithoutOperator": 16,
+        "p95DecisionMs": 11.477,
+        "survivedTwoNights": true,
+        "survivedNights": 10,
+        "survivalRounds": 1300
+      },
+      "snapshotDamageByNight": {
+        "1": {
+          "incomingRaw": 1670,
+          "incomingEffective": 1670,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            71,
+            75,
+            79,
+            83,
+            87,
+            91,
+            95,
+            99,
+            103,
+            107,
+            111,
+            115,
+            119,
+            123,
+            127
+          ]
+        },
+        "2": {
+          "incomingRaw": 1770,
+          "incomingEffective": 1770,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            201,
+            205,
+            209,
+            213,
+            217,
+            221,
+            225,
+            229,
+            233,
+            237,
+            241,
+            245,
+            249,
+            253,
+            257
+          ]
+        },
+        "3": {
+          "incomingRaw": 2240,
+          "incomingEffective": 2220,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            331,
+            335,
+            339,
+            343,
+            347,
+            351,
+            355,
+            359,
+            363,
+            367,
+            371,
+            375,
+            379,
+            383,
+            387
+          ]
+        },
+        "4": {
+          "incomingRaw": 2410,
+          "incomingEffective": 2400,
+          "incomingOverkill": 10,
+          "rocketVolleys": [
+            461,
+            465,
+            469,
+            473,
+            477,
+            481,
+            485,
+            489,
+            493,
+            497,
+            501,
+            505,
+            509,
+            513,
+            517
+          ]
+        },
+        "5": {
+          "incomingRaw": 3150,
+          "incomingEffective": 3070,
+          "incomingOverkill": 80,
+          "rocketVolleys": [
+            591,
+            595,
+            599,
+            603,
+            607,
+            611,
+            615,
+            619,
+            623,
+            627,
+            631,
+            635,
+            639,
+            643,
+            647
+          ]
+        },
+        "6": {
+          "incomingRaw": 3180,
+          "incomingEffective": 3060,
+          "incomingOverkill": 120,
+          "rocketVolleys": [
+            726,
+            730,
+            734,
+            738,
+            742,
+            746,
+            750,
+            754,
+            758,
+            762,
+            766,
+            770,
+            774,
+            778
+          ]
+        },
+        "7": {
+          "incomingRaw": 2660,
+          "incomingEffective": 2580,
+          "incomingOverkill": 80,
+          "rocketVolleys": [
+            851,
+            855,
+            859,
+            863,
+            867,
+            871,
+            875,
+            879,
+            883,
+            887,
+            891,
+            895,
+            899,
+            903,
+            907
+          ]
+        },
+        "8": {
+          "incomingRaw": 2410,
+          "incomingEffective": 2380,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            981,
+            985,
+            989,
+            993,
+            997,
+            1001,
+            1005,
+            1009,
+            1013,
+            1017,
+            1021,
+            1025,
+            1029,
+            1033,
+            1037
+          ]
+        },
+        "9": {
+          "incomingRaw": 2660,
+          "incomingEffective": 2570,
+          "incomingOverkill": 90,
+          "rocketVolleys": [
+            1111,
+            1115,
+            1119,
+            1123,
+            1127,
+            1131,
+            1135,
+            1139,
+            1143,
+            1147,
+            1151,
+            1155,
+            1159,
+            1163,
+            1167
+          ]
+        },
+        "10": {
+          "incomingRaw": 4010,
+          "incomingEffective": 3960,
+          "incomingOverkill": 50,
+          "rocketVolleys": [
+            1241,
+            1245,
+            1249,
+            1253,
+            1257,
+            1261,
+            1265,
+            1269,
+            1273,
+            1277,
+            1281,
+            1285,
+            1289,
+            1293,
+            1297
+          ]
+        }
+      }
+    },
+    {
+      "seed": 26006,
+      "seat": "defender",
+      "self": {
+        "baseDeathRound": null,
+        "nightHp": [
+          840,
+          840,
+          3000,
+          3000,
+          3000,
+          3000,
+          2880,
+          2880,
+          2880,
+          2880
+        ],
+        "nightOperators": [
+          2,
+          3,
+          3,
+          2,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "kills": 350,
+        "killPoints": 432,
+        "shots": 1231,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 2,
+        "income": 310,
+        "upgrades": [
+          [
+            309,
+            "station",
+            2
+          ],
+          [
+            701,
+            "rocket",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_20013": [
+              1,
+              840
+            ],
+            "railgun_41000": [
+              1,
+              805
+            ],
+            "railgun_41001": [
+              1,
+              880
+            ],
+            "rocket_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              840
+            ],
+            "railgun_41000": [
+              1,
+              805
+            ],
+            "railgun_41001": [
+              1,
+              880
+            ],
+            "rocket_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              3000
+            ],
+            "railgun_41000": [
+              1,
+              315
+            ],
+            "railgun_41001": [
+              1,
+              880
+            ],
+            "rocket_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              3000
+            ],
+            "railgun_41000": [
+              1,
+              315
+            ],
+            "railgun_41001": [
+              1,
+              880
+            ],
+            "rocket_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              3000
+            ],
+            "railgun_41000": [
+              1,
+              275
+            ],
+            "railgun_41001": [
+              1,
+              880
+            ],
+            "rocket_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              3000
+            ],
+            "railgun_41000": [
+              1,
+              275
+            ],
+            "railgun_41001": [
+              1,
+              880
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              2880
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              880
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              2880
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              880
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41030": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              2880
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              880
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41030": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              2880
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              880
+            ],
+            "rocket_41002": [
+              2,
+              1500
+            ],
+            "railgun_41030": [
+              1,
+              780
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [
+          [
+            89,
+            20012
+          ],
+          [
+            468,
+            20010
+          ],
+          [
+            907,
+            20011
+          ],
+          [
+            1011,
+            20012
+          ],
+          [
+            1168,
+            20012
+          ],
+          [
+            1247,
+            20012
+          ]
+        ],
+        "nightRoleMoves": 12,
+        "readyGunsWithoutAttack": 189,
+        "readyGunsWithoutOperator": 51,
+        "p95DecisionMs": 14.078,
+        "survivedTwoNights": true,
+        "survivedNights": 10,
+        "survivalRounds": 1300
+      },
+      "snapshotDamageByNight": {
+        "1": {
+          "incomingRaw": 1450,
+          "incomingEffective": 1450,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            71,
+            75,
+            79,
+            83,
+            87,
+            91,
+            95,
+            99,
+            103,
+            107,
+            111,
+            115,
+            119,
+            123,
+            127
+          ]
+        },
+        "2": {
+          "incomingRaw": 1720,
+          "incomingEffective": 1720,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            201,
+            205,
+            209,
+            213,
+            217,
+            221,
+            225,
+            229,
+            233,
+            237,
+            241,
+            245,
+            249,
+            253,
+            257
+          ]
+        },
+        "3": {
+          "incomingRaw": 1750,
+          "incomingEffective": 1750,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            331,
+            335,
+            339,
+            343,
+            347,
+            351,
+            355,
+            359,
+            363,
+            367,
+            371,
+            375,
+            379,
+            383,
+            387
+          ]
+        },
+        "4": {
+          "incomingRaw": 1400,
+          "incomingEffective": 1400,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            461,
+            465,
+            469,
+            473,
+            477,
+            481,
+            485,
+            489,
+            493,
+            497,
+            501,
+            505,
+            509,
+            513,
+            517
+          ]
+        },
+        "5": {
+          "incomingRaw": 1860,
+          "incomingEffective": 1860,
+          "incomingOverkill": 0,
+          "rocketVolleys": [
+            591,
+            595,
+            599,
+            603,
+            607,
+            611,
+            615,
+            619,
+            623,
+            627,
+            631,
+            635,
+            639,
+            643,
+            647
+          ]
+        },
+        "6": {
+          "incomingRaw": 2680,
+          "incomingEffective": 2650,
+          "incomingOverkill": 30,
+          "rocketVolleys": [
+            721,
+            725,
+            729,
+            733,
+            737,
+            741,
+            745,
+            749,
+            753,
+            757,
+            761,
+            765,
+            769,
+            773,
+            777
+          ]
+        },
+        "7": {
+          "incomingRaw": 2620,
+          "incomingEffective": 2600,
+          "incomingOverkill": 20,
+          "rocketVolleys": [
+            851,
+            855,
+            859,
+            863,
+            867,
+            871,
+            875,
+            879,
+            883,
+            887,
+            891,
+            895,
+            899,
+            903,
+            907
+          ]
+        },
+        "8": {
+          "incomingRaw": 2670,
+          "incomingEffective": 2630,
+          "incomingOverkill": 40,
+          "rocketVolleys": [
+            981,
+            985,
+            989,
+            993,
+            997,
+            1001,
+            1005,
+            1009,
+            1013,
+            1017,
+            1021,
+            1025,
+            1029,
+            1033,
+            1037
+          ]
+        },
+        "9": {
+          "incomingRaw": 2880,
+          "incomingEffective": 2820,
+          "incomingOverkill": 60,
+          "rocketVolleys": [
+            1111,
+            1115,
+            1119,
+            1123,
+            1127,
+            1131,
+            1135,
+            1139,
+            1143,
+            1147,
+            1151,
+            1155,
+            1159,
+            1163,
+            1167
+          ]
+        },
+        "10": {
+          "incomingRaw": 2370,
+          "incomingEffective": 2330,
+          "incomingOverkill": 40,
+          "rocketVolleys": [
+            1249,
+            1253,
+            1257,
+            1261,
+            1265,
+            1269,
+            1273,
+            1277,
+            1281,
+            1285,
+            1289,
+            1293,
+            1297
+          ]
+        }
+      }
+    }
+  ]
+}

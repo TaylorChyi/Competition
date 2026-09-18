@@ -1,0 +1,178 @@
+{
+  "candidates": {
+    "alpha": {
+      "reports": {
+        "development": {
+          "path": "lab/survival/iteration03/beta/full_ring_exits/gate-development.json",
+          "sha256": "3a0dde6d6461507a7c9307e43930bfd0558859258a24267965a798b399006714"
+        },
+        "validation": {
+          "path": "lab/survival/iteration03/beta/full_ring_exits/gate-validation.json",
+          "sha256": "a2523e316452a74e4d4a8606c467e1653eb9225166fa890a8c489e3c84f89ce8"
+        }
+      },
+      "testedCandidate": "lab/survival/iteration03/beta/full_ring_exits",
+      "candidate": "lab/tournament/round09/alpha",
+      "byteIdentityVerified": true,
+      "runtimeHashes": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "brain.py": "52dea4ff9858e2e3acc1ef0107652d6c33398d0c7e138f5d97fa4a45d5c59fdc",
+        "economy.py": "dfb3d1153ce765d0d02d4130215ff784819843e77bc1cdb18fb3b6387eb387c9",
+        "fire_control.py": "c56142f7a66d216fec6ca20caf75e2a9aa86f99715fddf05a02ae8f23f2ab3ac",
+        "grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+        "guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+        "protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+        "targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132"
+      },
+      "sourceHashes": {
+        "CoreGeek/src/agent/protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "CoreGeek/src/agent/targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132",
+        "lab/arena.py": "91691bc4fee6b6905709e8f57ef6c44876a43fda56700acff40c9a8f85ede231",
+        "lab/night_sim.py": "9d646e89a33e52b4901c056ff9a633b0fae463da2d9472854fce2ea4fc486727",
+        "lab/survival/iteration03/beta/full_ring_exits/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "lab/survival/iteration03/beta/full_ring_exits/brain.py": "52dea4ff9858e2e3acc1ef0107652d6c33398d0c7e138f5d97fa4a45d5c59fdc",
+        "lab/survival/iteration03/beta/full_ring_exits/economy.py": "dfb3d1153ce765d0d02d4130215ff784819843e77bc1cdb18fb3b6387eb387c9",
+        "lab/survival/iteration03/beta/full_ring_exits/fire_control.py": "c56142f7a66d216fec6ca20caf75e2a9aa86f99715fddf05a02ae8f23f2ab3ac",
+        "lab/survival/iteration03/beta/full_ring_exits/grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+        "lab/survival/iteration03/beta/full_ring_exits/guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+        "lab/survival/iteration03/beta/full_ring_exits/protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "lab/survival/iteration03/beta/full_ring_exits/server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+        "lab/survival/iteration03/beta/full_ring_exits/targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132",
+        "lab/survival/plan.json": "91d742ebaf75841a2cf3115b24d98a7a20cc4e50a3836e5528aba66746e38b81",
+        "lab/tournament/round05/alpha/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "lab/tournament/round05/alpha/brain.py": "2dc027d3be7720e7283e5f60a0e7c978c10755f09f409e34113bacfcd8c6d959",
+        "lab/tournament/round05/alpha/economy.py": "dfb3d1153ce765d0d02d4130215ff784819843e77bc1cdb18fb3b6387eb387c9",
+        "lab/tournament/round05/alpha/fire_control.py": "c56142f7a66d216fec6ca20caf75e2a9aa86f99715fddf05a02ae8f23f2ab3ac",
+        "lab/tournament/round05/alpha/grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+        "lab/tournament/round05/alpha/guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+        "lab/tournament/round05/alpha/protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "lab/tournament/round05/alpha/server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+        "lab/tournament/round05/alpha/targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132",
+        "tools/run_league.py": "e679915c2debc86b0694674cda05e5bc10908b996690d88deb040aeaedf1b80c",
+        "tools/run_survival_gate.py": "4109f0a445f4a528f207128069446d880079507b872ecf429c85b9f881846a71"
+      }
+    },
+    "beta": {
+      "reports": {
+        "development": {
+          "path": "lab/survival/iteration04/beta/partial12/gate-development.json",
+          "sha256": "1dc84828ec03f29cffa425b708ffff2fd552d2bd5657cc5cc599683e8d878937"
+        },
+        "validation": {
+          "path": "lab/survival/iteration04/beta/partial12/gate-validation.json",
+          "sha256": "7d47bb983b98952da53cf96baf88b5a6e5172219866716ad7a28b6a229dc32f3"
+        }
+      },
+      "testedCandidate": "lab/survival/iteration04/beta/partial12",
+      "candidate": "lab/tournament/round09/beta",
+      "byteIdentityVerified": true,
+      "runtimeHashes": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "brain.py": "5ba1c1adb5d189ff66ca95ea97943b98e2838c86f906c90aec313ac86f7a7632",
+        "economy.py": "dfb3d1153ce765d0d02d4130215ff784819843e77bc1cdb18fb3b6387eb387c9",
+        "fire_control.py": "c56142f7a66d216fec6ca20caf75e2a9aa86f99715fddf05a02ae8f23f2ab3ac",
+        "grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+        "guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+        "protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+        "targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132"
+      },
+      "sourceHashes": {
+        "CoreGeek/src/agent/protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "CoreGeek/src/agent/targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132",
+        "lab/arena.py": "91691bc4fee6b6905709e8f57ef6c44876a43fda56700acff40c9a8f85ede231",
+        "lab/night_sim.py": "9d646e89a33e52b4901c056ff9a633b0fae463da2d9472854fce2ea4fc486727",
+        "lab/survival/iteration04/beta/partial12/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "lab/survival/iteration04/beta/partial12/brain.py": "5ba1c1adb5d189ff66ca95ea97943b98e2838c86f906c90aec313ac86f7a7632",
+        "lab/survival/iteration04/beta/partial12/economy.py": "dfb3d1153ce765d0d02d4130215ff784819843e77bc1cdb18fb3b6387eb387c9",
+        "lab/survival/iteration04/beta/partial12/fire_control.py": "c56142f7a66d216fec6ca20caf75e2a9aa86f99715fddf05a02ae8f23f2ab3ac",
+        "lab/survival/iteration04/beta/partial12/grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+        "lab/survival/iteration04/beta/partial12/guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+        "lab/survival/iteration04/beta/partial12/protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "lab/survival/iteration04/beta/partial12/server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+        "lab/survival/iteration04/beta/partial12/targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132",
+        "lab/survival/plan.json": "91d742ebaf75841a2cf3115b24d98a7a20cc4e50a3836e5528aba66746e38b81",
+        "lab/tournament/round05/alpha/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "lab/tournament/round05/alpha/brain.py": "2dc027d3be7720e7283e5f60a0e7c978c10755f09f409e34113bacfcd8c6d959",
+        "lab/tournament/round05/alpha/economy.py": "dfb3d1153ce765d0d02d4130215ff784819843e77bc1cdb18fb3b6387eb387c9",
+        "lab/tournament/round05/alpha/fire_control.py": "c56142f7a66d216fec6ca20caf75e2a9aa86f99715fddf05a02ae8f23f2ab3ac",
+        "lab/tournament/round05/alpha/grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+        "lab/tournament/round05/alpha/guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+        "lab/tournament/round05/alpha/protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "lab/tournament/round05/alpha/server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+        "lab/tournament/round05/alpha/targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132",
+        "tools/run_league.py": "e679915c2debc86b0694674cda05e5bc10908b996690d88deb040aeaedf1b80c",
+        "tools/run_survival_gate.py": "4109f0a445f4a528f207128069446d880079507b872ecf429c85b9f881846a71"
+      }
+    },
+    "gamma": {
+      "reports": {
+        "development": {
+          "path": "lab/survival/iteration04/beta/partial14/gate-development.json",
+          "sha256": "23687d6acf8f14664984163aeea1d184be6f6c92445bc90bb13515efb2566e83"
+        },
+        "validation": {
+          "path": "lab/survival/iteration04/beta/partial14/gate-validation.json",
+          "sha256": "b4758192bedf8f590eb53d92dce7768416a5dfbb9b4114e65eb227f2a1cec0d8"
+        }
+      },
+      "testedCandidate": "lab/survival/iteration04/beta/partial14",
+      "candidate": "lab/tournament/round09/gamma",
+      "byteIdentityVerified": true,
+      "runtimeHashes": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "brain.py": "4766259d55c94f66861f9c70cd6462aa6c0eefc418dbc1e60acb9c5708cb557e",
+        "economy.py": "dfb3d1153ce765d0d02d4130215ff784819843e77bc1cdb18fb3b6387eb387c9",
+        "fire_control.py": "c56142f7a66d216fec6ca20caf75e2a9aa86f99715fddf05a02ae8f23f2ab3ac",
+        "grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+        "guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+        "protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+        "targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132"
+      },
+      "sourceHashes": {
+        "CoreGeek/src/agent/protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "CoreGeek/src/agent/targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132",
+        "lab/arena.py": "91691bc4fee6b6905709e8f57ef6c44876a43fda56700acff40c9a8f85ede231",
+        "lab/night_sim.py": "9d646e89a33e52b4901c056ff9a633b0fae463da2d9472854fce2ea4fc486727",
+        "lab/survival/iteration04/beta/partial14/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "lab/survival/iteration04/beta/partial14/brain.py": "4766259d55c94f66861f9c70cd6462aa6c0eefc418dbc1e60acb9c5708cb557e",
+        "lab/survival/iteration04/beta/partial14/economy.py": "dfb3d1153ce765d0d02d4130215ff784819843e77bc1cdb18fb3b6387eb387c9",
+        "lab/survival/iteration04/beta/partial14/fire_control.py": "c56142f7a66d216fec6ca20caf75e2a9aa86f99715fddf05a02ae8f23f2ab3ac",
+        "lab/survival/iteration04/beta/partial14/grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+        "lab/survival/iteration04/beta/partial14/guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+        "lab/survival/iteration04/beta/partial14/protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "lab/survival/iteration04/beta/partial14/server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+        "lab/survival/iteration04/beta/partial14/targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132",
+        "lab/survival/plan.json": "91d742ebaf75841a2cf3115b24d98a7a20cc4e50a3836e5528aba66746e38b81",
+        "lab/tournament/round05/alpha/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "lab/tournament/round05/alpha/brain.py": "2dc027d3be7720e7283e5f60a0e7c978c10755f09f409e34113bacfcd8c6d959",
+        "lab/tournament/round05/alpha/economy.py": "dfb3d1153ce765d0d02d4130215ff784819843e77bc1cdb18fb3b6387eb387c9",
+        "lab/tournament/round05/alpha/fire_control.py": "c56142f7a66d216fec6ca20caf75e2a9aa86f99715fddf05a02ae8f23f2ab3ac",
+        "lab/tournament/round05/alpha/grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+        "lab/tournament/round05/alpha/guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+        "lab/tournament/round05/alpha/protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+        "lab/tournament/round05/alpha/server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+        "lab/tournament/round05/alpha/targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132",
+        "tools/run_league.py": "e679915c2debc86b0694674cda05e5bc10908b996690d88deb040aeaedf1b80c",
+        "tools/run_survival_gate.py": "4109f0a445f4a528f207128069446d880079507b872ecf429c85b9f881846a71"
+      }
+    }
+  },
+  "qualification": "Each policy completed development8 and independent validation20; identical frozen runtime reference reuse is explicitly checked.",
+  "experiment": "Wall-shape comparison with the same three-railgun loadout and unchanged economy/fire-control.",
+  "excluded": "Both rear-rocket variants and balanced-upgrade variant failed survival checks; not eligible.",
+  "formalSeeds": [
+    39000,
+    39001,
+    39002,
+    39003,
+    39004,
+    39005,
+    39006,
+    39007,
+    39008,
+    39009
+  ]
+}

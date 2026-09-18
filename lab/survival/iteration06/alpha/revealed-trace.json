@@ -1,0 +1,7973 @@
+{
+  "36002": {
+    "result": {
+      "baseDeathRound": null,
+      "nightHp": [
+        1500,
+        1500,
+        1300,
+        1300,
+        1300,
+        1300,
+        780,
+        780,
+        780,
+        3000
+      ],
+      "nightOperators": [
+        3,
+        2,
+        1,
+        2,
+        1,
+        3,
+        1,
+        2,
+        3,
+        3
+      ],
+      "kills": 365,
+      "killPoints": 441,
+      "shots": 1092,
+      "foreignOnlyShots": 0,
+      "invalidCommands": 0,
+      "movesBlocked": 6,
+      "income": 295,
+      "upgrades": [
+        [
+          322,
+          "rocket",
+          2
+        ],
+        [
+          1212,
+          "station",
+          2
+        ]
+      ],
+      "nightEquipment": [
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            1000
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            1,
+            1000
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            980
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            1,
+            1000
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1300
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1300
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            900
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1300
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            0
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ],
+          "railgun_40023": [
+            1,
+            955
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1300
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            0
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ],
+          "railgun_40023": [
+            1,
+            955
+          ],
+          "railgun_40025": [
+            1,
+            1000
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            780
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            0
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ],
+          "railgun_40023": [
+            1,
+            0
+          ],
+          "railgun_40025": [
+            1,
+            715
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            780
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            0
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ],
+          "railgun_40023": [
+            1,
+            0
+          ],
+          "railgun_40025": [
+            1,
+            715
+          ],
+          "railgun_40032": [
+            1,
+            880
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            780
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            0
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ],
+          "railgun_40023": [
+            1,
+            0
+          ],
+          "railgun_40025": [
+            1,
+            685
+          ],
+          "railgun_40032": [
+            1,
+            815
+          ]
+        },
+        {
+          "station_10013": [
+            2,
+            3000
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            0
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ],
+          "railgun_40023": [
+            1,
+            0
+          ],
+          "railgun_40025": [
+            1,
+            0
+          ],
+          "railgun_40032": [
+            1,
+            780
+          ]
+        }
+      ],
+      "resourceConflicts": 0,
+      "operatorDeaths": [
+        [
+          208,
+          10012
+        ],
+        [
+          337,
+          10012
+        ],
+        [
+          373,
+          10010
+        ],
+        [
+          465,
+          10011
+        ],
+        [
+          595,
+          10012
+        ],
+        [
+          621,
+          10011
+        ],
+        [
+          896,
+          10012
+        ],
+        [
+          910,
+          10011
+        ],
+        [
+          1040,
+          10012
+        ]
+      ],
+      "nightRoleMoves": 23,
+      "readyGunsWithoutAttack": 236,
+      "readyGunsWithoutOperator": 102,
+      "p95DecisionMs": 2.968,
+      "survivedTwoNights": true,
+      "survivedNights": 10,
+      "survivalRounds": 1300
+    },
+    "trace": [
+      {
+        "round": 70,
+        "gold": 40,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40003,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40004,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40005,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40008,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 130,
+        "gold": 40,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40003,
+            "kind": "wall",
+            "hp": 475,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40004,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40005,
+            "kind": "wall",
+            "hp": 895,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 895,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40008,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 740,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 200,
+        "gold": 90,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              11,
+              18
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40003,
+            "kind": "wall",
+            "hp": 475,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40004,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40005,
+            "kind": "wall",
+            "hp": 895,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 895,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40008,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 740,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 260,
+        "gold": 90,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 980,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40004,
+            "kind": "wall",
+            "hp": 945,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40005,
+            "kind": "wall",
+            "hp": 225,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 700,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 320,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 330,
+        "gold": 1,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": [
+              "stone"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              8,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              11,
+              18
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 980,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40004,
+            "kind": "wall",
+            "hp": 945,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40005,
+            "kind": "wall",
+            "hp": 225,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 700,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 320,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40016,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 390,
+        "gold": 1,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1300,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              8,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 20,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 765,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 760,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40016,
+            "kind": "wall",
+            "hp": 100,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 460,
+        "gold": 1,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1300,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              24,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": [
+              "copper",
+              "copper"
+            ]
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 20,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 765,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 760,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40016,
+            "kind": "wall",
+            "hp": 100,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40017,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40018,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40019,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 520,
+        "gold": 1,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1300,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": [
+              "copper",
+              "copper"
+            ]
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 900,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 285,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 475,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40018,
+            "kind": "wall",
+            "hp": 275,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40019,
+            "kind": "wall",
+            "hp": 215,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 590,
+        "gold": 26,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1300,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              11,
+              18
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 900,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 285,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 475,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40018,
+            "kind": "wall",
+            "hp": 275,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40019,
+            "kind": "wall",
+            "hp": 215,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40020,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40021,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40022,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40024,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 650,
+        "gold": 26,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1300,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 775,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 475,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40021,
+            "kind": "wall",
+            "hp": 50,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40022,
+            "kind": "wall",
+            "hp": 890,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "railgun",
+            "hp": 955,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40024,
+            "kind": "wall",
+            "hp": 430,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 720,
+        "gold": 16,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1300,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              11,
+              18
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 775,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 475,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40021,
+            "kind": "wall",
+            "hp": 50,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40022,
+            "kind": "wall",
+            "hp": 890,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "railgun",
+            "hp": 955,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40024,
+            "kind": "wall",
+            "hp": 430,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40026,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40028,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 780,
+        "gold": 16,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1300,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 140,
+            "level": 1,
+            "pos": [
+              12,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 775,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 360,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40022,
+            "kind": "wall",
+            "hp": 60,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "railgun",
+            "hp": 955,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40026,
+            "kind": "wall",
+            "hp": 910,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40028,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 850,
+        "gold": 61,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1300,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 140,
+            "level": 1,
+            "pos": [
+              13,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 775,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 360,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40022,
+            "kind": "wall",
+            "hp": 60,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "railgun",
+            "hp": 955,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40026,
+            "kind": "wall",
+            "hp": 910,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40028,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40030,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40031,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 910,
+        "gold": 61,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 780,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 680,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "railgun",
+            "hp": 715,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 685,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 980,
+        "gold": 63,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 780,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 680,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "railgun",
+            "hp": 715,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 685,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40032,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40033,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40034,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40035,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40036,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 1040,
+        "gold": 63,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 780,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 490,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "railgun",
+            "hp": 715,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40032,
+            "kind": "railgun",
+            "hp": 880,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40036,
+            "kind": "wall",
+            "hp": 765,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 1110,
+        "gold": 93,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 780,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 490,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "railgun",
+            "hp": 715,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40032,
+            "kind": "railgun",
+            "hp": 880,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40036,
+            "kind": "wall",
+            "hp": 765,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40037,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40038,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 1170,
+        "gold": 93,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 780,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 150,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 15,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "railgun",
+            "hp": 685,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40032,
+            "kind": "railgun",
+            "hp": 815,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 1240,
+        "gold": 10,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 3000,
+            "level": 2,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 150,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "railgun",
+            "hp": 685,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40032,
+            "kind": "railgun",
+            "hp": 815,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40039,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40040,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40041,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40042,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 1300,
+        "gold": 10,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 3000,
+            "level": 2,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 140,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 670,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 760,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40032,
+            "kind": "railgun",
+            "hp": 780,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40040,
+            "kind": "wall",
+            "hp": 130,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40042,
+            "kind": "wall",
+            "hp": 400,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          }
+        ]
+      }
+    ]
+  },
+  "36007": {
+    "result": {
+      "baseDeathRound": null,
+      "nightHp": [
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "nightOperators": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "kills": 460,
+      "killPoints": 586,
+      "shots": 1422,
+      "foreignOnlyShots": 0,
+      "invalidCommands": 0,
+      "movesBlocked": 41,
+      "income": 521,
+      "upgrades": [
+        [
+          172,
+          "rocket",
+          2
+        ],
+        [
+          718,
+          "rocket",
+          3
+        ],
+        [
+          1088,
+          "railgun",
+          2
+        ],
+        [
+          1232,
+          "railgun",
+          2
+        ]
+      ],
+      "nightEquipment": [
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            980
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            1,
+            1000
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            980
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            980
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            2,
+            1500
+          ],
+          "railgun_40019": [
+            1,
+            570
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            3,
+            2000
+          ],
+          "railgun_40019": [
+            1,
+            0
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            3,
+            2000
+          ],
+          "railgun_40019": [
+            1,
+            0
+          ],
+          "railgun_40029": [
+            1,
+            1000
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            3,
+            2000
+          ],
+          "railgun_40019": [
+            1,
+            0
+          ],
+          "railgun_40029": [
+            1,
+            1000
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            1,
+            1000
+          ],
+          "rocket_40002": [
+            3,
+            2000
+          ],
+          "railgun_40019": [
+            1,
+            0
+          ],
+          "railgun_40029": [
+            2,
+            1500
+          ]
+        },
+        {
+          "station_10013": [
+            1,
+            1500
+          ],
+          "railgun_40000": [
+            1,
+            0
+          ],
+          "railgun_40001": [
+            2,
+            1500
+          ],
+          "rocket_40002": [
+            3,
+            2000
+          ],
+          "railgun_40019": [
+            1,
+            0
+          ],
+          "railgun_40029": [
+            2,
+            1440
+          ]
+        }
+      ],
+      "resourceConflicts": 0,
+      "operatorDeaths": [],
+      "nightRoleMoves": 32,
+      "readyGunsWithoutAttack": 91,
+      "readyGunsWithoutOperator": 29,
+      "p95DecisionMs": 4.103,
+      "survivedTwoNights": true,
+      "survivedNights": 10,
+      "survivalRounds": 1300
+    },
+    "trace": [
+      {
+        "round": 70,
+        "gold": 75,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              13,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40003,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40004,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40005,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40008,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 130,
+        "gold": 75,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 175,
+            "level": 1,
+            "pos": [
+              9,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 980,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40004,
+            "kind": "wall",
+            "hp": 340,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40005,
+            "kind": "wall",
+            "hp": 515,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40008,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 850,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 200,
+        "gold": 25,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              8,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 175,
+            "level": 1,
+            "pos": [
+              11,
+              18
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 980,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40004,
+            "kind": "wall",
+            "hp": 340,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40005,
+            "kind": "wall",
+            "hp": 515,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40008,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 850,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 260,
+        "gold": 25,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              8,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 20,
+            "level": 1,
+            "pos": [
+              12,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 980,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40004,
+            "kind": "wall",
+            "hp": 100,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40005,
+            "kind": "wall",
+            "hp": 425,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 915,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40008,
+            "kind": "wall",
+            "hp": 850,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 765,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40011,
+            "kind": "wall",
+            "hp": 425,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 330,
+        "gold": 67,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 200,
+            "level": 1,
+            "pos": [
+              12,
+              25
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 980,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 915,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40008,
+            "kind": "wall",
+            "hp": 850,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 765,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40016,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40017,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40018,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 390,
+        "gold": 67,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 980,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 740,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 795,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40008,
+            "kind": "wall",
+            "hp": 710,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 675,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40016,
+            "kind": "wall",
+            "hp": 600,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40017,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40018,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 460,
+        "gold": 126,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              13,
+              24
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              14,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40000,
+            "kind": "railgun",
+            "hp": 980,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40006,
+            "kind": "wall",
+            "hp": 740,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40007,
+            "kind": "wall",
+            "hp": 795,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40008,
+            "kind": "wall",
+            "hp": 710,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 675,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40016,
+            "kind": "wall",
+            "hp": 600,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40017,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40018,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 520,
+        "gold": 126,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 180,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              8,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 290,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40017,
+            "kind": "wall",
+            "hp": 570,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40018,
+            "kind": "wall",
+            "hp": 845,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 590,
+        "gold": 116,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 180,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 220,
+            "level": 1,
+            "pos": [
+              13,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40010,
+            "kind": "wall",
+            "hp": 290,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40017,
+            "kind": "wall",
+            "hp": 570,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40018,
+            "kind": "wall",
+            "hp": 845,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40019,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40020,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40021,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40022,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 650,
+        "gold": 116,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 180,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 790,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 885,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40019,
+            "kind": "railgun",
+            "hp": 570,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40021,
+            "kind": "wall",
+            "hp": 805,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "wall",
+            "hp": 955,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 720,
+        "gold": 1,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 180,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 2000,
+            "level": 3,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 790,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 885,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40019,
+            "kind": "railgun",
+            "hp": 570,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40021,
+            "kind": "wall",
+            "hp": 805,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "wall",
+            "hp": 955,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40024,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40026,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 780,
+        "gold": 1,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 180,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 2000,
+            "level": 3,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 550,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 785,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40021,
+            "kind": "wall",
+            "hp": 485,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "wall",
+            "hp": 385,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "wall",
+            "hp": 580,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40026,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 850,
+        "gold": 16,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 180,
+            "level": 1,
+            "pos": [
+              13,
+              21
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 2000,
+            "level": 3,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 550,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 785,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40021,
+            "kind": "wall",
+            "hp": 485,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "wall",
+            "hp": 385,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "wall",
+            "hp": 580,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40026,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40028,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40030,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 910,
+        "gold": 16,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 150,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 2000,
+            "level": 3,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40009,
+            "kind": "wall",
+            "hp": 420,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 575,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40021,
+            "kind": "wall",
+            "hp": 240,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40023,
+            "kind": "wall",
+            "hp": 265,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "wall",
+            "hp": 505,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40026,
+            "kind": "wall",
+            "hp": 980,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40028,
+            "kind": "wall",
+            "hp": 895,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40030,
+            "kind": "wall",
+            "hp": 860,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 980,
+        "gold": 66,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 150,
+            "level": 1,
+            "pos": [
+              13,
+              21
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 2000,
+            "level": 3,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40012,
+            "kind": "wall",
+            "hp": 575,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "wall",
+            "hp": 505,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40026,
+            "kind": "wall",
+            "hp": 980,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40028,
+            "kind": "wall",
+            "hp": 895,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40030,
+            "kind": "wall",
+            "hp": 860,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40031,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40032,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40033,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 1040,
+        "gold": 66,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 90,
+            "level": 1,
+            "pos": [
+              11,
+              21
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 2000,
+            "level": 3,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 860,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 990,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40025,
+            "kind": "wall",
+            "hp": 50,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40031,
+            "kind": "wall",
+            "hp": 940,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40032,
+            "kind": "wall",
+            "hp": 880,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40033,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 1110,
+        "gold": 51,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 90,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 2000,
+            "level": 3,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 860,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 990,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "railgun",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40031,
+            "kind": "wall",
+            "hp": 940,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40032,
+            "kind": "wall",
+            "hp": 880,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40033,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40034,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40035,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40036,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40037,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40038,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 1170,
+        "gold": 51,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 90,
+            "level": 1,
+            "pos": [
+              8,
+              21
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 2000,
+            "level": 3,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 700,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 990,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 855,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "railgun",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40032,
+            "kind": "wall",
+            "hp": 345,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40033,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40034,
+            "kind": "wall",
+            "hp": 670,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40035,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40036,
+            "kind": "wall",
+            "hp": 735,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40037,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40038,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 1240,
+        "gold": 1,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 90,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              8,
+              23
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 2000,
+            "level": 3,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 700,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 990,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40027,
+            "kind": "wall",
+            "hp": 855,
+            "level": 1,
+            "pos": [
+              10,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "railgun",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40033,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40034,
+            "kind": "wall",
+            "hp": 670,
+            "level": 1,
+            "pos": [
+              12,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40035,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40036,
+            "kind": "wall",
+            "hp": 735,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40037,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40038,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40039,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40040,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          }
+        ]
+      },
+      {
+        "round": 1300,
+        "gold": 1,
+        "units": [
+          {
+            "id": 10013,
+            "kind": "station",
+            "hp": 1500,
+            "level": 1,
+            "pos": [
+              9,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10010,
+            "kind": "worker",
+            "hp": 90,
+            "level": 1,
+            "pos": [
+              10,
+              23
+            ],
+            "backpack": []
+          },
+          {
+            "id": 10011,
+            "kind": "pioneer",
+            "hp": 190,
+            "level": 1,
+            "pos": [
+              10,
+              20
+            ],
+            "backpack": [
+              "Medicine"
+            ]
+          },
+          {
+            "id": 10012,
+            "kind": "worker",
+            "hp": 185,
+            "level": 1,
+            "pos": [
+              8,
+              23
+            ],
+            "backpack": [
+              "copper"
+            ]
+          },
+          {
+            "id": 40001,
+            "kind": "railgun",
+            "hp": 1500,
+            "level": 2,
+            "pos": [
+              11,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40002,
+            "kind": "rocket",
+            "hp": 2000,
+            "level": 3,
+            "pos": [
+              8,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40013,
+            "kind": "wall",
+            "hp": 700,
+            "level": 1,
+            "pos": [
+              8,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40014,
+            "kind": "wall",
+            "hp": 990,
+            "level": 1,
+            "pos": [
+              10,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40015,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              7,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40029,
+            "kind": "railgun",
+            "hp": 1440,
+            "level": 2,
+            "pos": [
+              11,
+              20
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40033,
+            "kind": "wall",
+            "hp": 900,
+            "level": 1,
+            "pos": [
+              9,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40035,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              21
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40036,
+            "kind": "wall",
+            "hp": 580,
+            "level": 1,
+            "pos": [
+              12,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40037,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              11,
+              24
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40038,
+            "kind": "wall",
+            "hp": 640,
+            "level": 1,
+            "pos": [
+              11,
+              19
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40039,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              22
+            ],
+            "backpack": []
+          },
+          {
+            "id": 40040,
+            "kind": "wall",
+            "hp": 1000,
+            "level": 1,
+            "pos": [
+              12,
+              23
+            ],
+            "backpack": []
+          }
+        ]
+      }
+    ]
+  }
+}

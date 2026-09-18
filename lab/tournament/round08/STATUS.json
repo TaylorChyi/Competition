@@ -1,0 +1,20 @@
+{
+  "status": "qualification-failed-no-formal-tournament",
+  "formalMatches": 0,
+  "failedCandidate": "alpha",
+  "reason": "18-wall rear rocket survived only 18 of 20 validation episodes; qualification required 20 of 20. Preserve frozen candidates; do not overwrite the failed configuration or start PvP.",
+  "failures": [
+    {
+      "seed": 36002,
+      "seat": "challenger",
+      "deathRound": 1039
+    },
+    {
+      "seed": 36007,
+      "seat": "challenger",
+      "deathRound": 1017
+    }
+  ],
+  "betaQualification": "passed development8/8 and validation20/20",
+  "publishedFallback": "8d3c051 / 18-wall three-railgun parent"
+}

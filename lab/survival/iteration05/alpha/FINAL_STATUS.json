@@ -1,0 +1,19 @@
+{
+  "candidate": "rejected",
+  "finalRuntimeSource": "lab/survival/iteration03/beta/full_ring_exits",
+  "parentEquality": {
+    "__init__.py": true,
+    "brain.py": true,
+    "economy.py": true,
+    "fire_control.py": true,
+    "grid.py": true,
+    "guard.py": true,
+    "protocol.py": true,
+    "server.py": true,
+    "targeting.py": true
+  },
+  "developmentPasses": 7,
+  "developmentEpisodes": 8,
+  "revealedRegressionPasses": 2,
+  "revealedRegressionEpisodes": 2
+}

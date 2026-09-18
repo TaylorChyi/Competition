@@ -1,0 +1,150 @@
+{
+  "episodes": 8,
+  "coordinates": "reflected to challenger camp",
+  "cells": [
+    {
+      "normalizedPos": [
+        7,
+        20
+      ],
+      "absorbedDamage": 0,
+      "builds": 8
+    },
+    {
+      "normalizedPos": [
+        7,
+        21
+      ],
+      "absorbedDamage": 0,
+      "builds": 8
+    },
+    {
+      "normalizedPos": [
+        7,
+        22
+      ],
+      "absorbedDamage": 0,
+      "builds": 8
+    },
+    {
+      "normalizedPos": [
+        7,
+        24
+      ],
+      "absorbedDamage": 0,
+      "builds": 8
+    },
+    {
+      "normalizedPos": [
+        8,
+        24
+      ],
+      "absorbedDamage": 0,
+      "builds": 8
+    },
+    {
+      "normalizedPos": [
+        9,
+        24
+      ],
+      "absorbedDamage": 0,
+      "builds": 8
+    },
+    {
+      "normalizedPos": [
+        7,
+        19
+      ],
+      "absorbedDamage": 105,
+      "builds": 8
+    },
+    {
+      "normalizedPos": [
+        10,
+        24
+      ],
+      "absorbedDamage": 410,
+      "builds": 8
+    },
+    {
+      "normalizedPos": [
+        8,
+        19
+      ],
+      "absorbedDamage": 2995,
+      "builds": 10
+    },
+    {
+      "normalizedPos": [
+        9,
+        19
+      ],
+      "absorbedDamage": 7770,
+      "builds": 13
+    },
+    {
+      "normalizedPos": [
+        11,
+        24
+      ],
+      "absorbedDamage": 9965,
+      "builds": 14
+    },
+    {
+      "normalizedPos": [
+        10,
+        19
+      ],
+      "absorbedDamage": 13590,
+      "builds": 19
+    },
+    {
+      "normalizedPos": [
+        12,
+        22
+      ],
+      "absorbedDamage": 18285,
+      "builds": 23
+    },
+    {
+      "normalizedPos": [
+        12,
+        23
+      ],
+      "absorbedDamage": 19805,
+      "builds": 25
+    },
+    {
+      "normalizedPos": [
+        11,
+        19
+      ],
+      "absorbedDamage": 20020,
+      "builds": 26
+    },
+    {
+      "normalizedPos": [
+        12,
+        24
+      ],
+      "absorbedDamage": 22250,
+      "builds": 27
+    },
+    {
+      "normalizedPos": [
+        12,
+        21
+      ],
+      "absorbedDamage": 24545,
+      "builds": 29
+    },
+    {
+      "normalizedPos": [
+        12,
+        19
+      ],
+      "absorbedDamage": 42570,
+      "builds": 48
+    }
+  ]
+}

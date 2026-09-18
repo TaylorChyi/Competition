@@ -1,0 +1,14 @@
+{
+  "alpha": {
+    "development": "lab/survival/iteration03/beta/full_ring_exits/gate-development.json",
+    "validation": "lab/survival/iteration03/beta/full_ring_exits/gate-validation.json"
+  },
+  "beta": {
+    "development": "lab/survival/iteration04/beta/partial12/gate-development.json",
+    "validation": "lab/survival/iteration04/beta/partial12/gate-validation.json"
+  },
+  "gamma": {
+    "development": "lab/survival/iteration04/beta/partial14/gate-development.json",
+    "validation": "lab/survival/iteration04/beta/partial14/gate-validation.json"
+  }
+}

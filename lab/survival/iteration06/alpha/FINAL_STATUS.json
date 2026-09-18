@@ -1,0 +1,15 @@
+{
+  "candidate": "rejected",
+  "reason": "Fresh survival holdout failed; do not admit to PvP or release",
+  "developmentPasses": 8,
+  "developmentEpisodes": 8,
+  "originalValidationNowRegressionPasses": 20,
+  "originalValidationNowRegressionEpisodes": 20,
+  "freshPasses": 19,
+  "freshEpisodes": 20,
+  "failedSeed": 46003,
+  "failedSeat": "defender",
+  "baseDeathRound": 1154,
+  "report": "fresh-holdout.json",
+  "pvpAllowed": false
+}

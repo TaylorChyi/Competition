@@ -1,0 +1,28 @@
+{
+  "complete": true,
+  "champion": "beta",
+  "mainWins": 19,
+  "mainFixtures": 20,
+  "winRate": 0.95,
+  "championTenNightSurvivals": 40,
+  "championHalves": 40,
+  "allCandidateTenNightSurvivals": 120,
+  "allCandidateAppearances": 120,
+  "invalidCommands": 0,
+  "foreignOnlyShots": 0,
+  "currentQualificationAndRuntimeHashesVerified": true,
+  "reportSha256": "646d2db1401292c7f67a05e1604bb1733096ba725f4b4b878d953894e1d105a8",
+  "runtimeHashes": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "brain.py": "5ba1c1adb5d189ff66ca95ea97943b98e2838c86f906c90aec313ac86f7a7632",
+    "economy.py": "dfb3d1153ce765d0d02d4130215ff784819843e77bc1cdb18fb3b6387eb387c9",
+    "fire_control.py": "c56142f7a66d216fec6ca20caf75e2a9aa86f99715fddf05a02ae8f23f2ab3ac",
+    "grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+    "guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+    "protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+    "server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+    "targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132"
+  },
+  "target100Percent": false,
+  "scope": "Local nearest-target model, fixed candidates and recorded seeds; not official results"
+}

@@ -19,8 +19,8 @@ class WallExitChecks(unittest.TestCase):
             ])
             turn = Turn.load(payload)
             walls, guns = _wall_order(turn), _tower_sites(turn)
-            self.assertEqual(len(walls), 18)
-            self.assertEqual(len(set(walls)), 18)
+            self.assertEqual(len(walls), 12)
+            self.assertEqual(len(set(walls)), 12)
             payload['teamOur']['roles'] += [
                 unit(10 + i, 'wall', pos.x, pos.y) for i, pos in enumerate(walls)
             ] + [unit(50 + i, 'railgun', pos.x, pos.y) for i, pos in enumerate(guns)]

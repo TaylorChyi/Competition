@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "agents": ["alpha", "beta", "gamma"],
+  "fixturesPerPair": 10,
+  "halvesPerFixture": 2,
+  "overtimeFixturesPerPair": 5,
+  "nights": 10,
+  "wave": "field",
+  "priority": "nearest",
+  "commerce": true,
+  "seedBaseOffset": 30000,
+  "seedRoundStride": 1000,
+  "seedStageStride": 20,
+  "seedRule": "seed = 30000 + round*1000 + stage*20 + caseIndex; round7 main37000..37009, first overtime37020..37024",
+  "qualification": "Current survival plan, complete ordered development8 and validation20 episodes, all passed with identical source hashes. Byte-identical nine-module candidates may reference the same reports; provenance is recorded.",
+  "winner": "Highest paired-fixture win fraction, draws are not wins; tied leaders play five fresh paired fixtures. Structurally identical tied leaders cannot be separated and leave the round incomplete.",
+  "limitations": "Partial local judge. Recorded-set survival and tournament results are not an official universal guarantee."
+}
