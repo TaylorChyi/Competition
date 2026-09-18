@@ -1,0 +1,158 @@
+[
+  {
+    "seed": 22001,
+    "priority": "operators",
+    "seat": "challenger",
+    "gamma": {
+      "score": 966,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1495,
+        3000,
+        3000,
+        3000,
+        3000,
+        2990,
+        2100,
+        2100,
+        3980
+      ]
+    },
+    "base": {
+      "score": 954,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1495,
+        1460,
+        2890,
+        2450,
+        2450,
+        2450,
+        2450,
+        2445
+      ]
+    }
+  },
+  {
+    "seed": 22001,
+    "priority": "operators",
+    "seat": "defender",
+    "gamma": {
+      "score": 954,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1495,
+        1460,
+        2890,
+        2450,
+        2450,
+        2450,
+        2450,
+        2445
+      ]
+    },
+    "base": {
+      "score": 966,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1495,
+        3000,
+        3000,
+        3000,
+        3000,
+        2990,
+        2100,
+        2100,
+        3980
+      ]
+    }
+  },
+  {
+    "seed": 22002,
+    "priority": "advance",
+    "seat": "challenger",
+    "gamma": {
+      "score": 417,
+      "rounds": 852,
+      "invalid": 0,
+      "nightHp": [
+        915,
+        770,
+        1585,
+        2640,
+        800,
+        20,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "base": {
+      "score": 112,
+      "rounds": 350,
+      "invalid": 0,
+      "nightHp": [
+        995,
+        1315,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "seed": 22002,
+    "priority": "advance",
+    "seat": "defender",
+    "gamma": {
+      "score": 113,
+      "rounds": 350,
+      "invalid": 0,
+      "nightHp": [
+        995,
+        1315,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "base": {
+      "score": 420,
+      "rounds": 853,
+      "invalid": 0,
+      "nightHp": [
+        915,
+        770,
+        1585,
+        2640,
+        800,
+        30,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  }
+]

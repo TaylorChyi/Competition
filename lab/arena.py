@@ -3,8 +3,8 @@
 Both policies receive the documented observations and issue actual decide()
 commands. Start from 75 gold, build level-one towers, carry damage across days.
 Wave sizes, movement ties, targeting priority and build rings are hypotheses.
-Commerce mode uses the official sample ore prices and documented upgrades.
-No task rewards, news, summons or direct player attacks.
+Commerce mode uses the official sample ore prices, upgrades and consumables.
+No task rewards, news or direct player attacks. This remains a partial model.
 """
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
@@ -20,11 +20,19 @@ TEAMS = ('challenger', 'defender')
 WAVES = {
     'moderate': ((10, 4, 0, 0), (16, 8, 1, 0), (20, 12, 2, 1)),
     'heavy': ((14, 6, 1, 0), (20, 10, 2, 0), (24, 14, 3, 1)),
+    # Only totals 35/36 for the first two nights come from the user's field
+    # summary. Type mix and all later growth remain stress-test assumptions.
+    'field': ((28, 6, 1, 0), (29, 6, 1, 0), (29, 7, 2, 1)),
 }
 PRICES = {'stone':1, 'iron':3, 'copper':5}
 SHOP = {'WeaponUpgradeVoucher1':100, 'WeaponUpgradeVoucher2':150,
         'StationUpgradeVoucher1':100, 'StationUpgradeVoucher2':150,
-        'Medicine':10, 'Bomb':100}
+        'WallUpgradeVoucher1':20, 'WallUpgradeVoucher2':30,
+        'Medicine':10, 'WallFixer':10, 'Bomb':100, 'DizzyWeapon':100,
+        'SmallRobotSummonOrder':20, 'MiddleRobotSummonOrder':30,
+        'LargeRobotSummonOrder':100, 'BossRobotSummonOrder':200}
+SUMMONS = {'SmallRobotSummonOrder':'smallRobot', 'MiddleRobotSummonOrder':'middleRobot',
+           'LargeRobotSummonOrder':'largeRobot', 'BossRobotSummonOrder':'bossRobot'}
 
 
 def wave_counts(profile, day):
@@ -47,6 +55,8 @@ class Piece:
     level: int = 1
     ready: int = 0
     backpack: list[str] = field(default_factory=list)
+    stunned_until: int = 0
+    died_round: int = 0
 
     def cells(self):
         return station_footprint(self.pos) if self.kind == 'station' else (self.pos,)
@@ -57,7 +67,7 @@ class Piece:
                   'backPackCapability': 40 if self.kind == 'pioneer' else 100,
                   'cooldown': max(0, self.ready-number)}
         if self.kind in ROBOT_STATS:
-            result.update(targetTeam=self.team, abnormalState='')
+            result.update(targetTeam=self.team, abnormalState='dizzy' if number < self.stunned_until else '')
         return result
 
 
@@ -110,6 +120,8 @@ class Arena:
                         for team in TEAMS}
         self.next_build = {'challenger': 40000, 'defender': 41000}
         self.next_robot = 30000
+        self.pending_summons = defaultdict(Counter)
+        self.summons_used = Counter()
         self.mines = {}
         for team in TEAMS:
             reflected = team == 'defender'
@@ -120,11 +132,20 @@ class Arena:
                 (10011, 'pioneer', Pos(7, 25), 200),
                 (10012, 'worker', Pos(5, 25), 220),
             ):
+                if wave == 'field':
+                    # The supplied three gun positions and four wall positions
+                    # fit defender station(30,10) under our build-ring model.
+                    # Reconstruct that placement and mirror the other camp;
+                    # it is not a replay of the unavailable complete map.
+                    pos = Pos(pos.x+2,pos.y-2)
                 self.pieces.append(Piece(uid+offset, kind,
                     mirror(pos, kind == 'station') if reflected else pos, hp, team))
             for pos in (Pos(12, 23), Pos(11, 19), Pos(4, 19)):
                 self.mines[mirror(pos) if reflected else pos] = 10
         self.mine_kinds = dict.fromkeys(self.mines,'stone')
+        for metric in self.metrics.values():
+            metric.update(operatorDeaths=[], nightRoleMoves=0,
+                          readyGunsWithoutAttack=0, readyGunsWithoutOperator=0)
         if commerce:
             # Six ore locations, prices and neutral shops from request.txt.
             self.mine_kinds = {Pos(4,24):'stone',Pos(14,3):'stone',
@@ -165,6 +186,8 @@ class Arena:
             for piece in self.pieces:
                 if piece.kind not in ('worker', 'pioneer') or piece.hp > 0 or self.base(piece.team).hp <= 0:
                     continue
+                if (piece.died_round-1)//130 >= (self.number-1)//130:
+                    continue
                 base = self.base(piece.team)
                 occupied = {pos for p in self.living() for pos in p.cells()} | set(self.mines) | set(self.markets)
                 options = [Pos(x, y) for x in range(WIDTH) for y in range(HEIGHT)
@@ -191,6 +214,15 @@ class Arena:
                 self.pieces.append(Piece(self.next_robot, kind, pos, ROBOT_STATS[kind][0], team))
                 self.next_robot += 1
                 occupied.add(pos)
+        for team in TEAMS:
+            for kind, count in sorted(self.pending_summons.pop((day, team), {}).items()):
+                for _ in range(count):
+                    pos = cells.pop()
+                    while pos in occupied:
+                        pos = cells.pop()
+                    self.pieces.append(Piece(self.next_robot, kind, pos, ROBOT_STATS[kind][0], team))
+                    self.next_robot += 1
+                    occupied.add(pos)
 
     def settle(self, commands):
         living = self.living()
@@ -203,6 +235,20 @@ class Arena:
         self.results = {team: {} for team in TEAMS}
         is_day = (self.number-1) % 130 < 70
         starting_mines = dict(self.mines)
+        if not is_day:
+            for team in TEAMS:
+                roles = [p for p in living if p.team==team and p.kind in ('worker','pioneer')]
+                attacks = {int(uid) for uid,cmd in commands[team].items() if cmd.get('action')=='attack'}
+                self.metrics[team]['nightRoleMoves'] += sum(cmd.get('action')=='move'
+                                                          for cmd in commands[team].values())
+                for tower in living:
+                    if (tower.team!=team or tower.kind not in TOWER_RANGE_BY_LEVEL
+                            or tower.ready>self.number or tower.uid in attacks):
+                        continue
+                    if any(r.team==team and distance(r.pos,tower.pos)<=TOWER_RANGE_BY_LEVEL[tower.kind][tower.level-1]
+                           for r in robots):
+                        self.metrics[team]['readyGunsWithoutAttack'] += 1
+                        self.metrics[team]['readyGunsWithoutOperator'] += not any(distance(r.pos,tower.pos)<=1 for r in roles)
         for team in TEAMS:
             used = set()
             for uid, command in sorted(commands[team].items(), key=lambda item: int(item[0])):
@@ -215,7 +261,9 @@ class Arena:
                     valid = (not is_day and actor.kind in TOWER_RANGE_BY_LEVEL
                              and actor.ready <= self.number and operator is not None
                              and operator.team == team and operator.kind in ('worker', 'pioneer')
-                             and operator.uid not in used and distance(actor.pos, operator.pos) <= 1)
+                             and operator.uid not in used and str(operator.uid) not in commands[team]
+                             and operator.uid not in commands[team]
+                             and distance(actor.pos, operator.pos) <= 1)
                     if valid:
                         reach = TOWER_RANGE_BY_LEVEL[actor.kind][actor.level-1]
                         count = actor.level if actor.kind in ('gatling', 'rocket') else 1
@@ -273,13 +321,39 @@ class Arena:
                             actor.hp = 200 if actor.kind=='pioneer' else 220
                         elif valid and 'UpgradeVoucher' in name:
                             unit = next((p for p in living if len(targets)==1 and p.pos==targets[0] and p.team==team),None)
-                            kinds = ('station',) if name.startswith('Station') else ('gatling','railgun','rocket')
+                            kinds = (('station',) if name.startswith('Station') else
+                                     ('wall',) if name.startswith('Wall') else ('gatling','railgun','rocket'))
                             valid = (unit is not None and unit.kind in kinds and name[-1]==str(unit.level)
-                                     and unit.level<3 and distance(actor.pos,unit.pos)<=1)
+                                     and unit.level<3 and separation(actor.pos,unit)<=1)
                             if valid:
                                 unit.level += 1
                                 unit.hp = 1500*unit.level if unit.kind=='station' else 500+500*unit.level
                                 self.metrics[team]['upgrades'].append([self.number,unit.kind,unit.level])
+                        elif valid and name=='WallFixer':
+                            wall = next((p for p in living if len(targets)==1 and p.pos==targets[0]
+                                         and p.kind=='wall' and p.team==team),None)
+                            valid = wall is not None and distance(actor.pos,wall.pos)<=1
+                            if valid:
+                                wall.hp = 500+500*wall.level
+                        elif valid and name in ('Bomb','DizzyWeapon'):
+                            valid = len(targets)==1 and 0<=targets[0].x<WIDTH and 0<=targets[0].y<HEIGHT
+                            if valid:
+                                for robot in robots:
+                                    if distance(robot.pos,targets[0])<=1:
+                                        if name=='Bomb':
+                                            damage[robot.uid] += 100
+                                            shooter_damage[robot.uid][team] += 100
+                                        else:
+                                            robot.stunned_until = max(robot.stunned_until,self.number+5)
+                        elif valid and name in SUMMONS:
+                            day=(self.number-1)//130
+                            valid = self.summons_used[(day,team)]<10
+                            if valid:
+                                target_team=TEAMS[1-TEAMS.index(team)]
+                                night=day+(not is_day)
+                                self.pending_summons[(night,target_team)][SUMMONS[name]] += 1
+                                self.summons_used[(day,team)] += 1
+                                self.metrics[team].setdefault('summons',[]).append([self.number,name,night+1])
                         else:
                             valid = False
                         if valid:
@@ -292,12 +366,13 @@ class Arena:
                         if valid:
                             proposals[actor.uid], move_owners[actor.uid] = p, team
                 elif valid and action in ('build', 'collect'):
-                    valid = is_day and actor.kind == 'worker' and len(targets) == 1 and distance(actor.pos, targets[0]) == 1
+                    valid = (actor.kind == 'worker' and len(targets) == 1
+                             and distance(actor.pos, targets[0]) == 1 and (is_day or action=='collect'))
                     if valid and action == 'collect':
                         p = targets[0]
-                        if starting_mines.get(p,0)>0 and self.mines.get(p,0)==0 and len(actor.backpack)<100:
-                            self.metrics[team]['resourceConflicts'] += 1
-                        valid = p in self.mines and self.mines[p]>0 and len(actor.backpack) < 100
+                        # Official rule: every simultaneous collector receives
+                        # one ore even when fewer units remain than collectors.
+                        valid = starting_mines.get(p,0)>0 and len(actor.backpack) < 100
                         if valid:
                             actor.backpack.append(self.mine_kinds.get(p,'stone'))
                             self.mines[p] -= 1
@@ -330,12 +405,15 @@ class Arena:
         # Robots act from the same observed state, even when lethally hit this turn.
         if not is_day:
             for robot in robots:
+                if self.number < robot.stunned_until:
+                    continue
                 base = self.base(robot.team)
                 defenders = [p for p in living if p.team == robot.team and p.kind not in ROBOT_STATS]
                 eligible = [p for p in defenders if separation(robot.pos, p) <= 3]
                 if eligible and (self.priority != 'advance' or separation(robot.pos, base) <= 3):
                     victim = min(eligible, key=lambda p: (
                         0 if self.priority in ('base', 'advance') and p.kind == 'station' else 1,
+                        0 if self.priority == 'operators' and p.kind in ('worker', 'pioneer') else 1,
                         separation(robot.pos, p), p.uid))
                     damage[victim.uid] += ROBOT_STATS[robot.kind][1]
                     continue
@@ -353,8 +431,21 @@ class Arena:
                     victim = min(eligible, key=lambda p: (separation(robot.pos, p), p.uid))
                     damage[victim.uid] += ROBOT_STATS[robot.kind][1]
         counts = Counter(proposals.values())
+        # Occupied destinations are usable when their occupant also completes
+        # a move. Cancel contests and swaps, then propagate blocked chains.
+        owners = {cell:p.uid for p in living for cell in p.cells()}
+        fixed = set(self.mines) | set(self.markets)
+        accepted = {uid:pos for uid,pos in proposals.items() if pos not in fixed and counts[pos]==1}
+        swaps = {uid for uid,pos in accepted.items() if owners.get(pos) in accepted
+                 and accepted[owners[pos]]==by_id[uid].pos}
+        accepted = {uid:pos for uid,pos in accepted.items() if uid not in swaps}
+        while True:
+            blocked = {uid for uid,pos in accepted.items() if pos in owners and owners[pos] not in accepted}
+            if not blocked:
+                break
+            accepted = {uid:pos for uid,pos in accepted.items() if uid not in blocked}
         for uid, pos in proposals.items():
-            if pos not in occupied and counts[pos] == 1:
+            if uid in accepted:
                 by_id[uid].pos = pos
             elif uid in move_owners:
                 team = move_owners[uid]
@@ -362,6 +453,9 @@ class Arena:
                 self.metrics[team]['movesBlocked'] += 1
         for piece in living:
             piece.hp = max(0, piece.hp-damage[piece.uid])
+            if piece.hp == 0 and piece.kind in ('worker', 'pioneer'):
+                piece.died_round = self.number
+                self.metrics[piece.team]['operatorDeaths'].append([self.number,piece.uid])
             if piece.kind in ROBOT_STATS and piece.hp == 0 and shooter_damage[piece.uid]:
                 credit = max(shooter_damage[piece.uid], key=shooter_damage[piece.uid].get)
                 self.metrics[credit]['kills'] += 1
@@ -382,6 +476,12 @@ class Arena:
             metric = self.metrics[team]
             if self.base(team).hp == 0 and metric['baseDeathRound'] is None:
                 metric['baseDeathRound'] = self.number
+                # Field report: losing the station removes all team units.
+                # Keep dead records internally for statistics, never let them
+                # earn post-elimination kills or keep operating the economy.
+                for piece in self.pieces:
+                    if piece.team == team and piece.kind not in ROBOT_STATS:
+                        piece.hp = 0
             if self.number % 130 == 0:
                 metric['nightHp'].append(self.base(team).hp)
                 metric['nightEquipment'].append({p.kind+'_'+str(p.uid):[p.level,p.hp]

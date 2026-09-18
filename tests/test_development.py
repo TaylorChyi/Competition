@@ -28,13 +28,15 @@ def market_state(gold=100):
 
 
 class DevelopmentChecks(unittest.TestCase):
-    def test_funded_base_purchase_finishes_at_sunset_and_early_night(self):
+    def test_late_funded_purchase_does_not_abandon_night_defense(self):
         for number in (200,201):
             payload=market_state();payload['roundNo']=number
             payload['teamOur']['roles'].append(unit(1,'worker',13,11))
+            payload['teamOur']['roles'].append(unit(40001,'railgun',12,9))
             commands=decide(payload)
-            self.assertEqual(commands['10011'],{'action':'buy','name':'StationUpgradeVoucher1','num':1})
-            self.assertFalse(any(c['action']=='build' for c in commands.values()))
+            self.assertEqual(commands['10011']['action'],'move')
+            self.assertLess(commands['10011']['targetPos'][0]['x'],19)
+            self.assertFalse(any(c['action']=='buy' for c in commands.values()))
 
     def test_carried_weapon_upgrade_can_be_used_at_night(self):
         payload=market_state(0);payload['roundNo']=201
@@ -67,8 +69,9 @@ class DevelopmentChecks(unittest.TestCase):
             develop(turn,role,claimed,commands)
         self.assertEqual(commands[2],{'action':'collect','targetPos':[{'x':18,'y':10}]})
 
-    def test_operator_steps_behind_tower_when_targeted_robot_approaches(self):
+    def test_wounded_operator_steps_behind_tower_when_robot_approaches(self):
         payload=state(71,roles=[unit(1,'worker',4,5),unit(2,'railgun',5,5)])
+        payload['teamOur']['roles'][0]['health']=70
         robot=unit(30000,'bossRobot',4,2)
         payload['robot']['roles']=[robot]
         turn=Turn.load(payload)
@@ -91,7 +94,7 @@ class DevelopmentChecks(unittest.TestCase):
         self.assertEqual([(p.hp,p.level) for p in towers],[(1000,1)])
         self.assertEqual(g.gold['challenger'],0)
 
-    def test_last_ore_race_is_counted_as_failure_and_resource_conflict(self):
+    def test_last_ore_is_shared_by_simultaneous_collectors(self):
         g=Arena(1,commerce=True);g.number=20;mine=Pos(20,10)
         g.mines={mine:1};g.mine_kinds={mine:'copper'}
         commands={}
@@ -99,9 +102,10 @@ class DevelopmentChecks(unittest.TestCase):
             worker=next(p for p in g.pieces if p.uid==uid);worker.pos=pos
             commands[team]={str(uid):{'action':'collect','targetPos':[mine.dump()]}}
         g.settle(commands)
-        self.assertEqual(g.metrics['defender']['resourceConflicts'],1)
-        self.assertEqual(g.metrics['defender']['invalidCommands'],1)
-        self.assertFalse(g.results['defender']['20010'])
+        for team,uid in [('challenger',10010),('defender',20010)]:
+            self.assertEqual(g.metrics[team]['invalidCommands'],0)
+            self.assertTrue(g.results[team][str(uid)])
+            self.assertEqual(next(p for p in g.pieces if p.uid==uid).backpack,['copper'])
 
     def test_saves_for_damaged_base_instead_of_cheaper_weapon(self):
         payload=market_state()

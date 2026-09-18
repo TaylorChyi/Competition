@@ -1,0 +1,23 @@
+{
+  "baselineCommit": "b471f443a9ac2ab893b1a15102818ace57a6dcd6",
+  "upstreamCommit": "7e629424c87f3f194d071696d3ee59a8dc2c0a75",
+  "nights": 10,
+  "developmentSeeds": [22001, 22002],
+  "holdoutSeeds": [23011, 23012, 23013],
+  "profiles": [
+    {"name": "heavy-nearest", "wave": "heavy", "priority": "nearest"},
+    {"name": "heavy-advance", "wave": "heavy", "priority": "advance"}
+  ],
+  "selection": "Development league points, then worst-profile points rate, then survival nights, then score; no holdout reselection",
+  "drawPolicy": "Draws count as draws, never wins; report half matches and paired fixtures separately",
+  "promotionGate": "Select only on round3 development standings; holdout must have zero invalid commands, win more paired fixtures than it loses against the released baseline, and have at least the baseline's two-night survival count in their direct matches. A failed gate keeps the released algorithm.",
+  "limitations": [
+    "This is a partial local simulator, not the official judge",
+    "Robot wave sizes, spawning, pathing and target priority are hypotheses",
+    "Tasks, task rewards, treasure, world news and direct player damage are omitted",
+    "Kill credit for simultaneous multi-team hits uses most damage as a local convention",
+    "Vacated-cell movement chains succeed; contested destinations and position swaps fail; robot path selection remains hypothetical",
+    "Summons apply to the next night, with the ten-per-day cap shared across the team",
+    "The fixture score includes combat and survival only; task score is zero for all candidates"
+  ]
+}

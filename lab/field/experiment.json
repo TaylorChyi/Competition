@@ -1,0 +1,44 @@
+{
+  "purpose": "Field-feedback correction; older three-agent league retained as development evidence, not official performance",
+  "baselineCommit": "b471f443a9ac2ab893b1a15102818ace57a6dcd6",
+  "candidates": {
+    "released": "lab/league/baseline",
+    "league-beta2": "lab/league/beta/round2",
+    "field": "lab/field/candidate"
+  },
+  "nights": 10,
+  "developmentSeeds": [
+    22001,
+    22002
+  ],
+  "holdoutSeeds": [
+    23011,
+    23012,
+    23013
+  ],
+  "profiles": [
+    {
+      "name": "field-nearest",
+      "wave": "field",
+      "priority": "nearest"
+    },
+    {
+      "name": "field-operators",
+      "wave": "field",
+      "priority": "operators"
+    },
+    {
+      "name": "field-advance",
+      "wave": "field",
+      "priority": "advance"
+    }
+  ],
+  "holdoutCandidate": "field",
+  "promotionGate": "Fix regressions pass; held-out matches have zero invalid commands, more paired wins than losses against released, no reduction of two-night survival against released. Never tune on these holdout results.",
+  "scope": [
+    "First two wave totals 35/36 are user-reported; robot type mix and later growth remain assumptions.",
+    "Defender base(30,10) reconstructed from reported guns/walls, opposing base mirrored; all remaining terrain and resources are sample assumptions.",
+    "Three robot target priorities are uncertainty scenarios, not a claim about official judge behavior.",
+    "No raw observation replay is available; tasks, news, treasure and direct player attacks are not simulated."
+  ]
+}

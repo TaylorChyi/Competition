@@ -1,0 +1,55 @@
+{
+  "provenance": "Scores preserved from round2 terminal output and NOTES; full detail file was overwritten by reused runner during round3, whose output is now dev-round3.json.",
+  "columns": [
+    "opponent",
+    "seed",
+    "priority",
+    "gammaScore",
+    "opponentScore",
+    "gammaSurvivalRounds",
+    "opponentSurvivalRounds",
+    "gammaSummons"
+  ],
+  "rows": [
+    [
+      "alpha",
+      22001,
+      "nearest",
+      963,
+      863,
+      1300,
+      1300,
+      3
+    ],
+    [
+      "alpha",
+      22002,
+      "advance",
+      156,
+      91,
+      482,
+      386,
+      1
+    ],
+    [
+      "beta",
+      22001,
+      "nearest",
+      890,
+      878,
+      1300,
+      1300,
+      6
+    ],
+    [
+      "beta",
+      22002,
+      "advance",
+      152,
+      519,
+      484,
+      989,
+      1
+    ]
+  ]
+}

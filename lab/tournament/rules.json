@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "agents": [
+    "alpha",
+    "beta",
+    "gamma"
+  ],
+  "model": "GPT-6 Astra",
+  "fixturesPerPair": 10,
+  "halvesPerFixture": 2,
+  "overtimeFixturesPerPair": 5,
+  "nights": 10,
+  "caseSchedule": "Same ten seeded cases for every pair; field-nearest 4, field-operators 3, field-advance 3; both seats played per case",
+  "winner": "Highest paired-fixture win fraction. Draws are not wins. If tied, only tied leaders play five fresh fixtures per pair; repeat tie-break rounds until a unique leader.",
+  "target": "20 wins from 20 main-stage fixtures against the two other candidates in the recorded round. This is not a guarantee against future policies or the official judge.",
+  "nextRound": "All three start from the published champion; two defeated agents must inherit it before independent improvements and mutual attacks.",
+  "release": "Publish each unique champion after source/package/Linux verification; download verify then remove previous bot Release.",
+  "limitations": [
+    "Partial simulator, not official judge.",
+    "Only first two night totals 35/36 come from field summary; later growth, spawn and robot target/move rules are hypotheses.",
+    "Full field input/settlement logs and official tasks/news/treasure are unavailable."
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "challenger": {
+    "baseDeathRound": 638,
+    "nightHp": [
+      915,
+      770,
+      1600,
+      2640,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "nightOperators": [
+      3,
+      3,
+      3,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "kills": 108,
+    "killPoints": 143,
+    "shots": 751,
+    "foreignOnlyShots": 0,
+    "invalidCommands": 0,
+    "movesBlocked": 9,
+    "income": 283,
+    "upgrades": [
+      [
+        290,
+        "station",
+        2
+      ],
+      [
+        456,
+        "station",
+        3
+      ]
+    ],
+    "nightEquipment": [
+      {
+        "station_10013": [
+          1,
+          915
+        ],
+        "railgun_40000": [
+          1,
+          1000
+        ],
+        "railgun_40001": [
+          1,
+          1000
+        ],
+        "railgun_40002": [
+          1,
+          1000
+        ]
+      },
+      {
+        "station_10013": [
+          1,
+          770
+        ],
+        "railgun_40000": [
+          1,
+          1000
+        ],
+        "railgun_40001": [
+          1,
+          1000
+        ],
+        "railgun_40002": [
+          1,
+          1000
+        ]
+      },
+      {
+        "station_10013": [
+          2,
+          1600
+        ],
+        "railgun_40000": [
+          1,
+          1000
+        ],
+        "railgun_40001": [
+          1,
+          1000
+        ],
+        "railgun_40002": [
+          1,
+          1000
+        ]
+      },
+      {
+        "station_10013": [
+          3,
+          2640
+        ],
+        "railgun_40000": [
+          1,
+          1000
+        ],
+        "railgun_40001": [
+          1,
+          1000
+        ],
+        "railgun_40002": [
+          1,
+          1000
+        ]
+      },
+      {
+        "station_10013": [
+          3,
+          0
+        ],
+        "railgun_40000": [
+          1,
+          0
+        ],
+        "railgun_40001": [
+          1,
+          0
+        ],
+        "railgun_40002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_10013": [
+          3,
+          0
+        ],
+        "railgun_40000": [
+          1,
+          0
+        ],
+        "railgun_40001": [
+          1,
+          0
+        ],
+        "railgun_40002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_10013": [
+          3,
+          0
+        ],
+        "railgun_40000": [
+          1,
+          0
+        ],
+        "railgun_40001": [
+          1,
+          0
+        ],
+        "railgun_40002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_10013": [
+          3,
+          0
+        ],
+        "railgun_40000": [
+          1,
+          0
+        ],
+        "railgun_40001": [
+          1,
+          0
+        ],
+        "railgun_40002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_10013": [
+          3,
+          0
+        ],
+        "railgun_40000": [
+          1,
+          0
+        ],
+        "railgun_40001": [
+          1,
+          0
+        ],
+        "railgun_40002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_10013": [
+          3,
+          0
+        ],
+        "railgun_40000": [
+          1,
+          0
+        ],
+        "railgun_40001": [
+          1,
+          0
+        ],
+        "railgun_40002": [
+          1,
+          0
+        ]
+      }
+    ],
+    "resourceConflicts": 0,
+    "operatorDeaths": [],
+    "nightRoleMoves": 0,
+    "readyGunsWithoutAttack": 26,
+    "readyGunsWithoutOperator": 0,
+    "p95DecisionMs": 2.059,
+    "survivedTwoNights": true,
+    "survivedNights": 4,
+    "survivalRounds": 638
+  },
+  "defender": {
+    "baseDeathRound": 350,
+    "nightHp": [
+      920,
+      1300,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "nightOperators": [
+      3,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "kills": 68,
+    "killPoints": 84,
+    "shots": 379,
+    "foreignOnlyShots": 0,
+    "invalidCommands": 0,
+    "movesBlocked": 9,
+    "income": 213,
+    "upgrades": [
+      [
+        176,
+        "station",
+        2
+      ]
+    ],
+    "nightEquipment": [
+      {
+        "station_20013": [
+          1,
+          920
+        ],
+        "railgun_41000": [
+          1,
+          1000
+        ],
+        "railgun_41001": [
+          1,
+          1000
+        ],
+        "railgun_41002": [
+          1,
+          1000
+        ]
+      },
+      {
+        "station_20013": [
+          2,
+          1300
+        ],
+        "railgun_41000": [
+          1,
+          1000
+        ],
+        "railgun_41001": [
+          1,
+          1000
+        ],
+        "railgun_41002": [
+          1,
+          1000
+        ]
+      },
+      {
+        "station_20013": [
+          2,
+          0
+        ],
+        "railgun_41000": [
+          1,
+          0
+        ],
+        "railgun_41001": [
+          1,
+          0
+        ],
+        "railgun_41002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_20013": [
+          2,
+          0
+        ],
+        "railgun_41000": [
+          1,
+          0
+        ],
+        "railgun_41001": [
+          1,
+          0
+        ],
+        "railgun_41002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_20013": [
+          2,
+          0
+        ],
+        "railgun_41000": [
+          1,
+          0
+        ],
+        "railgun_41001": [
+          1,
+          0
+        ],
+        "railgun_41002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_20013": [
+          2,
+          0
+        ],
+        "railgun_41000": [
+          1,
+          0
+        ],
+        "railgun_41001": [
+          1,
+          0
+        ],
+        "railgun_41002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_20013": [
+          2,
+          0
+        ],
+        "railgun_41000": [
+          1,
+          0
+        ],
+        "railgun_41001": [
+          1,
+          0
+        ],
+        "railgun_41002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_20013": [
+          2,
+          0
+        ],
+        "railgun_41000": [
+          1,
+          0
+        ],
+        "railgun_41001": [
+          1,
+          0
+        ],
+        "railgun_41002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_20013": [
+          2,
+          0
+        ],
+        "railgun_41000": [
+          1,
+          0
+        ],
+        "railgun_41001": [
+          1,
+          0
+        ],
+        "railgun_41002": [
+          1,
+          0
+        ]
+      },
+      {
+        "station_20013": [
+          2,
+          0
+        ],
+        "railgun_41000": [
+          1,
+          0
+        ],
+        "railgun_41001": [
+          1,
+          0
+        ],
+        "railgun_41002": [
+          1,
+          0
+        ]
+      }
+    ],
+    "resourceConflicts": 0,
+    "operatorDeaths": [],
+    "nightRoleMoves": 18,
+    "readyGunsWithoutAttack": 19,
+    "readyGunsWithoutOperator": 0,
+    "p95DecisionMs": 1.086,
+    "survivedTwoNights": true,
+    "survivedNights": 2,
+    "survivalRounds": 350
+  }
+}
