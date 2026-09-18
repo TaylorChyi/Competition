@@ -151,6 +151,7 @@ class PackageEntryPoints(unittest.TestCase):
                 except subprocess.TimeoutExpired:
                     proc.kill()
                     proc.wait(timeout=3)
+        self.assertEqual(log_path.read_text().splitlines()[0], 'Caffeine-Taylor')
         self.assertNotIn('decision failed', log_path.read_text())
         self.assertIn('CoreGeek startup | package=', log_path.read_text())
         self.assertIn('runtime=' + str(runtime.resolve()), log_path.read_text())
@@ -211,6 +212,7 @@ class PackageEntryPoints(unittest.TestCase):
                     command[0] = sys.executable
                     result = subprocess.run(command, capture_output=True, text=True, timeout=5)
                     self.assertNotEqual(result.returncode, 0)
+                    self.assertEqual(result.stdout.splitlines()[0], 'Caffeine-Taylor')
                     self.assertIn('CoreGeek preflight | entries=', result.stdout)
                     self.assertIn('CoreGeek preflight FAILED:', result.stderr)
                     self.assertNotIn('MUST NOT EXECUTE', result.stderr)

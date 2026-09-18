@@ -14,6 +14,7 @@ def start_command(manifest_sha: str, root: Path = Path('/home/docker'), port: in
     # an arbitrary main3.py from another upload or an older extracted version.
     code = '; '.join([
         'import hashlib,os,sys; from pathlib import Path',
+        'print("Caffeine-Taylor",flush=True)',
         f'r=Path({json.dumps(str(root))}); expected={json.dumps(manifest_sha)}',
         'print("CoreGeek preflight | cwd="+os.getcwd(),flush=True)',
         'print("CoreGeek preflight | directory="+str(sorted(p.name for p in r.iterdir()) if r.is_dir() else "MISSING"),flush=True)',

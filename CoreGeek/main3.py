@@ -7,6 +7,7 @@ from pathlib import Path
 
 
 def main() -> None:
+    print("Caffeine-Taylor", flush=True)
     if len(sys.argv) != 2:
         raise SystemExit("Usage: python main3.py <port>")
     port = int(sys.argv[1])
