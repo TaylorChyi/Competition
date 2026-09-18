@@ -5,7 +5,7 @@ from typing import Any
 from .targeting import load_policy, rocket_targets
 from .grid import next_step, shortest_path
 from .fire_control import targets as defense_targets
-from .economy import develop, use_carried, urgent_refit
+from .economy import develop, use_carried, urgent_refit, repair_upgrade, sell_at_vendor_for_upgrade
 from .guard import safer_step, exposure, station_side_rank
 from .protocol import (
     PIONEER,
@@ -136,9 +136,13 @@ def _worker_day(
                 )
                 return
     if economy and turn.shop_prices:
+        if sell_at_vendor_for_upgrade(turn,role,commands):
+            return
+        funded_repair=repair_upgrade(turn,commands)
         carried = {n for u in turn.controllable() for n in u.backpack}
         damaged = [t for t in turn.weapons() if t.health<250 and t.pos not in claimed
-                   and 'WeaponUpgradeVoucher'+str(t.level) not in carried]
+                   and 'WeaponUpgradeVoucher'+str(t.level) not in carried
+                   and not (t.level==2 and funded_repair)]
         if damaged and turn.gold-purchases-planned*WEAPON_BUILD_COST>=WEAPON_BUILD_COST:
             tower = min(damaged,key=lambda t:(t.health,distance(role.pos,t.pos)))
             _build_or_walk(turn,role,tower.pos,tower.kind,claimed,commands)
@@ -404,12 +408,7 @@ def _tower_sites(turn: Turn) -> tuple[Pos, ...]:
         if all(distance(cell,other)>=2 for other in spaced):
             spaced.append(cell)
         if len(spaced)==3:
-            # Two original forward guns plus a rear gun preserve a fallback
-            # operator station without leaving the legal base build ring.
-            rear_options = [p for p in reversed(cells)
-                            if all(distance(p,q)>=2 for q in spaced[:2])]
-            rear = rear_options[min(1,len(rear_options)-1)] if rear_options else spaced[2]
-            return tuple(spaced[:2]+[rear])
+            return tuple(spaced)
     return tuple(cells[:3])
 
 

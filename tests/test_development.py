@@ -1,5 +1,6 @@
 """Economy and survival regressions reproduced while debugging long matches."""
 from pathlib import Path
+from itertools import product
 import sys
 import unittest
 
@@ -150,13 +151,19 @@ class DevelopmentChecks(unittest.TestCase):
         retry=Turn.load(payload)
         self.assertNotEqual(next_step(retry,retry.workers()[0],Pos(5,5)),original)
 
-    def test_front_towers_leave_separate_operating_cells(self):
-        for x,y in ((7,24),(32,8)):
+    def test_towers_fit_build_ring_and_leave_separate_operating_cells(self):
+        for x,y in ((7,24),(32,8),(9,22),(30,10)):
             turn=Turn.load(state(roles=[unit(1,'station',x,y)]))
             sites=_tower_sites(turn)
             self.assertEqual(len(sites),3)
             self.assertTrue(all(distance(a,b)>=2 for i,a in enumerate(sites) for b in sites[i+1:]))
-            self.assertTrue(all((p.x>=x) if x<20 else (p.x<=x+1) for p in sites))
+            footprint=turn.footprint(turn.station())
+            self.assertTrue(all(min(distance(p,b) for b in footprint)==1 for p in sites))
+            blocked=set(footprint)|set(sites)
+            stands=[[Pos(p.x+dx,p.y+dy) for dx in (-1,0,1) for dy in (-1,0,1)
+                     if (dx or dy) and turn.land(Pos(p.x+dx,p.y+dy))
+                     and Pos(p.x+dx,p.y+dy) not in blocked] for p in sites]
+            self.assertTrue(any(len(set(cells))==3 for cells in product(*stands)))
 
     def test_small_threat_is_cleared_before_high_hp_boss(self):
         payload=state(71,roles=[unit(1,'worker',1,1),unit(2,'railgun',2,2)])

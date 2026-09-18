@@ -406,9 +406,8 @@ def _tower_sites(turn: Turn) -> tuple[Pos, ...]:
         if len(spaced)==3:
             # Two original forward guns plus a rear gun preserve a fallback
             # operator station without leaving the legal base build ring.
-            rear_options = [p for p in reversed(cells)
-                            if all(distance(p,q)>=2 for q in spaced[:2])]
-            rear = rear_options[min(1,len(rear_options)-1)] if rear_options else spaced[2]
+            rear = next((p for p in reversed(cells)
+                         if all(distance(p,q)>=2 for q in spaced[:2])),spaced[2])
             return tuple(spaced[:2]+[rear])
     return tuple(cells[:3])
 

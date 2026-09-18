@@ -98,7 +98,16 @@ class FieldDefenseChecks(unittest.TestCase):
     def test_escaped_operator_does_not_walk_back_into_lethal_range(self):
         payload=state([unit(1,'worker',7,5,30),unit(2,'railgun',5,5,1000)],
                       [robot(10,3,5,800,'bossRobot')])
-        self.assertEqual(decide(payload),{})
+        commands=decide(payload)
+        # Waiting and continuing a safe retreat are both acceptable. The
+        # business requirement is not to re-enter the boss's lethal range.
+        if commands:
+            self.assertEqual(set(commands),{'1'})
+            command=commands['1']
+            self.assertEqual(command['action'],'move')
+            target=Pos.load(command['targetPos'][0])
+            self.assertEqual(max(abs(target.x-7),abs(target.y-5)),1)
+            self.assertGreater(max(abs(target.x-3),abs(target.y-5)),3)
 
     def test_operator_threat_is_not_ignored_because_base_is_farther(self):
         turn=Turn.load(state([unit(1,'worker',6,6,30),unit(2,'railgun',6,5,1000),

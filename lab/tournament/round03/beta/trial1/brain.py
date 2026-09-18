@@ -6,7 +6,7 @@ from .targeting import load_policy, rocket_targets
 from .grid import next_step, shortest_path
 from .fire_control import targets as defense_targets
 from .economy import develop, use_carried, urgent_refit
-from .guard import safer_step, exposure, station_side_rank
+from .guard import safer_step, exposure, station_side_rank, joint_positions
 from .protocol import (
     PIONEER,
     DAY_ROUNDS,
@@ -209,11 +209,18 @@ def _night(turn: Turn, commands: dict[int, dict[str, Any]], policy: dict | None 
     for role in turn.controllable():
         if not use_carried(turn,role,claimed,commands,night=True):
             urgent_refit(turn,role,claimed,commands)
-    for role, tower in sorted(_tower_pairs(turn, excluded=set(commands)), key=lambda pair: pair[1].range_of_attack()):
+    pairs=_tower_pairs(turn,excluded=set(commands))
+    coordinated=joint_positions(turn,pairs,claimed)
+    if coordinated is not None:
+        pairs,steps=coordinated
+        for role_id,step in steps.items():
+            commands[role_id]=move_command(step)
+            claimed.add(step)
+    for role, tower in sorted(pairs, key=lambda pair: pair[1].range_of_attack()):
         if role.unit_id in commands:
             continue
         if distance(role.pos, tower.pos) <= 1:
-            step = safer_step(turn,role,tower,claimed)
+            step = None if coordinated is not None else safer_step(turn,role,tower,claimed)
             if step is not None:
                 commands[role.unit_id] = move_command(step)
                 claimed.add(step)
@@ -404,12 +411,7 @@ def _tower_sites(turn: Turn) -> tuple[Pos, ...]:
         if all(distance(cell,other)>=2 for other in spaced):
             spaced.append(cell)
         if len(spaced)==3:
-            # Two original forward guns plus a rear gun preserve a fallback
-            # operator station without leaving the legal base build ring.
-            rear_options = [p for p in reversed(cells)
-                            if all(distance(p,q)>=2 for q in spaced[:2])]
-            rear = rear_options[min(1,len(rear_options)-1)] if rear_options else spaced[2]
-            return tuple(spaced[:2]+[rear])
+            return tuple(spaced)
     return tuple(cells[:3])
 
 
