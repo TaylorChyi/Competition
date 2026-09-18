@@ -5,7 +5,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'CoreGeek/src'))
-from agent.brain import _tower_sites, _wall_order
+from agent.brain import TOWER_LOADOUT, _tower_sites, _wall_order
 from agent.grid import shortest_path
 from agent.protocol import Pos, Turn
 from test_baseline import state, unit
@@ -23,7 +23,7 @@ class WallExitChecks(unittest.TestCase):
             self.assertEqual(len(set(walls)), 12)
             payload['teamOur']['roles'] += [
                 unit(10 + i, 'wall', pos.x, pos.y) for i, pos in enumerate(walls)
-            ] + [unit(50 + i, 'railgun', pos.x, pos.y) for i, pos in enumerate(guns)]
+            ] + [unit(50 + i, kind, pos.x, pos.y) for i, (pos, kind) in enumerate(zip(guns, TOWER_LOADOUT))]
             turn = Turn.load(payload)
             worker = turn.controllable()[0]
             destination = Pos(bx + 5, by)

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "purpose": "Fresh iteration07 survival holdout; candidates may use earlier revealed failures and R9, never these seeds.",
+  "wave": "field",
+  "priority": "nearest",
+  "nights": 10,
+  "commerce": true,
+  "opponent": "lab/tournament/round05/alpha",
+  "seeds": [
+    56000,
+    56001,
+    56002,
+    56003,
+    56004,
+    56005,
+    56006,
+    56007,
+    56008,
+    56009
+  ],
+  "seats": [
+    "challenger",
+    "defender"
+  ],
+  "pass": "All20 episodes: 1300 rounds, living base, ten positive night-end HP values, zero invalid commands and zero foreign-only shots.",
+  "releaseCondition": "Root must manually verify this fresh holdout in addition to the original regression gates before opening a tournament. This script does not authorize PvP or modify global qualification rules.",
+  "limits": "Partial local simulator; recorded survival is not official universal success. No PvP ranking."
+}

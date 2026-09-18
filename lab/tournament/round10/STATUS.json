@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "champion": "alpha",
+  "formalMatches": 30,
+  "halves": 60,
+  "target100Percent": true,
+  "winnerPairedWins": 20,
+  "winnerPairedFixtures": 20,
+  "allThreeOriginal8Plus20Passed": true,
+  "allThreeFresh20Passed": true,
+  "losersInherited": true
+}

@@ -1,0 +1,9 @@
+{
+  "qualified": true,
+  "originalDevelopment": "8/8",
+  "originalValidationNowRegression": "20/20",
+  "fresh56000to56009BothSeats": "20/20",
+  "pvpAdmission": "lab/tournament/round10/ADMISSION.json",
+  "runtimeFrozen": true,
+  "scope": "Recorded partial local model only"
+}

@@ -1,0 +1,20 @@
+{
+  "admitted": false,
+  "development": "8/8",
+  "validation": "18/20",
+  "freshHoldoutStarted": false,
+  "failures": [
+    {
+      "seed": 36004,
+      "seat": "defender",
+      "baseDeathRound": 1278
+    },
+    {
+      "seed": 36008,
+      "seat": "challenger",
+      "baseDeathRound": 1161
+    }
+  ],
+  "runtimeFrozen": true,
+  "nextResearch": "lab/survival/iteration08/alpha"
+}
