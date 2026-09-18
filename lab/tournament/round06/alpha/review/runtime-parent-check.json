@@ -1,0 +1,11 @@
+{
+  "__init__.py": true,
+  "brain.py": true,
+  "economy.py": true,
+  "fire_control.py": true,
+  "grid.py": true,
+  "guard.py": true,
+  "protocol.py": true,
+  "server.py": true,
+  "targeting.py": true
+}

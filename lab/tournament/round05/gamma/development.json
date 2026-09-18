@@ -1,0 +1,416 @@
+[
+  {
+    "seed": 22001,
+    "priority": "operators",
+    "seat": "challenger",
+    "gamma": {
+      "score": 990,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1270,
+        1270,
+        1270
+      ],
+      "income": 783,
+      "shots": 1204,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        3,
+        3
+      ],
+      "summons": []
+    },
+    "champion": {
+      "score": 984,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1500,
+        1500,
+        1180,
+        2310,
+        2310,
+        2310,
+        2310,
+        2310
+      ],
+      "income": 742,
+      "shots": 1284,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "summons": []
+    }
+  },
+  {
+    "seed": 22001,
+    "priority": "operators",
+    "seat": "defender",
+    "gamma": {
+      "score": 980,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1500,
+        1500,
+        1180,
+        620,
+        3000,
+        3000,
+        3000,
+        3000
+      ],
+      "income": 683,
+      "shots": 1292,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3
+      ],
+      "summons": []
+    },
+    "champion": {
+      "score": 1023,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "income": 817,
+      "shots": 1266,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "summons": []
+    }
+  },
+  {
+    "seed": 22002,
+    "priority": "advance",
+    "seat": "challenger",
+    "gamma": {
+      "score": 336,
+      "rounds": 756,
+      "invalid": 0,
+      "nightHp": [
+        885,
+        2885,
+        1640,
+        2595,
+        640,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 505,
+      "shots": 855,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "summons": []
+    },
+    "champion": {
+      "score": 116,
+      "rounds": 350,
+      "invalid": 0,
+      "nightHp": [
+        1120,
+        1395,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 212,
+      "shots": 377,
+      "operators": [
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "summons": []
+    }
+  },
+  {
+    "seed": 22002,
+    "priority": "advance",
+    "seat": "defender",
+    "gamma": {
+      "score": 116,
+      "rounds": 350,
+      "invalid": 0,
+      "nightHp": [
+        1120,
+        1395,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 212,
+      "shots": 377,
+      "operators": [
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "summons": []
+    },
+    "champion": {
+      "score": 336,
+      "rounds": 756,
+      "invalid": 0,
+      "nightHp": [
+        885,
+        2885,
+        1640,
+        2595,
+        640,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 505,
+      "shots": 855,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "summons": []
+    }
+  },
+  {
+    "seed": 28002,
+    "priority": "advance",
+    "seat": "challenger",
+    "gamma": {
+      "score": 238,
+      "rounds": 599,
+      "invalid": 0,
+      "nightHp": [
+        925,
+        1905,
+        3400,
+        205,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 485,
+      "shots": 651,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "summons": []
+    },
+    "champion": {
+      "score": 106,
+      "rounds": 352,
+      "invalid": 0,
+      "nightHp": [
+        1420,
+        1320,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 145,
+      "shots": 314,
+      "operators": [
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "summons": []
+    }
+  },
+  {
+    "seed": 28002,
+    "priority": "advance",
+    "seat": "defender",
+    "gamma": {
+      "score": 104,
+      "rounds": 339,
+      "invalid": 0,
+      "nightHp": [
+        1420,
+        380,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 145,
+      "shots": 244,
+      "operators": [
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "summons": []
+    },
+    "champion": {
+      "score": 239,
+      "rounds": 599,
+      "invalid": 0,
+      "nightHp": [
+        925,
+        1905,
+        3400,
+        205,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 485,
+      "shots": 655,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "summons": []
+    }
+  }
+]

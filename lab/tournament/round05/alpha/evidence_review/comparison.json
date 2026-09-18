@@ -1,0 +1,52 @@
+{
+  "opponent": "lab.tournament.round05.gamma.rejected_economy.brain.decide",
+  "excludedFields": [
+    "p95DecisionMs"
+  ],
+  "allExact": true,
+  "historicalSha256": "e389654f8daae47f1dea7513c9d2d3b43ea0cc116812ddcd291c82ac18b2bed0",
+  "checks": [
+    {
+      "seed": 22001,
+      "mode": "operators",
+      "alphaSeat": "challenger",
+      "exactExcludingP95": true,
+      "differences": []
+    },
+    {
+      "seed": 22001,
+      "mode": "operators",
+      "alphaSeat": "defender",
+      "exactExcludingP95": true,
+      "differences": []
+    },
+    {
+      "seed": 22002,
+      "mode": "advance",
+      "alphaSeat": "challenger",
+      "exactExcludingP95": true,
+      "differences": []
+    },
+    {
+      "seed": 22002,
+      "mode": "advance",
+      "alphaSeat": "defender",
+      "exactExcludingP95": true,
+      "differences": []
+    },
+    {
+      "seed": 28002,
+      "mode": "advance",
+      "alphaSeat": "challenger",
+      "exactExcludingP95": true,
+      "differences": []
+    },
+    {
+      "seed": 28002,
+      "mode": "advance",
+      "alphaSeat": "defender",
+      "exactExcludingP95": true,
+      "differences": []
+    }
+  ]
+}
