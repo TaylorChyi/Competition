@@ -27,8 +27,13 @@ class TargetTeamChecks(unittest.TestCase):
             for weapon in ('gatling', 'railgun', 'rocket'):
                 with self.subTest(team=team, weapon=weapon):
                     payload = self.scenario(weapon, team)
+                    payload['robot']['roles'][0]['pos'] = {'x':10,'y':11}
                     command = decide(payload)['2']
                     self.assertEqual(command['targetPos'], [{'x': 13, 'y': 10}])
+
+    def test_direct_fire_waits_when_only_shot_would_hit_foreign_blocker(self):
+        for kind in ('gatling','railgun'):
+            self.assertEqual(decide(self.scenario(kind)),{})
 
     def test_splash_scores_only_our_incoming_wave(self):
         payload = self.scenario()

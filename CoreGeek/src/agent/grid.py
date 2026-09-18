@@ -16,22 +16,27 @@ def next_step(turn: Turn, moving: Unit, goal: Pos) -> Pos | None:
 
 
 def shortest_path(turn: Turn, moving: Unit, goal: Pos,
-                  avoid: set[Pos] | None = None) -> tuple[Pos, ...] | None:
+                  avoid: set[Pos] | None = None, *, reroute: bool = True) -> tuple[Pos, ...] | None:
     blocked = turn.blocked(moving) | (avoid or set())
     order = count()
-    frontier: list[tuple[int, int, int, Pos]] = [
-        (distance(moving.pos, goal), 0, next(order), moving.pos)
+    frontier: list[tuple[int, int, int, int, Pos]] = [
+        (distance(moving.pos, goal), 0, 0, next(order), moving.pos)
     ]
     came_from: dict[Pos, Pos] = {}
     best = {moving.pos: 0}
     seen: set[Pos] = set()
 
     while frontier:
-        _, cost, _, current = heappop(frontier)
+        _, _, cost, _, current = heappop(frontier)
         if current in seen:
             continue
         if current == goal:
-            return _path(came_from, moving.pos, goal)
+            path = _path(came_from, moving.pos, goal)
+            if path and reroute and moving.unit_id in turn.failed_actions:
+                alternative = shortest_path(turn,moving,goal,(avoid or set())|{path[0]},reroute=False)
+                if alternative is not None:
+                    return alternative
+            return path
         seen.add(current)
         for dx, dy in _STEPS:
             step = Pos(current.x + dx, current.y + dy)
@@ -46,6 +51,7 @@ def shortest_path(turn: Turn, moving: Unit, goal: Pos,
                 frontier,
                 (
                     new_cost + distance(step, goal),
+                    (step.x-goal.x)**2+(step.y-goal.y)**2,
                     new_cost,
                     next(order),
                     step,

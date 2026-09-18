@@ -3,7 +3,8 @@
 Both policies receive the documented observations and issue actual decide()
 commands. Start from 75 gold, build level-one towers, carry damage across days.
 Wave sizes, movement ties, targeting priority and build rings are hypotheses.
-No task rewards, trading, upgrades, news, summons or direct player attacks.
+Commerce mode uses the official sample ore prices and documented upgrades.
+No task rewards, news, summons or direct player attacks.
 """
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
@@ -20,6 +21,20 @@ WAVES = {
     'moderate': ((10, 4, 0, 0), (16, 8, 1, 0), (20, 12, 2, 1)),
     'heavy': ((14, 6, 1, 0), (20, 10, 2, 0), (24, 14, 3, 1)),
 }
+PRICES = {'stone':1, 'iron':3, 'copper':5}
+SHOP = {'WeaponUpgradeVoucher1':100, 'WeaponUpgradeVoucher2':150,
+        'StationUpgradeVoucher1':100, 'StationUpgradeVoucher2':150,
+        'Medicine':10, 'Bomb':100}
+
+
+def wave_counts(profile, day):
+    if day<3:
+        return WAVES[profile][day]
+    # Fixed before strategy search: retain the original first three waves,
+    # extend to ten nights without tuning the schedule to a winning policy.
+    small, middle, large, boss = WAVES[profile][-1]
+    extra = day-2
+    return small+4*extra, middle+2*extra, large+extra//3, boss+extra//4
 
 
 @dataclass
@@ -79,16 +94,19 @@ def ray_hits(origin, target, robots):
 
 
 class Arena:
-    def __init__(self, seed, wave='moderate', priority='nearest', nights=3):
+    def __init__(self, seed, wave='moderate', priority='nearest', nights=3, commerce=False):
         self.seed, self.wave, self.priority, self.nights = seed, wave, priority, nights
         self.rng = random.Random(seed)
         self.number = 0
+        self.commerce = commerce
+        self.markets = {Pos(20,16):'vendor',Pos(25,20):'weaponShop'} if commerce else {}
         self.pieces = []
         self.gold = dict.fromkeys(TEAMS, 75)
         self.results = {team: {} for team in TEAMS}
         self.metrics = {team: {'baseDeathRound': None, 'nightHp': [], 'nightOperators': [],
                               'kills': 0, 'killPoints': 0, 'shots': 0, 'foreignOnlyShots': 0,
-                              'invalidCommands': 0, 'movesBlocked': 0, 'decisionMs': []}
+                              'invalidCommands': 0, 'movesBlocked': 0, 'decisionMs': [],
+                              'income':0, 'upgrades':[], 'nightEquipment':[], 'resourceConflicts':0}
                         for team in TEAMS}
         self.next_build = {'challenger': 40000, 'defender': 41000}
         self.next_robot = 30000
@@ -106,6 +124,13 @@ class Arena:
                     mirror(pos, kind == 'station') if reflected else pos, hp, team))
             for pos in (Pos(12, 23), Pos(11, 19), Pos(4, 19)):
                 self.mines[mirror(pos) if reflected else pos] = 10
+        self.mine_kinds = dict.fromkeys(self.mines,'stone')
+        if commerce:
+            # Six ore locations, prices and neutral shops from request.txt.
+            self.mine_kinds = {Pos(4,24):'stone',Pos(14,3):'stone',
+                               Pos(25,10):'iron',Pos(8,28):'iron',
+                               Pos(22,26):'copper',Pos(7,2):'copper'}
+            self.mines = dict.fromkeys(self.mine_kinds,10)
 
     def base(self, team):
         return next(p for p in self.pieces if p.team == team and p.kind == 'station')
@@ -121,12 +146,15 @@ class Arena:
                        separation(p.pos, own) <= 4 for own in ours if own.hp > 0))]
         return {'roundNo': self.number,
                 'mapInfo': {'width': WIDTH, 'height': HEIGHT, 'zones': [
-                    {'pos': pos.dump(), 'neutralType': 'stone'} for pos in self.mines]},
+                    {'pos': pos.dump(), 'neutralType': self.mine_kinds.get(pos,'stone')} for pos in self.mines]
+                    + [{'pos':p.dump(),'neutralType':k} for p,k in self.markets.items()]},
                 'teamOur': {'type': team, 'goldNum': self.gold[team],
                             'roles': [p.dump(self.number) for p in ours]},
                 'teamEnemy': {'roles': [p.dump(self.number) for p in visible]},
                 'robot': {'roles': [p.dump(self.number) for p in living if p.kind in ROBOT_STATS]},
-                'lastRoundRoleActionResults': dict(self.results[team])}
+                'lastRoundRoleActionResults': dict(self.results[team]),
+                'vendorShopList': [{'name':k,'price':v} for k,v in PRICES.items()] if self.commerce else [],
+                'weaponShopList': [{'name':k,'price':v} for k,v in SHOP.items()] if self.commerce else []}
 
     def begin(self):
         self.number += 1
@@ -138,7 +166,7 @@ class Arena:
                 if piece.kind not in ('worker', 'pioneer') or piece.hp > 0 or self.base(piece.team).hp <= 0:
                     continue
                 base = self.base(piece.team)
-                occupied = {pos for p in self.living() for pos in p.cells()} | set(self.mines)
+                occupied = {pos for p in self.living() for pos in p.cells()} | set(self.mines) | set(self.markets)
                 options = [Pos(x, y) for x in range(WIDTH) for y in range(HEIGHT)
                            if Pos(x, y) not in occupied]
                 piece.pos = min(options, key=lambda p: (separation(p, base), p.x, p.y))
@@ -147,13 +175,13 @@ class Arena:
             self.spawn((self.number-1)//130)
 
     def spawn(self, day):
-        occupied = {pos for p in self.living() for pos in p.cells()} | set(self.mines)
+        occupied = {pos for p in self.living() for pos in p.cells()} | set(self.mines) | set(self.markets)
         # Equal kind counts for both camps, seeded central spawn. Both waves
         # remain visible to both policies, including bots heading to the rival.
         cells = [Pos(x, y) for x in range(14, 27) for y in range(4, 28)]
         wave_rng = random.Random(self.seed*1009 + day*7919)
         wave_rng.shuffle(cells)
-        kinds = [kind for kind, count in zip(ROBOT_STATS, WAVES[self.wave][day]) for _ in range(count)]
+        kinds = [kind for kind, count in zip(ROBOT_STATS, wave_counts(self.wave,day)) for _ in range(count)]
         wave_rng.shuffle(kinds)
         for kind in kinds:
             for team in TEAMS:
@@ -168,12 +196,13 @@ class Arena:
         living = self.living()
         robots = [p for p in living if p.kind in ROBOT_STATS]
         by_id = {p.uid: p for p in living}
-        occupied = {pos for p in living for pos in p.cells()} | set(self.mines)
+        occupied = {pos for p in living for pos in p.cells()} | set(self.mines) | set(self.markets)
         damage = defaultdict(int)
         shooter_damage = defaultdict(lambda: defaultdict(int))
         proposals, move_owners = {}, {}
         self.results = {team: {} for team in TEAMS}
         is_day = (self.number-1) % 130 < 70
+        starting_mines = dict(self.mines)
         for team in TEAMS:
             used = set()
             for uid, command in sorted(commands[team].items(), key=lambda item: int(item[0])):
@@ -220,6 +249,41 @@ class Arena:
                             for robot, hit in hits:
                                 damage[robot.uid] += hit
                                 shooter_damage[robot.uid][team] += hit
+                elif valid and action in ('buy','sell','use'):
+                    name, count = command.get('name',''), command.get('num',1)
+                    valid = self.commerce and actor.kind in ('worker','pioneer') and isinstance(count,int) and count>0
+                    if valid and action=='sell':
+                        valid = (name in PRICES and actor.backpack.count(name)>=count and
+                                 any(kind=='vendor' and distance(actor.pos,p)<=1 for p,kind in self.markets.items()))
+                        if valid:
+                            self.gold[team] += PRICES[name]*count
+                            self.metrics[team]['income'] += PRICES[name]*count
+                            for _ in range(count):
+                                actor.backpack.remove(name)
+                    elif valid and action=='buy':
+                        valid = (name in SHOP and self.gold[team]>=SHOP[name]*count
+                                 and len(actor.backpack)+count<=(40 if actor.kind=='pioneer' else 100)
+                                 and any(kind=='weaponShop' and distance(actor.pos,p)<=1 for p,kind in self.markets.items()))
+                        if valid:
+                            self.gold[team] -= SHOP[name]*count
+                            actor.backpack.extend([name]*count)
+                    elif valid:
+                        valid = name in actor.backpack
+                        if valid and name=='Medicine':
+                            actor.hp = 200 if actor.kind=='pioneer' else 220
+                        elif valid and 'UpgradeVoucher' in name:
+                            unit = next((p for p in living if len(targets)==1 and p.pos==targets[0] and p.team==team),None)
+                            kinds = ('station',) if name.startswith('Station') else ('gatling','railgun','rocket')
+                            valid = (unit is not None and unit.kind in kinds and name[-1]==str(unit.level)
+                                     and unit.level<3 and distance(actor.pos,unit.pos)<=1)
+                            if valid:
+                                unit.level += 1
+                                unit.hp = 1500*unit.level if unit.kind=='station' else 500+500*unit.level
+                                self.metrics[team]['upgrades'].append([self.number,unit.kind,unit.level])
+                        else:
+                            valid = False
+                        if valid:
+                            actor.backpack.remove(name)
                 elif valid and action == 'move':
                     valid = actor.kind in ('worker', 'pioneer') and len(targets) == 1
                     if valid:
@@ -231,21 +295,27 @@ class Arena:
                     valid = is_day and actor.kind == 'worker' and len(targets) == 1 and distance(actor.pos, targets[0]) == 1
                     if valid and action == 'collect':
                         p = targets[0]
-                        valid = p in self.mines and len(actor.backpack) < 100
+                        if starting_mines.get(p,0)>0 and self.mines.get(p,0)==0 and len(actor.backpack)<100:
+                            self.metrics[team]['resourceConflicts'] += 1
+                        valid = p in self.mines and self.mines[p]>0 and len(actor.backpack) < 100
                         if valid:
-                            actor.backpack.append('stone')
+                            actor.backpack.append(self.mine_kinds.get(p,'stone'))
                             self.mines[p] -= 1
                     elif valid:
                         p, kind = targets[0], command.get('name')
                         tower = kind in TOWER_RANGE_BY_LEVEL
-                        valid = (p not in occupied and 0 <= p.x < WIDTH and 0 <= p.y < HEIGHT
+                        previous = next((q for q in living if q.team==team and q.pos==p
+                                         and (q.kind in TOWER_RANGE_BY_LEVEL if tower else q.kind=='wall')),None)
+                        valid = ((p not in occupied or previous is not None) and 0 <= p.x < WIDTH and 0 <= p.y < HEIGHT
                                  and separation(p, self.base(team)) == (1 if tower else 2))
                         if tower:
-                            valid = valid and self.gold[team] >= 25 and sum(
-                                q.team == team and q.kind in TOWER_RANGE_BY_LEVEL for q in self.living()) < 3
+                            valid = valid and self.gold[team] >= 25 and (previous is not None or sum(
+                                q.team == team and q.kind in TOWER_RANGE_BY_LEVEL for q in self.living()) < 3)
                         else:
                             valid = valid and kind == 'wall' and 'stone' in actor.backpack
                         if valid:
+                            if previous is not None:
+                                previous.hp=0
                             if tower:
                                 self.gold[team] -= 25
                             else:
@@ -300,16 +370,22 @@ class Arena:
             if amount > 0:
                 continue
             del self.mines[pos]
-            free = [Pos(x, y) for x in (*range(14), *range(27, WIDTH)) for y in range(HEIGHT)
+            kind = self.mine_kinds.pop(pos,'stone')
+            occupied = {cell for unit in self.living() for cell in unit.cells()} | set(self.mines) | set(self.markets)
+            free = [Pos(x, y) for x in range(WIDTH) for y in range(HEIGHT)
                     if Pos(x,y) not in occupied and all(separation(Pos(x,y), self.base(t)) > 2 for t in TEAMS)]
             if free:
-                self.mines[self.rng.choice(free)] = 10
+                replacement = self.rng.choice(free)
+                self.mines[replacement] = 10
+                self.mine_kinds[replacement] = kind
         for team in TEAMS:
             metric = self.metrics[team]
             if self.base(team).hp == 0 and metric['baseDeathRound'] is None:
                 metric['baseDeathRound'] = self.number
             if self.number % 130 == 0:
                 metric['nightHp'].append(self.base(team).hp)
+                metric['nightEquipment'].append({p.kind+'_'+str(p.uid):[p.level,p.hp]
+                    for p in self.pieces if p.team==team and p.kind in ('station','gatling','railgun','rocket')})
                 metric['nightOperators'].append(sum(p.hp > 0 and p.team == team
                         and p.kind in ('worker', 'pioneer') for p in self.pieces))
 

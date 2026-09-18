@@ -31,8 +31,8 @@ def state(round_no=1, gold=75, roles=None):
         'mapInfo': {'width': 41, 'height': 32, 'zones': []},
         'teamOur': {'type': 'challenger', 'goldNum': gold, 'roles': roles or [
             unit(10013, 'station', 10, 24),
-            unit(10010, 'worker', 8, 22),
-            unit(10012, 'worker', 8, 24),
+            unit(10010, 'worker', 11, 22),
+            unit(10012, 'worker', 11, 25),
         ]},
         'teamEnemy': {'roles': []},
         'robot': {'roles': []},

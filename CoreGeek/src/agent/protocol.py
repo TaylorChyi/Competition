@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 DAY_ROUNDS = 70
@@ -96,11 +96,12 @@ class Robot:
     pos: Pos
     health: int
     target_team: str | None = None
+    kind: str = "smallRobot"
 
     @classmethod
     def load(cls, raw: dict[str, Any]) -> "Robot":
         return cls(int(raw["id"]), Pos.load(raw["pos"]), int(raw["health"]),
-                   raw.get("targetTeam"))
+                   raw.get("targetTeam"), str(raw.get("roleType") or "smallRobot"))
 
 
 @dataclass(frozen=True, slots=True)
@@ -115,6 +116,9 @@ class Turn:
     robots: tuple[Robot, ...]
     enemies: tuple[Unit, ...]
     team_type: str | None = None
+    sale_prices: dict[str, int] = field(default_factory=dict)
+    shop_prices: dict[str, int] = field(default_factory=dict)
+    failed_actions: frozenset[int] = frozenset()
 
     @classmethod
     def load(cls, payload: dict[str, Any]) -> "Turn":
@@ -141,6 +145,10 @@ class Turn:
                 for role in (payload.get("teamEnemy") or {}).get("roles") or ()
             ),
             team.get("type"),
+            {str(item['name']): int(item['price']) for item in payload.get('vendorShopList') or ()},
+            {str(item['name']): int(item['price']) for item in payload.get('weaponShopList') or ()},
+            frozenset(int(uid) for uid, valid in (payload.get('lastRoundRoleActionResults') or {}).items()
+                      if valid is False),
         )
 
     def incoming_robots(self) -> tuple[Robot, ...]:

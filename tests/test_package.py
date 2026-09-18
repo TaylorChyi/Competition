@@ -123,12 +123,22 @@ class PackageEntryPoints(unittest.TestCase):
                 action = post(json.dumps(night).encode())['roleCommandMap']['2']
                 self.assertEqual(action['action'], 'attack')
                 self.assertEqual(action['controllerId'], '1')
-                expected = {'x': 5, 'y': 5} if policy == 'default' else {'x': 6, 'y': 6}
+                expected = {'x': 6, 'y': 6}
                 self.assertEqual(action['targetPos'], [expected, expected])
                 # Include the platform's action validity feedback in diagnostics.
                 night['roundNo'] = 72
                 night['lastRoundRoleActionResults'] = {'2': False}
                 post(json.dumps(night).encode())
+                # Exercise the economic action path from the shipped modules.
+                upgrade={'roundNo':200,'mapInfo':{'width':41,'height':32,'zones':[]},
+                    'teamOur':{'type':'challenger','roles':[
+                        {'id':1,'roleType':'pioneer','pos':{'x':9,'y':10},'health':200,
+                         'backpack':['StationUpgradeVoucher1']},
+                        {'id':2,'roleType':'station','pos':{'x':10,'y':10},'health':50,'level':1}]},
+                    'robot':{'roles':[]}}
+                action=post(json.dumps(upgrade).encode())['roleCommandMap']['1']
+                self.assertEqual(action,{'action':'use','name':'StationUpgradeVoucher1',
+                                         'targetPos':[{'x':10,'y':10}]})
                 deadline = time.monotonic() + 2
                 while 'last_invalid=[\'2\']' not in log_path.read_text():
                     if time.monotonic() > deadline:

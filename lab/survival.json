@@ -1,0 +1,76 @@
+{
+  "baselineCommit": "2f71866453f08b854add21ebbe7e589c1d32b2df",
+  "nights": 10,
+  "commerce": true,
+  "trainSeeds": [
+    11001,
+    12102
+  ],
+  "holdoutSeeds": [
+    13101,
+    13102,
+    13103
+  ],
+  "profiles": [
+    {
+      "name": "heavy-nearest",
+      "wave": "heavy",
+      "priority": "nearest"
+    },
+    {
+      "name": "heavy-advance",
+      "wave": "heavy",
+      "priority": "advance"
+    }
+  ],
+  "selection": [
+    "twoNightSurvival",
+    "meanSurvivedNights",
+    "meanFinalBaseHp"
+  ],
+  "candidates": {
+    "economy_only": {
+      "loadout": [
+        "railgun",
+        "railgun",
+        "railgun"
+      ],
+      "fortify": 0
+    },
+    "four_walls": {
+      "loadout": [
+        "railgun",
+        "railgun",
+        "railgun"
+      ],
+      "fortify": 4
+    },
+    "eight_walls": {
+      "loadout": [
+        "railgun",
+        "railgun",
+        "railgun"
+      ],
+      "fortify": 8
+    }
+  },
+  "assumptions": {
+    "officialRules": "75 initial gold; tower 25; stone wall 1; sample ore sale prices 1/3/5; vouchers 100/150; upgrades restore full HP; damaged buildings can be replaced; no free daily healing",
+    "markets": "Initial six ore nodes and market coordinates come from upstream sample; scenario base locations are retained from the prior arena, not an official complete map",
+    "waves": "Original three heavy waves unchanged; extend deterministically to ten with wave_counts; schedules/spawns are hypotheses, not official waves",
+    "robotTargeting": "nearest attacks nearest own-camp target within 3; advance moves toward base despite reachable side targets and attacks through walls; both are unverified hypotheses",
+    "settlement": "Same documented damage/cooldown as prior arena; ray-cell ties, robot pathing and priority among simultaneous commands remain local conventions",
+    "resourceConflicts": "A valid observed collection can lose the final ore to another actor in the same round; report these failed actions separately without hiding them",
+    "omitted": "Official tasks, news, treasure, summons, direct player damage; income only from actually mined and sold ore",
+    "runtime": "Every action uses the actual packaged-policy source; levels, cash and HP carried across nights; dead characters revive after 20 daylight rounds",
+    "limit": "Synthetic comparisons do not establish official survival or win rate; holdout used only after choosing the candidate"
+  },
+  "maxMatches": 50,
+  "stage": 2,
+  "priorDiagnosticMatches": 42,
+  "previousHoldoutNowDevelopment": [
+    12101,
+    12102,
+    12103
+  ]
+}
