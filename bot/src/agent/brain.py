@@ -1,10 +1,13 @@
 import os
+from itertools import combinations, permutations
 from typing import Any
 
 from .targeting import load_policy, rocket_targets
-from .grid import next_step
+from .grid import next_step, shortest_path
 from .protocol import (
     PIONEER,
+    DAY_ROUNDS,
+    ROUNDS_PER_DAY,
     Pos,
     Turn,
     Unit,
@@ -21,6 +24,7 @@ from .protocol import (
 
 TOWER_LOADOUT = ("gatling", "railgun", "rocket")
 STONE_BATCH = 6
+RETURN_BUFFER = 2
 _NEIGHBOUR_STEPS = (
     (-1, -1), (-1, 0), (-1, 1),
     (0, -1), (0, 1),
@@ -50,18 +54,30 @@ def _day(turn: Turn, commands: dict[int, dict[str, Any]]) -> None:
     free_walls = [pos for pos in walls_missing if pos not in occupied]
 
     claimed: set[Pos] = set()
+    returning: set[int] = set()
+    daylight_left = DAY_ROUNDS - (turn.round_no - 1) % ROUNDS_PER_DAY
+    for role, tower in _tower_pairs(turn):
+        if role.kind == PIONEER and role.pos in walls_missing:
+            # Leave planned wall cells available to the builders.
+            step = _step_toward(turn, role, tower.pos, claimed, inside_only=True)
+            if step is not None:
+                commands[role.unit_id] = move_command(step)
+            continue
+        route = _return_route(turn, role, tower, claimed)
+        if route is None:
+            continue
+        # Stop working in time to walk home, with two turns for congestion.
+        if role.kind == PIONEER or daylight_left <= len(route) + RETURN_BUFFER:
+            returning.add(role.unit_id)
+            if route:
+                commands[role.unit_id] = move_command(route[0])
+                claimed.add(route[0])
     for role in turn.workers():
+        if role.unit_id in returning:
+            continue
         _worker_day(
             turn, role, sites, free_towers, free_walls, claimed, commands,
         )
-    for role, tower in _tower_pairs(turn):
-        if role.kind != PIONEER:
-            continue
-        if distance(role.pos, tower.pos) <= 1 and role.pos not in walls_missing:
-            continue
-        step = _step_toward(turn, role, tower.pos, claimed, inside_only=True)
-        if step is not None:
-            commands[role.unit_id] = move_command(step)
 
 
 def _worker_day(
@@ -140,13 +156,46 @@ def _night(turn: Turn, commands: dict[int, dict[str, Any]]) -> None:
                 command["targetPos"] = [pos.dump() for pos in targets]
                 commands[tower.unit_id] = command
             continue
-        step = _step_toward(turn, role, tower.pos, claimed)
-        if step is not None:
-            commands[role.unit_id] = move_command(step)
+        route = _return_route(turn, role, tower, claimed)
+        if route:
+            commands[role.unit_id] = move_command(route[0])
+            claimed.add(route[0])
 
 
 def _tower_pairs(turn: Turn) -> tuple[tuple[Unit, Unit], ...]:
-    return tuple(zip(turn.controllable(), turn.weapons()))
+    roles, towers = turn.controllable(), turn.weapons()
+    count = min(len(roles), len(towers))
+    if not count:
+        return ()
+    ready = {tower.unit_id: not turn.is_day and tower.cooldown == 0
+             and _attack_target(turn, tower) is not None for tower in towers}
+
+    def cost(pairs):
+        adjacent = [distance(role.pos, tower.pos) <= 1 for role, tower in pairs]
+        return (
+            -sum(near and ready[tower.unit_id] for near, (_, tower) in zip(adjacent, pairs)),
+            -sum(adjacent),
+            sum(max(0, distance(role.pos, tower.pos) - 1) for role, tower in pairs),
+            -sum(tower.range_of_attack() for _, tower in pairs),
+            tuple((role.unit_id, tower.unit_id) for role, tower in pairs),
+        )
+
+    # There are at most three operators and three towers: at most six pairings.
+    # Re-evaluate observed survivors instead of shifting every assignment by ID.
+    candidates = (tuple(zip(selected, ordered))
+                  for selected in combinations(roles, count)
+                  for ordered in permutations(towers, count))
+    return min(candidates, key=cost)
+
+
+def _return_route(turn: Turn, role: Unit, tower: Unit,
+                  claimed: set[Pos]) -> tuple[Pos, ...] | None:
+    if distance(role.pos, tower.pos) <= 1:
+        return ()
+    routes = [path for stand in _stand_cells(turn, role, tower.pos, claimed)
+              if (path := shortest_path(turn, role, stand, claimed)) is not None]
+    # _stand_cells orders ties toward the base; shortest travel takes priority.
+    return min(routes, key=len) if routes else None
 
 
 def _attack_target(turn: Turn, tower: Unit) -> Pos | None:

@@ -4,7 +4,8 @@
 
 - 源码和文档纳入 Git；参赛压缩包不提交到源码树。固定本地输出是 `dist/CoreGeek.tar.gz`，该目录被忽略。
 - 修改算法、启动入口、策略配置、包内样例或交付说明后，运行 `python3 tools/package_bot.py`，再运行 `python3 -m unittest discover -s tests -p test_package.py -v`。
-- 包内保持 `CoreGeek/main3.py` 和 `CoreGeek/src/agent/`，兼容平台固定路径 `/home/docker/CoreGeek/main3.py`。
+- 包内保持官方 `CoreGeek/` 显式目录、`CoreGeek/main3.py` 和 `CoreGeek/src/agent/`；归档根部另放同内容的 `main3.py` 与 `run.sh` 兼容入口，运行时代码只保留一份。
+- 必须覆盖三种解压：父目录、平台先创建 CoreGeek 再解压、去掉顶层目录后解压到 CoreGeek。启动和包结构变更需在一次性 Linux / Python 3.11 容器中按绝对路径 `/home/docker/CoreGeek/main3.py` 发真实 HTTP 请求，不能只以 macOS 临时目录检查代替。
 - 提交并推送源码后，为该完整提交 SHA 创建带 `bot-` 前缀的新 Release 标签，上传刚才验证过的 `CoreGeek.tar.gz` 并标记 Latest。当前交付的 agent 应完成实际发布，不只停在打包或写说明。
 - Release 说明记录源码 SHA、包的 SHA-256、启动方式和本次检查。不要把本地通过写成正式比赛验收。
 - 从 Release 重新下载附件，核对哈希和入口；验证新版本可用后，再删除旧的比赛包 Release 及其资产。不要清理其他用途的 Release 或改写 Git 历史。

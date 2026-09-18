@@ -2,6 +2,7 @@
 import hashlib
 import json
 import os
+import platform
 from pathlib import Path
 import socket
 import subprocess
@@ -14,43 +15,59 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from tools.package_bot import DIST, payloads
+from tools.package_bot import DIST, archive_payloads
 
 ARCHIVE = Path(os.environ.get('COMPETITION_PACKAGE_PATH', DIST / 'CoreGeek.tar.gz'))
 
 
 class PackageEntryPoints(unittest.TestCase):
-    def check_archive(self):
+    def check_archive(self, layout):
         # Exercise the built or downloaded Release artifact; never rebuild it in tests.
         archive = ARCHIVE
         with tempfile.TemporaryDirectory(prefix='competition package ') as temp:
             root = Path(temp)
-            docker = root / 'home' / 'docker'
+            if os.environ.get('COMPETITION_PLATFORM_LAYOUT'):
+                # Only disposable Linux containers may exercise the literal
+                # path from the user's error. Each layout gets a fresh container.
+                self.assertEqual(sys.platform, 'linux')
+                self.assertEqual(sys.version_info[:2], (3, 11))
+                self.assertTrue(Path('/.dockerenv').is_file())
+                print('Runtime:', platform.python_version(), platform.machine(),
+                      '| entry: /home/docker/CoreGeek/main3.py 6666', flush=True)
+                docker = Path('/home/docker')
+                self.assertFalse(docker.exists(), 'Use a fresh container per layout')
+            else:
+                docker = root / 'home' / 'docker'
             package = docker / 'CoreGeek'
-            docker.mkdir(parents=True)
-            with tarfile.open(archive) as stream:
-                stream.extractall(docker, filter='data')
+            destination = docker if layout == 'parent' else package
+            destination.mkdir(parents=True)
+            command = ['tar', '-xzf', str(archive), '-C', str(destination)]
+            if layout == 'strip':
+                command.append('--strip-components=1')
+            subprocess.run(command, check=True, capture_output=True)
+            runtime = package / 'CoreGeek' if layout == 'named-directory' else package
             self.assertTrue((package / 'main3.py').is_file())
-            self.assertTrue((package / 'src' / 'agent' / 'server.py').is_file())
-            self.assertFalse((package / 'CoreGeek').exists())
-            manifest = json.loads((package / 'MANIFEST.json').read_text())
+            self.assertTrue((runtime / 'src' / 'agent' / 'server.py').is_file())
+            manifest = json.loads((runtime / 'MANIFEST.json').read_text())
             for name, digest in manifest['files'].items():
-                self.assertEqual(hashlib.sha256((package / name).read_bytes()).hexdigest(), digest)
+                self.assertEqual(hashlib.sha256((runtime / name).read_bytes()).hexdigest(), digest)
             for entry in ('main3.py', 'run.sh'):
                 for policy in ('default', 'experimental'):
                     with self.subTest(entry=entry, policy=policy):
-                        self.check_server(package, root, entry, policy)
+                        self.check_server(package, runtime, root, entry, policy)
 
-    def check_server(self, package, unrelated_cwd, entry, policy):
+    def check_server(self, package, runtime, unrelated_cwd, entry, policy):
         with socket.socket() as sock:
             sock.bind(('127.0.0.1', 0))
             port = sock.getsockname()[1]
+        if os.environ.get('COMPETITION_PLATFORM_LAYOUT'):
+            port = 6666
         env = dict(os.environ)
         for key in ('COMPETITION_ROCKET_POLICY', 'COMPETITION_TRACE'):
             env.pop(key, None)
         env['PYTHON'] = sys.executable
         if policy == 'experimental':
-            env['COMPETITION_ROCKET_POLICY'] = str(package / 'selected-policy.json')
+            env['COMPETITION_ROCKET_POLICY'] = str(runtime / 'selected-policy.json')
         command = [sys.executable if entry.endswith('.py') else 'bash',
                    str(package / entry), str(port)]
         log_path = unrelated_cwd / 'server.log'
@@ -75,7 +92,7 @@ class PackageEntryPoints(unittest.TestCase):
                         self.assertEqual(response.status, 200)
                         return json.load(response)
 
-                sample = post((package / 'sample-request.json').read_bytes())
+                sample = post((runtime / 'sample-request.json').read_bytes())
                 self.assertTrue(sample['roleCommandMap'])
                 night = {
                     'roundNo': 71, 'mapInfo': {'width': 41, 'height': 32, 'zones': []},
@@ -93,6 +110,15 @@ class PackageEntryPoints(unittest.TestCase):
                 self.assertEqual(action['controllerId'], '1')
                 expected = {'x': 5, 'y': 5} if policy == 'default' else {'x': 6, 'y': 6}
                 self.assertEqual(action['targetPos'], [expected, expected])
+                # Include the platform's action validity feedback in diagnostics.
+                night['roundNo'] = 72
+                night['lastRoundRoleActionResults'] = {'2': False}
+                post(json.dumps(night).encode())
+                deadline = time.monotonic() + 2
+                while 'last_invalid=[\'2\']' not in log_path.read_text():
+                    if time.monotonic() > deadline:
+                        self.fail('Missing round/action diagnostics: ' + log_path.read_text())
+                    time.sleep(.01)
             finally:
                 proc.terminate()
                 try:
@@ -101,19 +127,39 @@ class PackageEntryPoints(unittest.TestCase):
                     proc.kill()
                     proc.wait(timeout=3)
         self.assertNotIn('decision failed', log_path.read_text())
+        self.assertIn('CoreGeek startup | package=', log_path.read_text())
+        self.assertIn('runtime=' + str(runtime.resolve()), log_path.read_text())
+        self.assertIn('round 72 | phase=night', log_path.read_text())
 
     def test_official_tar_layout_and_both_entrypoints(self):
-        self.check_archive()
+        layouts = ('parent', 'named-directory', 'strip')
+        platform_layout = os.environ.get('COMPETITION_PLATFORM_LAYOUT')
+        if platform_layout:
+            self.assertIn(platform_layout, layouts)
+            layouts = (platform_layout,)
+        for layout in layouts:
+            with self.subTest(layout=layout):
+                self.check_archive(layout)
 
     def test_shipped_archive_matches_current_sources(self):
-        expected = {'CoreGeek/' + name: raw for name, raw in payloads().items()}
+        expected = archive_payloads()
         with tarfile.open(ARCHIVE) as stream:
-            self.assertEqual(sorted(stream.getnames()), sorted(expected))
+            self.assertEqual(stream.getmembers()[0].name, 'CoreGeek')
+            self.assertTrue(stream.getmembers()[0].isdir())
+            directories = {str(parent) for name in expected for parent in Path(name).parents
+                           if str(parent) != '.'}
+            self.assertEqual(set(stream.getnames()), set(expected) | directories)
+            self.assertEqual(len(stream.getnames()), len(expected) + len(directories))
             for member in stream.getmembers():
+                if member.name in directories:
+                    self.assertTrue(member.isdir())
+                    self.assertEqual(member.mode, 0o755)
+                    continue
                 self.assertTrue(member.isfile())
                 self.assertEqual(stream.extractfile(member).read(), expected[member.name],
                                  'Stale package; run python3 tools/package_bot.py')
             self.assertEqual(stream.getmember('CoreGeek/run.sh').mode, 0o755)
+            self.assertEqual(stream.getmember('run.sh').mode, 0o755)
 
 
 if __name__ == '__main__':

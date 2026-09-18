@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package the bot at the original Demo's CoreGeek/main3.py entrypoint."""
+"""One upload supporting parent-directory and named-directory extraction."""
 import gzip
 import hashlib
 import io
@@ -39,19 +39,36 @@ def payloads() -> dict[str, bytes]:
     return files
 
 
-def build(output_dir: Path = DIST) -> dict:
+def archive_payloads() -> dict[str, bytes]:
     files = payloads()
+    # Keep the official CoreGeek tree, plus two tiny root entrypoints for hosts
+    # that create /home/docker/CoreGeek before extracting the uploaded archive.
+    return {**{'CoreGeek/' + name: raw for name, raw in files.items()},
+            'main3.py': files['main3.py'], 'run.sh': files['run.sh']}
+
+
+def build(output_dir: Path = DIST) -> dict:
+    files = archive_payloads()
     # Fixed local output; publish this tested file as a GitHub Release asset.
     output_dir.mkdir(parents=True, exist_ok=True)
     output = output_dir / 'CoreGeek.tar.gz'
     data = io.BytesIO()
     # Stable metadata prevents a rebuild with identical inputs changing the file.
     with gzip.GzipFile(fileobj=data, mode='wb', filename='', mtime=0) as compressed:
-        with tarfile.open(fileobj=compressed, mode='w') as package:
-            for name, raw in sorted(files.items()):
-                info = tarfile.TarInfo('CoreGeek/' + name)
+        with tarfile.open(fileobj=compressed, mode='w', format=tarfile.USTAR_FORMAT) as package:
+            directories = set()
+            for name, raw in files.items():
+                for parent in reversed(Path(name).parents):
+                    if str(parent) == '.' or str(parent) in directories:
+                        continue
+                    info = tarfile.TarInfo(parent.as_posix())
+                    info.type = tarfile.DIRTYPE
+                    info.mode = 0o755
+                    package.addfile(info)
+                    directories.add(str(parent))
+                info = tarfile.TarInfo(name)
                 info.size = len(raw)
-                info.mode = 0o755 if name == 'run.sh' else 0o644
+                info.mode = 0o755 if name.endswith('run.sh') else 0o644
                 package.addfile(info, io.BytesIO(raw))
     output.write_bytes(data.getvalue())
     return {'path': str(output), 'bytes': output.stat().st_size,

@@ -11,7 +11,13 @@ _STEPS = (
 
 
 def next_step(turn: Turn, moving: Unit, goal: Pos) -> Pos | None:
-    blocked = turn.blocked(moving)
+    path = shortest_path(turn, moving, goal)
+    return path[0] if path else None
+
+
+def shortest_path(turn: Turn, moving: Unit, goal: Pos,
+                  avoid: set[Pos] | None = None) -> tuple[Pos, ...] | None:
+    blocked = turn.blocked(moving) | (avoid or set())
     order = count()
     frontier: list[tuple[int, int, int, Pos]] = [
         (distance(moving.pos, goal), 0, next(order), moving.pos)
@@ -25,7 +31,7 @@ def next_step(turn: Turn, moving: Unit, goal: Pos) -> Pos | None:
         if current in seen:
             continue
         if current == goal:
-            return _first_step(came_from, moving.pos, goal)
+            return _path(came_from, moving.pos, goal)
         seen.add(current)
         for dx, dy in _STEPS:
             step = Pos(current.x + dx, current.y + dy)
@@ -48,8 +54,10 @@ def next_step(turn: Turn, moving: Unit, goal: Pos) -> Pos | None:
     return None
 
 
-def _first_step(came_from: dict[Pos, Pos], start: Pos, goal: Pos) -> Pos:
+def _path(came_from: dict[Pos, Pos], start: Pos, goal: Pos) -> tuple[Pos, ...]:
     current = goal
-    while came_from[current] != start:
+    steps = []
+    while current != start:
+        steps.append(current)
         current = came_from[current]
-    return current
+    return tuple(reversed(steps))
