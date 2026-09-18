@@ -14,13 +14,15 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from tools.package_bot import payloads
+from tools.package_bot import DIST, payloads
+
+ARCHIVE = Path(os.environ.get('COMPETITION_PACKAGE_PATH', DIST / 'CoreGeek.tar.gz'))
 
 
 class PackageEntryPoints(unittest.TestCase):
     def check_archive(self):
-        # Exercise the exact checked-in artifact that recipients download.
-        archive = ROOT / 'CoreGeek.tar.gz'
+        # Exercise the built or downloaded Release artifact; never rebuild it in tests.
+        archive = ARCHIVE
         with tempfile.TemporaryDirectory(prefix='competition package ') as temp:
             root = Path(temp)
             docker = root / 'home' / 'docker'
@@ -105,7 +107,7 @@ class PackageEntryPoints(unittest.TestCase):
 
     def test_shipped_archive_matches_current_sources(self):
         expected = {'CoreGeek/' + name: raw for name, raw in payloads().items()}
-        with tarfile.open(ROOT / 'CoreGeek.tar.gz') as stream:
+        with tarfile.open(ARCHIVE) as stream:
             self.assertEqual(sorted(stream.getnames()), sorted(expected))
             for member in stream.getmembers():
                 self.assertTrue(member.isfile())

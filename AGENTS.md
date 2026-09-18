@@ -1,12 +1,14 @@
 # 交付约定
 
-用户要求下载仓库即可取得可上传的最新产物，不让接收者编译或打包。
+用户要求每次修改后的参赛包发布到 GitHub Releases，接收者直接下载上传，无需编译或打包。只保留最新比赛包版本。
 
-- 唯一参赛包是仓库根目录 `CoreGeek.tar.gz`，必须纳入 Git 并随交付推送到私有 GitHub 仓库。
-- 不生成 ZIP 或带版本号的产物目录，不保留旧参赛包、旧 Demo 压缩包等并列下载入口。
-- 包内必须保持 `CoreGeek/main3.py`、`CoreGeek/src/agent/`，兼容平台固定路径 `/home/docker/CoreGeek/main3.py`。
-- 修改算法、启动入口、策略配置、包内样例或交付说明后，运行 `python3 tools/package_bot.py` 更新同名包。
-- 提交前运行 `python3 -m unittest discover -s tests -p test_package.py -v`。该检查直接使用根目录交付包，核对源码一致性、独立解压、两种启动入口和真实 HTTP 指令。
-- 源码、交付说明和最新包放在同一个提交中；提交并推送后，给用户 GitHub 上的最新包链接。
-- 接收方入口只写下载、上传和运行；开发者构建与测试说明放在 README 的维护部分。
-- 无需编译不等于没有运行时：当前使用平台已有 Python >=3.11，不声称包内包含 Python 解释器或已完成正式平台验收。
+- 源码和文档纳入 Git；参赛压缩包不提交到源码树。固定本地输出是 `dist/CoreGeek.tar.gz`，该目录被忽略。
+- 修改算法、启动入口、策略配置、包内样例或交付说明后，运行 `python3 tools/package_bot.py`，再运行 `python3 -m unittest discover -s tests -p test_package.py -v`。
+- 包内保持 `CoreGeek/main3.py` 和 `CoreGeek/src/agent/`，兼容平台固定路径 `/home/docker/CoreGeek/main3.py`。
+- 提交并推送源码后，为该完整提交 SHA 创建带 `bot-` 前缀的新 Release 标签，上传刚才验证过的 `CoreGeek.tar.gz` 并标记 Latest。当前交付的 agent 应完成实际发布，不只停在打包或写说明。
+- Release 说明记录源码 SHA、包的 SHA-256、启动方式和本次检查。不要把本地通过写成正式比赛验收。
+- 从 Release 重新下载附件，核对哈希和入口；验证新版本可用后，再删除旧的比赛包 Release 及其资产。不要清理其他用途的 Release 或改写 Git 历史。
+- 下载入口固定为 `https://github.com/TaylorChyi/Competition/releases/latest/download/CoreGeek.tar.gz`，最终给用户这个链接或 Latest Release 页面。
+- 不再生成 ZIP、多个带版本号的本地输出目录或原始 Demo 包的并列下载入口。
+- 具体发布与复核步骤见 `docs/发布流程.md`。接收方首页只说明下载、上传和运行，开发者命令放到维护部分。
+- 当前使用平台已有 Python >=3.11，包内没有解释器；无需编译不等于没有运行时。

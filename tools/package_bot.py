@@ -8,6 +8,7 @@ from pathlib import Path
 import tarfile
 
 ROOT = Path(__file__).resolve().parents[1]
+DIST = ROOT / 'dist'
 FILES = [
     ('bot/main3.py', 'main3.py'),
     ('bot/pyproject.toml', 'pyproject.toml'),
@@ -38,9 +39,9 @@ def payloads() -> dict[str, bytes]:
     return files
 
 
-def build(output_dir: Path = ROOT) -> dict:
+def build(output_dir: Path = DIST) -> dict:
     files = payloads()
-    # Fixed name: the current checkout contains one ready-to-upload artifact.
+    # Fixed local output; publish this tested file as a GitHub Release asset.
     output_dir.mkdir(parents=True, exist_ok=True)
     output = output_dir / 'CoreGeek.tar.gz'
     data = io.BytesIO()

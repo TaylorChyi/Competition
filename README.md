@@ -4,9 +4,9 @@
 
 ## 直接下载并上传比赛平台
 
-**[下载最新 CoreGeek.tar.gz](https://github.com/TaylorChyi/Competition/raw/refs/heads/main/CoreGeek.tar.gz)**
+**[下载最新 CoreGeek.tar.gz](https://github.com/TaylorChyi/Competition/releases/latest/download/CoreGeek.tar.gz)**
 
-仓库根目录已包含打好的包，下载后直接上传，无需编译、安装依赖或重新打包。这里只保留一份最新包，后续更新覆盖同名文件。
+参赛包统一放在 [GitHub Releases](https://github.com/TaylorChyi/Competition/releases/latest)。下载 Assets 中的 `CoreGeek.tar.gz` 后直接上传，无需编译、安装依赖或重新打包。只保留最新的比赛包 Release，以上下载地址始终指向最新版。
 
 包内入口为 `CoreGeek/main3.py`，兼容平台已有启动命令：
 
@@ -18,7 +18,7 @@ python3 /home/docker/CoreGeek/main3.py 8080
 
 ## 当前进度
 
-原 Demo 已展开为可编辑的 `bot/`。当前下载内容中已移除旧压缩包，根目录仅保留最新参赛包。
+原 Demo 已展开为可编辑的 `bot/`。仓库保存源码与文档，最新参赛包在 Releases 下载。
 
 已有基础程序：
 
@@ -44,14 +44,14 @@ python3 /home/docker/CoreGeek/main3.py 8080
 <details>
 <summary>仅修改代码时需要：本地运行、更新产物和检查</summary>
 
-源码更新后，维护者重新生成同名包，并将它与源码一起提交到 GitHub：
+源码更新后，维护者生成 `dist/CoreGeek.tar.gz` 并验证：
 
 ```bash
 python3 tools/package_bot.py
 python3 -m unittest discover -s tests -p test_package.py -v
 ```
 
-打包检查会直接使用仓库里的产物；包内代码落后于源码时检查失败。交付约定见 [AGENTS.md](AGENTS.md)。
+检查直接使用已生成的产物；包内代码落后于源码时检查失败。然后提交、推送源码，为该提交发布 Release 并上传同一份包。验证新附件可以下载且内容一致后，再清理旧比赛包 Release。具体步骤见 [发布流程](docs/发布流程.md)和 [AGENTS.md](AGENTS.md)。
 
 本地开发需要 Python 3.11 或以上，无第三方运行依赖。进入本仓库后：
 
