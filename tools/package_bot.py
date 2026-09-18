@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Package the bot at the original Demo's CoreGeek/main3.py entrypoint."""
+import gzip
 import hashlib
 import io
 import json
 from pathlib import Path
 import tarfile
-from zipfile import ZIP_DEFLATED, ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = [
@@ -29,37 +29,37 @@ exec "${PYTHON:-python3}" main3.py "$@"
 '''
 
 
-def build(output_dir: Path) -> dict:
-    payloads = {target: (ROOT / source).read_bytes() for source, target in FILES}
-    payloads['run.sh'] = PACKAGE_LAUNCHER
+def payloads() -> dict[str, bytes]:
+    files = {target: (ROOT / source).read_bytes() for source, target in FILES}
+    files['run.sh'] = PACKAGE_LAUNCHER
     manifest = {'files': {name: hashlib.sha256(raw).hexdigest()
-                          for name, raw in payloads.items()}}
-    content_id = hashlib.sha256(json.dumps(manifest, sort_keys=True).encode()).hexdigest()[:12]
-    payloads['MANIFEST.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
-    output = output_dir / content_id
-    output.mkdir(parents=True, exist_ok=True)
-    tar_path = output / 'CoreGeek.tar.gz'
-    zip_path = output / 'CoreGeek-flat.zip'
-    # Same top-level folder as the upstream Demo: extract into /home/docker.
-    with tarfile.open(tar_path, 'w:gz') as package:
-        for name, raw in payloads.items():
-            info = tarfile.TarInfo('CoreGeek/' + name)
-            info.size = len(raw)
-            info.mode = 0o755 if name == 'run.sh' else 0o644
-            package.addfile(info, io.BytesIO(raw))
-    # For uploaders that already extract into /home/docker/CoreGeek.
-    with ZipFile(zip_path, 'w', ZIP_DEFLATED) as package:
-        for name, raw in payloads.items():
-            package.writestr(name, raw)
-    return {'files': len(payloads), 'archives': [
-        {'path': str(path), 'bytes': path.stat().st_size,
-         'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
-        for path in (tar_path, zip_path)
-    ]}
+                          for name, raw in files.items()}}
+    files['MANIFEST.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
+    return files
+
+
+def build(output_dir: Path = ROOT) -> dict:
+    files = payloads()
+    # Fixed name: the current checkout contains one ready-to-upload artifact.
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output = output_dir / 'CoreGeek.tar.gz'
+    data = io.BytesIO()
+    # Stable metadata prevents a rebuild with identical inputs changing the file.
+    with gzip.GzipFile(fileobj=data, mode='wb', filename='', mtime=0) as compressed:
+        with tarfile.open(fileobj=compressed, mode='w') as package:
+            for name, raw in sorted(files.items()):
+                info = tarfile.TarInfo('CoreGeek/' + name)
+                info.size = len(raw)
+                info.mode = 0o755 if name == 'run.sh' else 0o644
+                package.addfile(info, io.BytesIO(raw))
+    output.write_bytes(data.getvalue())
+    return {'path': str(output), 'bytes': output.stat().st_size,
+            'sha256': hashlib.sha256(output.read_bytes()).hexdigest(),
+            'files': len(files)}
 
 
 def main():
-    print(json.dumps(build(ROOT / 'deliverables'), indent=2))
+    print(json.dumps(build(), indent=2))
 
 
 if __name__ == '__main__':

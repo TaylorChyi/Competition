@@ -2,9 +2,23 @@
 
 面向《未来战争》编程比赛的私有开发仓库。先用小步实验得到可用结果，再按真实对局改进。
 
+## 直接下载并上传比赛平台
+
+**[下载最新 CoreGeek.tar.gz](https://github.com/TaylorChyi/Competition/raw/refs/heads/main/CoreGeek.tar.gz)**
+
+仓库根目录已包含打好的包，下载后直接上传，无需编译、安装依赖或重新打包。这里只保留一份最新包，后续更新覆盖同名文件。
+
+包内入口为 `CoreGeek/main3.py`，兼容平台已有启动命令：
+
+```bash
+python3 /home/docker/CoreGeek/main3.py 8080
+```
+
+端口由比赛平台指定。程序使用平台已有的 Python >=3.11，包内不包含解释器。[平台接收与启动说明](docs/交付说明.md)
+
 ## 当前进度
 
-已下载原仓库，保留完整历史、任务书、接口文档与 Demo 压缩包，并将 Demo 展开为可编辑的 `bot/`。
+原 Demo 已展开为可编辑的 `bot/`。当前下载内容中已移除旧压缩包，根目录仅保留最新参赛包。
 
 已有基础程序：
 
@@ -25,13 +39,21 @@
 
 完整参赛程序目前仍是基础防守程序。没有完整判题器、真实任务样本或对局回放，尚未验证存活天数与胜率；尚未实现任务解题、新闻决策、宝藏和升级策略。这里的“80 分”是先做够用版本的工作方式，不是实测比赛分数。
 
-## 发给对方运行
+## 开发维护
 
-运行 `python3 tools/package_bot.py`，生成 `deliverables/<版本>/CoreGeek.tar.gz`，目录结构与原始 Demo 一致；解压后 `CoreGeek/main3.py` 可直接由平台启动，也支持 `bash run.sh <port>`。另提供 `CoreGeek-flat.zip`，供平台已固定解压到 `CoreGeek/` 的情况使用。旧版开发目录 ZIP 已停用。仅需 Python >=3.11（使用脚本时还需 Bash），无第三方运行依赖。目录要求和命令见 [交付说明](docs/交付说明.md)，同一份说明也随包附带。
+<details>
+<summary>仅修改代码时需要：本地运行、更新产物和检查</summary>
 
-## 快速使用
+源码更新后，维护者重新生成同名包，并将它与源码一起提交到 GitHub：
 
-需要 Python 3.11 或以上，无第三方运行依赖。进入本仓库后：
+```bash
+python3 tools/package_bot.py
+python3 -m unittest discover -s tests -p test_package.py -v
+```
+
+打包检查会直接使用仓库里的产物；包内代码落后于源码时检查失败。交付约定见 [AGENTS.md](AGENTS.md)。
+
+本地开发需要 Python 3.11 或以上，无第三方运行依赖。进入本仓库后：
 
 ```bash
 bash run.sh 8080
@@ -65,6 +87,8 @@ python3 tools/replay.py runs/match-001.jsonl
 
 `replay.py` 只回放输入，不推进游戏，也不产生胜率或积分。`runs/` 被 Git 忽略；真实数据先在本机分析，再决定哪些脱敏样本值得纳入测试。
 
+</details>
+
 ## 后续路线
 
 见 [执行方案](docs/执行方案.md)、[自博弈路线](docs/自博弈方案.md)和[本轮结果](docs/夜战Demo结果.md)。先核对机制清单、获取正式试跑或连续回放，再决定下一轮；任务样本按后续实际需要索取。
@@ -78,6 +102,6 @@ python3 tools/replay.py runs/match-001.jsonl
 
 - 上游：[Tymonxiong/Competition](https://github.com/Tymonxiong/Competition)
 - 本次下载版本：`7e629424c87f3f194d071696d3ee59a8dc2c0a75`。
-- `docs/任务书.md`、`docs/接口文档.md`、两个 `.txt` 示例和 `Demo/CoreGeek.tar.gz` 保持原样。
+- `docs/任务书.md`、`docs/接口文档.md` 和两个 `.txt` 示例保持原样；旧 Demo 压缩包已从当前下载内容移除，源码来源可在上游及 Git 历史中追溯。
 - `bot/` 基于该 Demo 展开；本仓库后续改动由 Git 单独记录。上游未提供许可证，本仓库不额外声明其材料的授权范围。
 - 官方文本的推断与本地验证分开记录，具体疑点见执行方案。

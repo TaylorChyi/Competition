@@ -11,30 +11,23 @@ import tempfile
 import time
 import unittest
 from urllib.request import Request, urlopen
-from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from tools.package_bot import build
+from tools.package_bot import payloads
 
 
 class PackageEntryPoints(unittest.TestCase):
-    def check_archive(self, suffix):
+    def check_archive(self):
+        # Exercise the exact checked-in artifact that recipients download.
+        archive = ROOT / 'CoreGeek.tar.gz'
         with tempfile.TemporaryDirectory(prefix='competition package ') as temp:
             root = Path(temp)
-            report = build(root / 'artifacts')
-            archive = next(Path(a['path']) for a in report['archives']
-                           if a['path'].endswith(suffix))
             docker = root / 'home' / 'docker'
             package = docker / 'CoreGeek'
-            if suffix == '.tar.gz':
-                docker.mkdir(parents=True)
-                with tarfile.open(archive) as stream:
-                    stream.extractall(docker, filter='data')
-            else:
-                package.mkdir(parents=True)
-                with ZipFile(archive) as stream:
-                    stream.extractall(package)
+            docker.mkdir(parents=True)
+            with tarfile.open(archive) as stream:
+                stream.extractall(docker, filter='data')
             self.assertTrue((package / 'main3.py').is_file())
             self.assertTrue((package / 'src' / 'agent' / 'server.py').is_file())
             self.assertFalse((package / 'CoreGeek').exists())
@@ -43,7 +36,7 @@ class PackageEntryPoints(unittest.TestCase):
                 self.assertEqual(hashlib.sha256((package / name).read_bytes()).hexdigest(), digest)
             for entry in ('main3.py', 'run.sh'):
                 for policy in ('default', 'experimental'):
-                    with self.subTest(archive=suffix, entry=entry, policy=policy):
+                    with self.subTest(entry=entry, policy=policy):
                         self.check_server(package, root, entry, policy)
 
     def check_server(self, package, unrelated_cwd, entry, policy):
@@ -108,10 +101,17 @@ class PackageEntryPoints(unittest.TestCase):
         self.assertNotIn('decision failed', log_path.read_text())
 
     def test_official_tar_layout_and_both_entrypoints(self):
-        self.check_archive('.tar.gz')
+        self.check_archive()
 
-    def test_zip_for_preexisting_CoreGeek_directory(self):
-        self.check_archive('.zip')
+    def test_shipped_archive_matches_current_sources(self):
+        expected = {'CoreGeek/' + name: raw for name, raw in payloads().items()}
+        with tarfile.open(ROOT / 'CoreGeek.tar.gz') as stream:
+            self.assertEqual(sorted(stream.getnames()), sorted(expected))
+            for member in stream.getmembers():
+                self.assertTrue(member.isfile())
+                self.assertEqual(stream.extractfile(member).read(), expected[member.name],
+                                 'Stale package; run python3 tools/package_bot.py')
+            self.assertEqual(stream.getmember('CoreGeek/run.sh').mode, 0o755)
 
 
 if __name__ == '__main__':
