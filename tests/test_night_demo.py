@@ -47,10 +47,10 @@ class RocketRules(unittest.TestCase):
     def test_live_bot_upgraded_targets_and_policy_integration(self):
         import json, tempfile
         payload = {'roundNo': 71, 'mapInfo': {'width': 41, 'height': 32, 'zones': []},
-                   'teamOur': {'roles': [
+                   'teamOur': {'type': 'challenger', 'roles': [
                        {'id': 1, 'roleType': 'worker', 'pos': {'x': 4, 'y': 5}, 'health': 220},
                        {'id': 2, 'roleType': 'rocket', 'pos': {'x': 5, 'y': 5}, 'health': 1500, 'level': 2},
-                   ]}, 'robot': {'roles': [{'id': 3, 'pos': {'x': 8, 'y': 5}, 'health': 40}]}}
+                   ]}, 'robot': {'roles': [{'id': 3, 'pos': {'x': 8, 'y': 5}, 'health': 40, 'targetTeam': 'challenger'}]}}
         with patch.dict(os.environ, {}, clear=True):
             self.assertEqual(len(decide(payload)['2']['targetPos']), 2)
         with tempfile.TemporaryDirectory() as folder:

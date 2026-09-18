@@ -1,0 +1,48 @@
+{
+  "baselineCommit": "1ff259ba593446295739b045060648b3cce997ba",
+  "nights": 3,
+  "trainSeeds": [
+    8101,
+    8102
+  ],
+  "holdoutSeeds": [
+    9101,
+    9102
+  ],
+  "profiles": [
+    {
+      "name": "moderate-nearest",
+      "wave": "moderate",
+      "priority": "nearest"
+    },
+    {
+      "name": "heavy-advance",
+      "wave": "heavy",
+      "priority": "advance"
+    }
+  ],
+  "maxMatches": 52,
+  "maxSeconds": 600,
+  "selection": [
+    "worstProfileTwoNightSurvival",
+    "meanSurvivedNights",
+    "meanSurvivalRounds",
+    "meanFinalBaseHp"
+  ],
+  "scope": "Synthetic shared-map bot-vs-bot games; actual Bot commands, equal seeded waves, seat swaps and carried damage; no official win-rate claim.",
+  "assumptions": {
+    "initialState": "75 gold, station HP 1500, 2 workers HP 220 and pioneer HP 200; no prebuilt towers or walls; newly built towers are level 1",
+    "waves": "lab/arena.py defines increasing moderate/heavy waves; these counts and central spawn locations are synthetic; day-indexed RNG is independent of policy-dependent mining",
+    "targetTeam": "Each robot targets the camp declared by targetTeam, confirmed by the user and upstream interface",
+    "robotBehavior": "One-cell greedy steps, seeded movement ties; attacks nearest own-target-camp unit or prioritizes that camp's base within range 3; exact official behavior remains unknown; advance stress profile ignores reachable side targets while a move toward the base exists, then attacks the base through walls at range 3; this is an unverified conservative sensitivity case",
+    "weapons": "Rocket center 20 and eight-neighbor splash 10; period 4; gatling nearest ray intersection 10 per bullet; railgun energy 10 per level; ray-cell boundary handling is unverified",
+    "settlement": "Weapon hits use start-of-turn positions; robot movement follows; damage settles at turn end; lethally hit robots still act",
+    "movement": "Start-occupied cells stay blocked, same-destination moves cancel, vacated-cell chains unsupported",
+    "construction": "Tower ring at distance 1 from base footprint, wall ring at distance 2, matching current Demo implementation; zones are inferred from the rule illustration",
+    "mining": "Three initial stone mines per camp, ten collections each, seeded relocation outside building rings; no ore sale or shop system",
+    "continuity": "Base/tower/wall HP and remaining gold carry across nights; dead roles revive after 20 next-day turns; no automatic building heal or free towers; old robots clear at dawn",
+    "omitted": "Official tasks/news/treasure, trading/upgrades, summons, direct player attacks, official spawn/judge engine; opponent-only robots attacking foreign blockers is not modelled"
+  },
+  "stage": 2,
+  "priorDiagnosticMatches": 52
+}

@@ -1,0 +1,2800 @@
+{
+  "spec": {
+    "baselineCommit": "1ff259ba593446295739b045060648b3cce997ba",
+    "nights": 3,
+    "trainSeeds": [
+      8101,
+      8102
+    ],
+    "holdoutSeeds": [
+      9101,
+      9102
+    ],
+    "profiles": [
+      {
+        "name": "moderate-nearest",
+        "wave": "moderate",
+        "priority": "nearest"
+      },
+      {
+        "name": "heavy-advance",
+        "wave": "heavy",
+        "priority": "advance"
+      }
+    ],
+    "maxMatches": 52,
+    "maxSeconds": 600,
+    "selection": [
+      "worstProfileTwoNightSurvival",
+      "meanSurvivedNights",
+      "meanSurvivalRounds",
+      "meanFinalBaseHp"
+    ],
+    "scope": "Synthetic shared-map bot-vs-bot games; actual Bot commands, equal seeded waves, seat swaps and carried damage; no official win-rate claim.",
+    "assumptions": {
+      "initialState": "75 gold, station HP 1500, 2 workers HP 220 and pioneer HP 200; no prebuilt towers or walls; newly built towers are level 1",
+      "waves": "lab/arena.py defines increasing moderate/heavy waves; these counts and central spawn locations are synthetic; day-indexed RNG is independent of policy-dependent mining",
+      "targetTeam": "Each robot targets the camp declared by targetTeam, confirmed by the user and upstream interface",
+      "robotBehavior": "One-cell greedy steps, seeded movement ties; attacks nearest own-target-camp unit or prioritizes that camp's base within range 3; exact official behavior remains unknown; advance stress profile ignores reachable side targets while a move toward the base exists, then attacks the base through walls at range 3; this is an unverified conservative sensitivity case",
+      "weapons": "Rocket center 20 and eight-neighbor splash 10; period 4; gatling nearest ray intersection 10 per bullet; railgun energy 10 per level; ray-cell boundary handling is unverified",
+      "settlement": "Weapon hits use start-of-turn positions; robot movement follows; damage settles at turn end; lethally hit robots still act",
+      "movement": "Start-occupied cells stay blocked, same-destination moves cancel, vacated-cell chains unsupported",
+      "construction": "Tower ring at distance 1 from base footprint, wall ring at distance 2, matching current Demo implementation; zones are inferred from the rule illustration",
+      "mining": "Three initial stone mines per camp, ten collections each, seeded relocation outside building rings; no ore sale or shop system",
+      "continuity": "Base/tower/wall HP and remaining gold carry across nights; dead roles revive after 20 next-day turns; no automatic building heal or free towers; old robots clear at dawn",
+      "omitted": "Official tasks/news/treasure, trading/upgrades, summons, direct player attacks, official spawn/judge engine; opponent-only robots attacking foreign blockers is not modelled"
+    },
+    "stage": 2,
+    "priorDiagnosticMatches": 52
+  },
+  "matches": 48,
+  "elapsedSeconds": 26.43,
+  "sourceHashes": {
+    "lab/arena.py": "ce7485bc1c839d3f65370df9830ca46bffad13fb5a266e7174181e93c63f9c49",
+    "lab/selfplay.json": "33903be2d32cc50d87ac01c408b5984d35cf03b0b6716a8486a6fd185cf7d31c",
+    "tools/run_selfplay.py": "13be3e0c1fdfce11fdc921e24c7759830d205c331389fa1a28a668108af3cd46",
+    "CoreGeek/src/agent/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "CoreGeek/src/agent/brain.py": "0eae2b875757287b09482cc90bc0f8c361164583a98dcb132308f36b6dede876",
+    "CoreGeek/src/agent/grid.py": "33c0532916e49f87511f63751fd88d354e632b61e3e4006c9e68b3144f7eb677",
+    "CoreGeek/src/agent/protocol.py": "2b66b7954750b9a9d5cba70bc803d344b875b4a8fb7b8b7f63fdd904304b914d",
+    "CoreGeek/src/agent/server.py": "2e79d67c925a848c75787317f550ef920fe465abb5579df8eabfdeaa63f9ca60",
+    "CoreGeek/src/agent/targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132"
+  },
+  "candidates": {
+    "filter_only": {
+      "loadout": [
+        "gatling",
+        "railgun",
+        "rocket"
+      ],
+      "rocket_policy": {
+        "name": "nearest",
+        "mode": "nearest",
+        "threatWeight": 0,
+        "killBonus": 0,
+        "reserveDamage": false
+      },
+      "cover": false
+    },
+    "covered_mixed": {
+      "loadout": [
+        "gatling",
+        "railgun",
+        "rocket"
+      ],
+      "rocket_policy": {
+        "name": "nearest",
+        "mode": "nearest",
+        "threatWeight": 0,
+        "killBonus": 0,
+        "reserveDamage": false
+      },
+      "cover": true
+    },
+    "covered_two_rockets": {
+      "loadout": [
+        "rocket",
+        "railgun",
+        "rocket"
+      ],
+      "rocket_policy": {
+        "name": "defense_splash",
+        "mode": "splash",
+        "threatWeight": 3,
+        "killBonus": 15,
+        "reserveDamage": true
+      },
+      "cover": true
+    },
+    "covered_three_rockets": {
+      "loadout": [
+        "rocket",
+        "rocket",
+        "rocket"
+      ],
+      "rocket_policy": {
+        "name": "defense_splash",
+        "mode": "splash",
+        "threatWeight": 3,
+        "killBonus": 15,
+        "reserveDamage": true
+      },
+      "cover": true
+    }
+  },
+  "training": {
+    "filter_only": [
+      {
+        "candidate": "filter_only",
+        "seed": 8101,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1205
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 28,
+          "killPoints": 41,
+          "shots": 125,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.597,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1480
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 36,
+          "killPoints": 53,
+          "shots": 190,
+          "foreignOnlyShots": 7,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.469,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 8101,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 31,
+          "killPoints": 46,
+          "shots": 177,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.473,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 29,
+          "killPoints": 42,
+          "shots": 124,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.591,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 8101,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            1
+          ],
+          "kills": 6,
+          "killPoints": 9,
+          "shots": 46,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.592,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        },
+        "opponent": {
+          "baseDeathRound": 213,
+          "nightHp": [
+            60,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 15,
+          "killPoints": 20,
+          "shots": 92,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.469,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 213
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 8101,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 220,
+          "nightHp": [
+            330,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 17,
+          "killPoints": 23,
+          "shots": 100,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.474,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 220
+        },
+        "opponent": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            1
+          ],
+          "kills": 6,
+          "killPoints": 9,
+          "shots": 46,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.585,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 8102,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 35,
+          "killPoints": 47,
+          "shots": 97,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 13.185,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 42,
+          "killPoints": 58,
+          "shots": 191,
+          "foreignOnlyShots": 4,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.49,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 8102,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 44,
+          "killPoints": 61,
+          "shots": 189,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.49,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 34,
+          "killPoints": 46,
+          "shots": 88,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.612,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 8102,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 117,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 9,
+          "killPoints": 11,
+          "shots": 57,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.593,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 117
+        },
+        "opponent": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 10,
+          "killPoints": 13,
+          "shots": 46,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.487,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 8102,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 10,
+          "killPoints": 13,
+          "shots": 46,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.49,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        },
+        "opponent": {
+          "baseDeathRound": 118,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 9,
+          "killPoints": 11,
+          "shots": 58,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.601,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 118
+        }
+      }
+    ],
+    "covered_mixed": [
+      {
+        "candidate": "covered_mixed",
+        "seed": 8101,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1275
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 27,
+          "killPoints": 39,
+          "shots": 125,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.408,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1480
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 36,
+          "killPoints": 53,
+          "shots": 190,
+          "foreignOnlyShots": 7,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.465,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_mixed",
+        "seed": 8101,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 31,
+          "killPoints": 46,
+          "shots": 177,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.449,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 29,
+          "killPoints": 42,
+          "shots": 124,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.588,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_mixed",
+        "seed": 8101,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            1
+          ],
+          "kills": 6,
+          "killPoints": 9,
+          "shots": 46,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.356,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        },
+        "opponent": {
+          "baseDeathRound": 213,
+          "nightHp": [
+            60,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 15,
+          "killPoints": 20,
+          "shots": 92,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.467,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 213
+        }
+      },
+      {
+        "candidate": "covered_mixed",
+        "seed": 8101,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 220,
+          "nightHp": [
+            330,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 17,
+          "killPoints": 23,
+          "shots": 100,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.456,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 220
+        },
+        "opponent": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            1
+          ],
+          "kills": 6,
+          "killPoints": 9,
+          "shots": 46,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.597,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        }
+      },
+      {
+        "candidate": "covered_mixed",
+        "seed": 8102,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 38,
+          "killPoints": 51,
+          "shots": 107,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.388,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 42,
+          "killPoints": 58,
+          "shots": 191,
+          "foreignOnlyShots": 4,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.491,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_mixed",
+        "seed": 8102,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 44,
+          "killPoints": 61,
+          "shots": 189,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.489,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 34,
+          "killPoints": 46,
+          "shots": 88,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.621,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_mixed",
+        "seed": 8102,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 117,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 9,
+          "killPoints": 11,
+          "shots": 57,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.528,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 117
+        },
+        "opponent": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 10,
+          "killPoints": 13,
+          "shots": 46,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.637,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        }
+      },
+      {
+        "candidate": "covered_mixed",
+        "seed": 8102,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 10,
+          "killPoints": 13,
+          "shots": 46,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.437,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        },
+        "opponent": {
+          "baseDeathRound": 118,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 9,
+          "killPoints": 11,
+          "shots": 58,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.604,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 118
+        }
+      }
+    ],
+    "covered_two_rockets": [
+      {
+        "candidate": "covered_two_rockets",
+        "seed": 8101,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            880
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 43,
+          "killPoints": 57,
+          "shots": 122,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.631,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1490
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 35,
+          "killPoints": 51,
+          "shots": 186,
+          "foreignOnlyShots": 7,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.468,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_two_rockets",
+        "seed": 8101,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 44,
+          "killPoints": 60,
+          "shots": 189,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.585,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 29,
+          "killPoints": 42,
+          "shots": 124,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.595,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_two_rockets",
+        "seed": 8101,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 108,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            2
+          ],
+          "kills": 15,
+          "killPoints": 21,
+          "shots": 46,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.406,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 108
+        },
+        "opponent": {
+          "baseDeathRound": 219,
+          "nightHp": [
+            290,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 17,
+          "killPoints": 23,
+          "shots": 99,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.465,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 219
+        }
+      },
+      {
+        "candidate": "covered_two_rockets",
+        "seed": 8101,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 219,
+          "nightHp": [
+            405,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 24,
+          "killPoints": 31,
+          "shots": 99,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.492,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 219
+        },
+        "opponent": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            1
+          ],
+          "kills": 6,
+          "killPoints": 9,
+          "shots": 46,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.596,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        }
+      },
+      {
+        "candidate": "covered_two_rockets",
+        "seed": 8102,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 56,
+          "killPoints": 72,
+          "shots": 104,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.479,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 42,
+          "killPoints": 58,
+          "shots": 191,
+          "foreignOnlyShots": 4,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.486,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_two_rockets",
+        "seed": 8102,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 53,
+          "killPoints": 71,
+          "shots": 187,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.575,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 34,
+          "killPoints": 46,
+          "shots": 88,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.615,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_two_rockets",
+        "seed": 8102,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 110,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 10,
+          "killPoints": 12,
+          "shots": 49,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.397,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 110
+        },
+        "opponent": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 10,
+          "killPoints": 13,
+          "shots": 46,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.486,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        }
+      },
+      {
+        "candidate": "covered_two_rockets",
+        "seed": 8102,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 114,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 13,
+          "killPoints": 17,
+          "shots": 53,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.474,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 114
+        },
+        "opponent": {
+          "baseDeathRound": 118,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 9,
+          "killPoints": 11,
+          "shots": 58,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.63,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 118
+        }
+      }
+    ],
+    "covered_three_rockets": [
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 8101,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1120
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 45,
+          "killPoints": 64,
+          "shots": 95,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.717,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1490
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 35,
+          "killPoints": 51,
+          "shots": 186,
+          "foreignOnlyShots": 7,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.473,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 8101,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1260
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 52,
+          "killPoints": 71,
+          "shots": 115,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.625,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 29,
+          "killPoints": 42,
+          "shots": 124,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.591,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 8101,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 117,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 15,
+          "killPoints": 20,
+          "shots": 36,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.405,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 117
+        },
+        "opponent": {
+          "baseDeathRound": 220,
+          "nightHp": [
+            335,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 17,
+          "killPoints": 23,
+          "shots": 100,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.463,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 220
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 8101,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 130,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 16,
+          "killPoints": 20,
+          "shots": 45,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.489,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 130
+        },
+        "opponent": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            2
+          ],
+          "kills": 6,
+          "killPoints": 9,
+          "shots": 46,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.596,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 8102,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 55,
+          "killPoints": 71,
+          "shots": 98,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.613,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 42,
+          "killPoints": 58,
+          "shots": 190,
+          "foreignOnlyShots": 4,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.483,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 8102,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 60,
+          "killPoints": 80,
+          "shots": 111,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.606,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 35,
+          "killPoints": 47,
+          "shots": 87,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.623,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 8102,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 210,
+          "nightHp": [
+            75,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 20,
+          "killPoints": 24,
+          "shots": 54,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.486,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 210
+        },
+        "opponent": {
+          "baseDeathRound": 109,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 10,
+          "killPoints": 13,
+          "shots": 46,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.488,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 109
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 8102,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 124,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 16,
+          "killPoints": 20,
+          "shots": 42,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.496,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 124
+        },
+        "opponent": {
+          "baseDeathRound": 118,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 9,
+          "killPoints": 11,
+          "shots": 58,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.594,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 118
+        }
+      }
+    ]
+  },
+  "trainingSummary": {
+    "filter_only": {
+      "matches": 8,
+      "twoNightSurvival": 0.5,
+      "worstProfileTwoNightSurvival": 0,
+      "meanSurvivedNights": 1.625,
+      "meanSurvivalRounds": 264.375,
+      "meanFinalBaseHp": 713.125,
+      "meanNightHp": [
+        791.25,
+        750,
+        713.125
+      ],
+      "meanNightOperators": [
+        3,
+        2.875,
+        2
+      ],
+      "foreignOnlyShots": 0,
+      "invalidCommands": 0,
+      "p95DecisionMsMax": 13.185
+    },
+    "covered_mixed": {
+      "matches": 8,
+      "twoNightSurvival": 0.5,
+      "worstProfileTwoNightSurvival": 0,
+      "meanSurvivedNights": 1.625,
+      "meanSurvivalRounds": 264.375,
+      "meanFinalBaseHp": 721.875,
+      "meanNightHp": [
+        791.25,
+        750,
+        721.875
+      ],
+      "meanNightOperators": [
+        3,
+        2.875,
+        2.25
+      ],
+      "foreignOnlyShots": 0,
+      "invalidCommands": 0,
+      "p95DecisionMsMax": 0.528
+    },
+    "covered_two_rockets": {
+      "matches": 8,
+      "twoNightSurvival": 0.5,
+      "worstProfileTwoNightSurvival": 0,
+      "meanSurvivedNights": 1.625,
+      "meanSurvivalRounds": 263.875,
+      "meanFinalBaseHp": 672.5,
+      "meanNightHp": [
+        800.625,
+        750,
+        672.5
+      ],
+      "meanNightOperators": [
+        3,
+        2.875,
+        2.125
+      ],
+      "foreignOnlyShots": 0,
+      "invalidCommands": 0,
+      "p95DecisionMsMax": 0.631
+    },
+    "covered_three_rockets": {
+      "matches": 8,
+      "twoNightSurvival": 0.5,
+      "worstProfileTwoNightSurvival": 0,
+      "meanSurvivedNights": 1.625,
+      "meanSurvivalRounds": 267.625,
+      "meanFinalBaseHp": 672.5,
+      "meanNightHp": [
+        759.375,
+        750,
+        672.5
+      ],
+      "meanNightOperators": [
+        3,
+        3,
+        2.25
+      ],
+      "foreignOnlyShots": 0,
+      "invalidCommands": 0,
+      "p95DecisionMsMax": 0.717
+    }
+  },
+  "selected": "covered_three_rockets",
+  "selectedPolicy": {
+    "loadout": [
+      "rocket",
+      "rocket",
+      "rocket"
+    ],
+    "rocket_policy": {
+      "name": "defense_splash",
+      "mode": "splash",
+      "threatWeight": 3,
+      "killBonus": 15,
+      "reserveDamage": true
+    },
+    "cover": true
+  },
+  "holdout": {
+    "filter_only": [
+      {
+        "candidate": "filter_only",
+        "seed": 9101,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1480,
+            1480
+          ],
+          "nightOperators": [
+            3,
+            2,
+            3
+          ],
+          "kills": 30,
+          "killPoints": 38,
+          "shots": 127,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.869,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 41,
+          "killPoints": 59,
+          "shots": 215,
+          "foreignOnlyShots": 8,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.472,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 9101,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 39,
+          "killPoints": 57,
+          "shots": 200,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.476,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1480,
+            1480
+          ],
+          "nightOperators": [
+            3,
+            2,
+            3
+          ],
+          "kills": 31,
+          "killPoints": 39,
+          "shots": 127,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.857,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 9101,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 130,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 12,
+          "killPoints": 15,
+          "shots": 73,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.869,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 130
+        },
+        "opponent": {
+          "baseDeathRound": 253,
+          "nightHp": [
+            380,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 26,
+          "killPoints": 33,
+          "shots": 142,
+          "foreignOnlyShots": 3,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.472,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 253
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 9101,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 254,
+          "nightHp": [
+            380,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 26,
+          "killPoints": 33,
+          "shots": 140,
+          "foreignOnlyShots": 2,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.475,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 254
+        },
+        "opponent": {
+          "baseDeathRound": 130,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 12,
+          "killPoints": 15,
+          "shots": 73,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.871,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 130
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 9102,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            940
+          ],
+          "nightOperators": [
+            2,
+            3,
+            3
+          ],
+          "kills": 30,
+          "killPoints": 41,
+          "shots": 118,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.673,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 45,
+          "killPoints": 62,
+          "shots": 198,
+          "foreignOnlyShots": 3,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.495,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 9102,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 43,
+          "killPoints": 59,
+          "shots": 194,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.497,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1090
+          ],
+          "nightOperators": [
+            2,
+            3,
+            2
+          ],
+          "kills": 31,
+          "killPoints": 43,
+          "shots": 121,
+          "foreignOnlyShots": 2,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.685,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 9102,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 229,
+          "nightHp": [
+            885,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            2
+          ],
+          "kills": 23,
+          "killPoints": 30,
+          "shots": 94,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.665,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 229
+        },
+        "opponent": {
+          "baseDeathRound": 103,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 8,
+          "killPoints": 10,
+          "shots": 42,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.499,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 103
+        }
+      },
+      {
+        "candidate": "filter_only",
+        "seed": 9102,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 103,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 8,
+          "killPoints": 10,
+          "shots": 42,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.499,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 103
+        },
+        "opponent": {
+          "baseDeathRound": 229,
+          "nightHp": [
+            885,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            2
+          ],
+          "kills": 23,
+          "killPoints": 30,
+          "shots": 94,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.665,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 229
+        }
+      }
+    ],
+    "covered_three_rockets": [
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 9101,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            2,
+            3
+          ],
+          "kills": 48,
+          "killPoints": 65,
+          "shots": 113,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.693,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 48,
+          "killPoints": 67,
+          "shots": 212,
+          "foreignOnlyShots": 8,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.476,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 9101,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            940
+          ],
+          "nightOperators": [
+            3,
+            3,
+            1
+          ],
+          "kills": 55,
+          "killPoints": 75,
+          "shots": 114,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.636,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1470,
+            1470
+          ],
+          "nightOperators": [
+            3,
+            2,
+            3
+          ],
+          "kills": 35,
+          "killPoints": 45,
+          "shots": 133,
+          "foreignOnlyShots": 1,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.859,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 9101,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 120,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            1
+          ],
+          "kills": 14,
+          "killPoints": 18,
+          "shots": 39,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.484,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 120
+        },
+        "opponent": {
+          "baseDeathRound": 254,
+          "nightHp": [
+            400,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 26,
+          "killPoints": 33,
+          "shots": 143,
+          "foreignOnlyShots": 3,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.466,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 254
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 9101,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 211,
+          "nightHp": [
+            200,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            3
+          ],
+          "kills": 24,
+          "killPoints": 31,
+          "shots": 54,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.526,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 211
+        },
+        "opponent": {
+          "baseDeathRound": 130,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 12,
+          "killPoints": 15,
+          "shots": 73,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.87,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 130
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 9102,
+        "profile": "moderate-nearest",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            2,
+            2
+          ],
+          "kills": 52,
+          "killPoints": 70,
+          "shots": 105,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.697,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 45,
+          "killPoints": 62,
+          "shots": 198,
+          "foreignOnlyShots": 3,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.484,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 9102,
+        "profile": "moderate-nearest",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1500
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 55,
+          "killPoints": 72,
+          "shots": 117,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.62,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        },
+        "opponent": {
+          "baseDeathRound": null,
+          "nightHp": [
+            1500,
+            1500,
+            1090
+          ],
+          "nightOperators": [
+            2,
+            3,
+            2
+          ],
+          "kills": 31,
+          "killPoints": 43,
+          "shots": 118,
+          "foreignOnlyShots": 2,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.7,
+          "survivedTwoNights": true,
+          "survivedNights": 3,
+          "survivalRounds": 390
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 9102,
+        "profile": "heavy-advance",
+        "seat": "challenger",
+        "ours": {
+          "baseDeathRound": 230,
+          "nightHp": [
+            970,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            2
+          ],
+          "kills": 36,
+          "killPoints": 49,
+          "shots": 60,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.662,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 230
+        },
+        "opponent": {
+          "baseDeathRound": 103,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 8,
+          "killPoints": 10,
+          "shots": 42,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.488,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 103
+        }
+      },
+      {
+        "candidate": "covered_three_rockets",
+        "seed": 9102,
+        "profile": "heavy-advance",
+        "seat": "defender",
+        "ours": {
+          "baseDeathRound": 107,
+          "nightHp": [
+            0,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            3,
+            2
+          ],
+          "kills": 16,
+          "killPoints": 21,
+          "shots": 29,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.512,
+          "survivedTwoNights": false,
+          "survivedNights": 0,
+          "survivalRounds": 107
+        },
+        "opponent": {
+          "baseDeathRound": 229,
+          "nightHp": [
+            885,
+            0,
+            0
+          ],
+          "nightOperators": [
+            3,
+            2,
+            2
+          ],
+          "kills": 23,
+          "killPoints": 30,
+          "shots": 94,
+          "foreignOnlyShots": 0,
+          "invalidCommands": 0,
+          "movesBlocked": 0,
+          "p95DecisionMs": 0.667,
+          "survivedTwoNights": false,
+          "survivedNights": 1,
+          "survivalRounds": 229
+        }
+      }
+    ]
+  },
+  "holdoutSummary": {
+    "filter_only": {
+      "matches": 8,
+      "twoNightSurvival": 0.5,
+      "worstProfileTwoNightSurvival": 0,
+      "meanSurvivedNights": 1.75,
+      "meanSurvivalRounds": 284.5,
+      "meanFinalBaseHp": 677.5,
+      "meanNightHp": [
+        908.125,
+        747.5,
+        677.5
+      ],
+      "meanNightOperators": [
+        2.875,
+        2.75,
+        2.375
+      ],
+      "foreignOnlyShots": 2,
+      "invalidCommands": 0,
+      "p95DecisionMsMax": 0.869
+    },
+    "covered_three_rockets": {
+      "matches": 8,
+      "twoNightSurvival": 0.5,
+      "worstProfileTwoNightSurvival": 0,
+      "meanSurvivedNights": 1.75,
+      "meanSurvivalRounds": 278.5,
+      "meanFinalBaseHp": 680,
+      "meanNightHp": [
+        896.25,
+        750,
+        680
+      ],
+      "meanNightOperators": [
+        3,
+        2.5,
+        2
+      ],
+      "foreignOnlyShots": 0,
+      "invalidCommands": 0,
+      "p95DecisionMsMax": 0.697
+    }
+  },
+  "promoted": "filter_only",
+  "promotedPolicy": {
+    "loadout": [
+      "gatling",
+      "railgun",
+      "rocket"
+    ],
+    "rocket_policy": {
+      "name": "nearest",
+      "mode": "nearest",
+      "threatWeight": 0,
+      "killBonus": 0,
+      "reserveDamage": false
+    },
+    "cover": false
+  },
+  "promotionPassed": false
+}

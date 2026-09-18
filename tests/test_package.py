@@ -109,15 +109,17 @@ class PackageEntryPoints(unittest.TestCase):
                 self.assertTrue(sample['roleCommandMap'])
                 night = {
                     'roundNo': 71, 'mapInfo': {'width': 41, 'height': 32, 'zones': []},
-                    'teamOur': {'roles': [
+                    'teamOur': {'type': 'challenger', 'roles': [
                         {'id': 1, 'roleType': 'worker', 'pos': {'x': 0, 'y': 1}, 'health': 220},
                         {'id': 2, 'roleType': 'rocket', 'pos': {'x': 1, 'y': 1}, 'health': 1500, 'level': 2},
                     ]},
                     'robot': {'roles': [
-                        {'id': 30000+i, 'roleType': 'smallRobot', 'pos': {'x': x, 'y': y}, 'health': 100}
+                        {'id': 30000+i, 'roleType': 'smallRobot', 'pos': {'x': x, 'y': y}, 'health': 100, 'targetTeam': 'challenger'}
                         for i, (x, y) in enumerate([(5, 5), (5, 7), (7, 5), (7, 7)])
                     ]},
                 }
+                night['robot']['roles'].append({'id': 39999, 'roleType': 'bossRobot',
+                    'pos': {'x': 2, 'y': 1}, 'health': 800, 'targetTeam': 'defender'})
                 action = post(json.dumps(night).encode())['roleCommandMap']['2']
                 self.assertEqual(action['action'], 'attack')
                 self.assertEqual(action['controllerId'], '1')

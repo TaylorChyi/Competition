@@ -19,6 +19,8 @@ from agent.protocol import Pos, Turn
 
 
 def unit(uid, kind, x, y, **extra):
+    if kind.endswith('Robot'):
+        extra.setdefault('targetTeam', 'challenger')
     return dict(id=uid, roleType=kind, pos=dict(x=x, y=y), health=1000,
                 level=1, backpack=[], **extra)
 
@@ -27,7 +29,7 @@ def state(round_no=1, gold=75, roles=None):
     return {
         'roundNo': round_no,
         'mapInfo': {'width': 41, 'height': 32, 'zones': []},
-        'teamOur': {'goldNum': gold, 'roles': roles or [
+        'teamOur': {'type': 'challenger', 'goldNum': gold, 'roles': roles or [
             unit(10013, 'station', 10, 24),
             unit(10010, 'worker', 8, 22),
             unit(10012, 'worker', 8, 24),

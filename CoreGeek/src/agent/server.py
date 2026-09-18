@@ -52,9 +52,13 @@ class Handler(BaseHTTPRequestHandler):
         invalid = [str(uid) for uid, valid in results.items() if valid is False]
         robots = state.get("robot")
         robots = robots.get("roles") if isinstance(robots, dict) else None
-        LOGGER.info("round %s | phase=%s base_hp=%s gold=%s units=%s robots=%d last_invalid=%s errors=%s | commands=%s | %.2f ms error=%s",
+        robots = [robot for robot in robots if isinstance(robot, dict)] if isinstance(robots, list) else []
+        own_type = team.get("type")
+        incoming = sum(robot.get("targetTeam") == own_type for robot in robots) if own_type in {"challenger", "defender"} else 0
+        unknown = sum(robot.get("targetTeam") not in {"challenger", "defender"} for robot in robots)
+        LOGGER.info("round %s | phase=%s base_hp=%s gold=%s units=%s robots=%d team=%s incoming=%d unknown_target=%d last_invalid=%s errors=%s | commands=%s | %.2f ms error=%s",
                     round_no, phase, base_hp, team.get("goldNum"), units,
-                    len(robots) if isinstance(robots, list) else 0,
+                    len(robots), own_type, incoming, unknown,
                     invalid, str(state.get("errors") or [])[:500],
                     response["roleCommandMap"], elapsed, error)
         # Opt-in local evidence; no outgoing network call or external model SDK.

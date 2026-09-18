@@ -11,6 +11,7 @@ from .protocol import (
     Pos,
     Turn,
     Unit,
+    TOWER_TYPES,
     WALL,
     WALL_MATERIAL,
     WEAPON_BUILD_COST,
@@ -23,6 +24,8 @@ from .protocol import (
 )
 
 TOWER_LOADOUT = ("gatling", "railgun", "rocket")
+DEFAULT_ROCKET_POLICY = None
+DEFAULT_COVER = False
 STONE_BATCH = 6
 RETURN_BUFFER = 2
 _NEIGHBOUR_STEPS = (
@@ -32,17 +35,19 @@ _NEIGHBOUR_STEPS = (
 )
 
 
-def decide(payload: dict[str, Any]) -> dict[str, dict[str, Any]]:
+def decide(payload: dict[str, Any], *, loadout: tuple[str, ...] | None = None,
+           rocket_policy: dict | None = None, cover: bool | None = None) -> dict[str, dict[str, Any]]:
     turn = Turn.load(payload)
     commands: dict[int, dict[str, Any]] = {}
     if turn.is_day:
-        _day(turn, commands)
+        _day(turn, commands, loadout if loadout is not None else TOWER_LOADOUT,
+             DEFAULT_COVER if cover is None else cover)
     else:
-        _night(turn, commands)
+        _night(turn, commands, rocket_policy)
     return {str(key): value for key, value in commands.items()}
 
 
-def _day(turn: Turn, commands: dict[int, dict[str, Any]]) -> None:
+def _day(turn: Turn, commands: dict[int, dict[str, Any]], loadout: tuple[str, ...], cover: bool) -> None:
     sites = _tower_sites(turn)
     order = _wall_order(turn)
     standing_towers = {unit.pos for unit in turn.weapons()}
@@ -63,7 +68,7 @@ def _day(turn: Turn, commands: dict[int, dict[str, Any]]) -> None:
             if step is not None:
                 commands[role.unit_id] = move_command(step)
             continue
-        route = _return_route(turn, role, tower, claimed)
+        route = _return_route(turn, role, tower, claimed, inside_only=cover)
         if route is None:
             continue
         # Stop working in time to walk home, with two turns for congestion.
@@ -76,7 +81,7 @@ def _day(turn: Turn, commands: dict[int, dict[str, Any]]) -> None:
         if role.unit_id in returning:
             continue
         _worker_day(
-            turn, role, sites, free_towers, free_walls, claimed, commands,
+            turn, role, sites, free_towers, free_walls, claimed, commands, loadout,
         )
 
 
@@ -88,10 +93,11 @@ def _worker_day(
     walls_missing: list[Pos],
     claimed: set[Pos],
     commands: dict[int, dict[str, Any]],
+    loadout: tuple[str, ...],
 ) -> None:
     # Workers spend the same team wallet; reserve only builds issued this turn.
     planned = sum(
-        cmd.get("action") == "build" and cmd.get("name") in TOWER_LOADOUT
+        cmd.get("action") == "build" and cmd.get("name") in TOWER_TYPES
         for cmd in commands.values()
     )
     if (towers_missing and len(turn.weapons()) + planned < 3
@@ -99,7 +105,7 @@ def _worker_day(
         for index, site in enumerate(sites):
             if site in towers_missing and site not in claimed:
                 _build_or_walk(
-                    turn, role, site, TOWER_LOADOUT[index], claimed, commands,
+                    turn, role, site, loadout[index], claimed, commands,
                 )
                 return
     if not walls_missing:
@@ -131,11 +137,12 @@ def _adjacent_mine(turn: Turn, role: Unit) -> Pos | None:
     return mines[0] if mines else None
 
 
-def _night(turn: Turn, commands: dict[int, dict[str, Any]]) -> None:
+def _night(turn: Turn, commands: dict[int, dict[str, Any]], policy: dict | None = None) -> None:
     claimed: set[Pos] = set()
     reserved: dict[int, int] = {}
     policy_path = os.environ.get("COMPETITION_ROCKET_POLICY")
-    policy = load_policy(policy_path) if policy_path else None
+    if policy is None:
+        policy = load_policy(policy_path) if policy_path else DEFAULT_ROCKET_POLICY
     for role, tower in _tower_pairs(turn):
         if distance(role.pos, tower.pos) <= 1:
             if tower.cooldown > 0:
@@ -144,7 +151,7 @@ def _night(turn: Turn, commands: dict[int, dict[str, Any]]) -> None:
                 station = turn.station()
                 targets = rocket_targets(
                     tower.pos, tower.range_of_attack(), max(1, tower.level),
-                    turn.robots, station.pos if station else tower.pos,
+                    turn.incoming_robots(), station.pos if station else tower.pos,
                     policy, reserved, turn.width, turn.height,
                 )
             else:
@@ -189,11 +196,15 @@ def _tower_pairs(turn: Turn) -> tuple[tuple[Unit, Unit], ...]:
 
 
 def _return_route(turn: Turn, role: Unit, tower: Unit,
-                  claimed: set[Pos]) -> tuple[Pos, ...] | None:
-    if distance(role.pos, tower.pos) <= 1:
+                  claimed: set[Pos], *, inside_only: bool = False) -> tuple[Pos, ...] | None:
+    station = turn.station()
+    covered = station is None or _footprint_distance(role.pos, station_footprint(station.pos)) <= 1
+    if distance(role.pos, tower.pos) <= 1 and (not inside_only or covered):
         return ()
-    routes = [path for stand in _stand_cells(turn, role, tower.pos, claimed)
+    routes = [path for stand in _stand_cells(turn, role, tower.pos, claimed, inside_only)
               if (path := shortest_path(turn, role, stand, claimed)) is not None]
+    if not routes and inside_only:
+        return _return_route(turn, role, tower, claimed)
     # _stand_cells orders ties toward the base; shortest travel takes priority.
     return min(routes, key=len) if routes else None
 
@@ -201,7 +212,7 @@ def _return_route(turn: Turn, role: Unit, tower: Unit,
 def _attack_target(turn: Turn, tower: Unit) -> Pos | None:
     reach = tower.range_of_attack()
     targets = [
-        robot for robot in turn.robots
+        robot for robot in turn.incoming_robots()
         if robot.health > 0 and distance(tower.pos, robot.pos) <= reach
     ]
     if not targets:

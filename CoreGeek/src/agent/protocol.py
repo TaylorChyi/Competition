@@ -95,10 +95,12 @@ class Robot:
     robot_id: int
     pos: Pos
     health: int
+    target_team: str | None = None
 
     @classmethod
     def load(cls, raw: dict[str, Any]) -> "Robot":
-        return cls(int(raw["id"]), Pos.load(raw["pos"]), int(raw["health"]))
+        return cls(int(raw["id"]), Pos.load(raw["pos"]), int(raw["health"]),
+                   raw.get("targetTeam"))
 
 
 @dataclass(frozen=True, slots=True)
@@ -112,6 +114,7 @@ class Turn:
     ours: tuple[Unit, ...]
     robots: tuple[Robot, ...]
     enemies: tuple[Unit, ...]
+    team_type: str | None = None
 
     @classmethod
     def load(cls, payload: dict[str, Any]) -> "Turn":
@@ -137,7 +140,16 @@ class Turn:
                 Unit.load(role)
                 for role in (payload.get("teamEnemy") or {}).get("roles") or ()
             ),
+            team.get("type"),
         )
+
+    def incoming_robots(self) -> tuple[Robot, ...]:
+        # The judge declares the destination; position or motion can be misleading
+        # while a robot detours around obstacles. Unknown labels are not guessed.
+        if self.team_type not in ("challenger", "defender"):
+            return ()
+        return tuple(robot for robot in self.robots
+                     if robot.health > 0 and robot.target_team == self.team_type)
 
     def station(self) -> Unit | None:
         for unit in self.ours:

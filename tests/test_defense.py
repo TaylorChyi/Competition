@@ -11,6 +11,20 @@ from test_baseline import state, unit
 
 
 class DefenseChecks(unittest.TestCase):
+    def test_return_can_move_an_adjacent_but_exposed_operator_inside(self):
+        payload = state(68, gold=0, roles=[unit(10010,'worker',7,3),
+                        unit(10040,'rocket',8,4), unit(10013,'station',9,5)])
+        role = payload['teamOur']['roles'][0]
+        for number in range(68, 71):
+            payload['roundNo'] = number
+            command = decide(payload, cover=True).get('10010')
+            if command:
+                self.assertEqual(command['action'], 'move')
+                role['pos'] = command['targetPos'][0]
+        pos = Pos.load(role['pos'])
+        self.assertEqual(distance(pos, Pos(8,4)), 1)
+        self.assertLessEqual(min(distance(pos, p) for p in Turn.load(payload).footprint(Turn.load(payload).station())), 1)
+
     def test_worker_arrives_before_first_night_attack(self):
         payload = state(65, gold=0, roles=[
             unit(10010, 'worker', 0, 5),
