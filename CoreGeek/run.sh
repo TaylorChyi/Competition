@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd -- "$(dirname -- "$0")"
-exec bash CoreGeek/run.sh "$@"
+exec "${PYTHON:-python3}" main3.py "$@"

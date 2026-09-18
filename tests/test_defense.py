@@ -4,7 +4,7 @@ import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'bot' / 'src'))
+sys.path.insert(0, str(ROOT / 'CoreGeek' / 'src'))
 from agent.brain import decide
 from agent.protocol import Pos, Turn, distance
 from test_baseline import state, unit

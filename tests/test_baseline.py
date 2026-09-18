@@ -12,7 +12,7 @@ import unittest
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'bot' / 'src'))
+sys.path.insert(0, str(ROOT / 'CoreGeek' / 'src'))
 from agent.brain import decide
 from agent.grid import next_step
 from agent.protocol import Pos, Turn

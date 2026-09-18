@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path[:0] = [str(ROOT), str(ROOT / 'bot' / 'src')]
+sys.path[:0] = [str(ROOT), str(ROOT / 'CoreGeek' / 'src')]
 from agent.brain import decide
 from agent.protocol import Pos, Robot
 from agent.targeting import BASELINE, rocket_targets, splash_damage

@@ -25,6 +25,7 @@ def main():
                    '--network', 'none', '--read-only', '--tmpfs', '/tmp', '--tmpfs', '/home']
         for source, target in ((archive, '/upload/CoreGeek.tar.gz'),
                                (ROOT / 'tests/test_package.py', '/checks/tests/test_package.py'),
+                               (ROOT / 'tools/platform_start.py', '/checks/tools/platform_start.py'),
                                (ROOT / 'tools/package_bot.py', '/checks/tools/package_bot.py')):
             command += ['--mount', f'type=bind,src={source},dst={target},readonly']
         command += ['-e', 'COMPETITION_PACKAGE_PATH=/upload/CoreGeek.tar.gz',

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One upload supporting parent-directory and named-directory extraction."""
+"""Build the submission using the official archive's single CoreGeek root."""
 import gzip
 import hashlib
 import io
@@ -10,29 +10,23 @@ import tarfile
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / 'dist'
 FILES = [
-    ('bot/main3.py', 'main3.py'),
-    ('bot/pyproject.toml', 'pyproject.toml'),
-    ('bot/src/agent/__init__.py', 'src/agent/__init__.py'),
-    ('bot/src/agent/brain.py', 'src/agent/brain.py'),
-    ('bot/src/agent/grid.py', 'src/agent/grid.py'),
-    ('bot/src/agent/protocol.py', 'src/agent/protocol.py'),
-    ('bot/src/agent/server.py', 'src/agent/server.py'),
-    ('bot/src/agent/targeting.py', 'src/agent/targeting.py'),
+    ('CoreGeek/main3.py', 'main3.py'),
+    ('CoreGeek/run.sh', 'run.sh'),
+    ('CoreGeek/pyproject.toml', 'pyproject.toml'),
+    ('CoreGeek/src/agent/__init__.py', 'src/agent/__init__.py'),
+    ('CoreGeek/src/agent/brain.py', 'src/agent/brain.py'),
+    ('CoreGeek/src/agent/grid.py', 'src/agent/grid.py'),
+    ('CoreGeek/src/agent/protocol.py', 'src/agent/protocol.py'),
+    ('CoreGeek/src/agent/server.py', 'src/agent/server.py'),
+    ('CoreGeek/src/agent/targeting.py', 'src/agent/targeting.py'),
     ('night-demo/selected-policy.json', 'selected-policy.json'),
     ('docs/request.txt', 'sample-request.json'),
     ('docs/交付说明.md', 'README.md'),
 ]
-# The development checkout keeps code under bot/; the submission puts it at root.
-PACKAGE_LAUNCHER = b'''#!/usr/bin/env bash
-set -euo pipefail
-cd -- "$(dirname -- "$0")"
-exec "${PYTHON:-python3}" main3.py "$@"
-'''
 
 
 def payloads() -> dict[str, bytes]:
     files = {target: (ROOT / source).read_bytes() for source, target in FILES}
-    files['run.sh'] = PACKAGE_LAUNCHER
     manifest = {'files': {name: hashlib.sha256(raw).hexdigest()
                           for name, raw in files.items()}}
     files['MANIFEST.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
@@ -40,11 +34,9 @@ def payloads() -> dict[str, bytes]:
 
 
 def archive_payloads() -> dict[str, bytes]:
-    files = payloads()
-    # Keep the official CoreGeek tree, plus two tiny root entrypoints for hosts
-    # that create /home/docker/CoreGeek before extracting the uploaded archive.
-    return {**{'CoreGeek/' + name: raw for name, raw in files.items()},
-            'main3.py': files['main3.py'], 'run.sh': files['run.sh']}
+    # Some uploaders select or validate the top-level directory before unpacking.
+    # Match the official Demo: one explicit CoreGeek directory, no sibling files.
+    return {'CoreGeek/' + name: raw for name, raw in payloads().items()}
 
 
 def build(output_dir: Path = DIST) -> dict:

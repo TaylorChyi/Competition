@@ -8,7 +8,7 @@
 
 参赛包统一放在 [GitHub Releases](https://github.com/TaylorChyi/Competition/releases/latest)。下载 Assets 中的 `CoreGeek.tar.gz` 后直接上传，无需编译、安装依赖或重新打包。只保留最新的比赛包 Release，以上下载地址始终指向最新版。
 
-包内入口为 `CoreGeek/main3.py`，兼容平台已有启动命令：
+包内只有 `CoreGeek/` 一个顶层目录。平台将它解压到 `/home/docker` 后，启动命令为：
 
 ```bash
 python3 /home/docker/CoreGeek/main3.py 6666
@@ -16,9 +16,19 @@ python3 /home/docker/CoreGeek/main3.py 6666
 
 端口由比赛平台指定；本次正常日志使用 `6666`。程序使用平台已有的 Python >=3.11，包内不包含解释器。[平台接收与启动说明](docs/交付说明.md)
 
+**仍然报找不到 `main3.py` 时**：若平台允许修改启动命令，复制当前 Release 中的“预检启动命令”，它会先显示文件位置并定位本版程序；若命令固定，则需要平台解压日志或实际目录确认文件落点。[启动故障排查与本轮验证](docs/平台启动排查.md)
+
 ## 当前进度
 
-原 Demo 已展开为可编辑的 `bot/`。仓库保存源码与文档，最新参赛包在 Releases 下载。
+源码与参赛包统一采用官方名称：`CoreGeek/main3.py` 是入口，算法位于 `CoreGeek/src/agent/`。仓库保存源码与文档，最新参赛包在 Releases 下载。
+
+```text
+CoreGeek/
+├── main3.py
+├── run.sh
+├── pyproject.toml
+└── src/agent/
+```
 
 已有基础程序：
 
@@ -27,7 +37,7 @@ python3 /home/docker/CoreGeek/main3.py 6666
 - 可选保存每回合请求、响应、决策耗时与异常，支持离线重新生成动作。
 - 日落前按实际可走路径提前回防；按距离及当前能否开火分配炮手，避免按 ID 硬配后交叉赶路。
 - 启动日志包含包指纹、Python 版本和入口路径；回合日志包含动作、基地血量、上轮非法动作和平台错误。
-- 检查包含真实 HTTP 请求与异常恢复、局部夜战关键结算和三种解压方式。[本次故障与对局日志分析](docs/2026-09-18-启动修复与迭代.md)
+- 检查包含真实 HTTP 请求与异常恢复、局部夜战关键结算、官方目录结构和预检启动。已完成本地 Linux 验证，内网平台仍待实际试跑。[对局日志分析](docs/2026-09-18-启动修复与迭代.md)
 
 ### 新增：可运行的夜战 Demo
 
@@ -105,5 +115,5 @@ python3 tools/replay.py runs/match-001.jsonl
 - 上游：[Tymonxiong/Competition](https://github.com/Tymonxiong/Competition)
 - 本次下载版本：`7e629424c87f3f194d071696d3ee59a8dc2c0a75`。
 - `docs/任务书.md`、`docs/接口文档.md` 和两个 `.txt` 示例保持原样；旧 Demo 压缩包已从当前下载内容移除，源码来源可在上游及 Git 历史中追溯。
-- `bot/` 基于该 Demo 展开；本仓库后续改动由 Git 单独记录。上游未提供许可证，本仓库不额外声明其材料的授权范围。
+- `CoreGeek/` 基于该 Demo 展开；本仓库后续改动由 Git 单独记录。上游未提供许可证，本仓库不额外声明其材料的授权范围。
 - 官方文本的推断与本地验证分开记录，具体疑点见执行方案。

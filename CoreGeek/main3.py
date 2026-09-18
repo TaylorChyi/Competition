@@ -11,12 +11,9 @@ def main() -> None:
         raise SystemExit("Usage: python main3.py <port>")
     port = int(sys.argv[1])
     entry = Path(__file__).resolve()
-    candidates = (entry.parent, entry.parent / "CoreGeek")
-    root = next((path for path in candidates
-                 if (path / "src" / "agent" / "server.py").is_file()), None)
-    if root is None:
-        raise SystemExit("CoreGeek runtime missing beside entrypoint: " +
-                         ", ".join(str(path) for path in candidates))
+    root = entry.parent
+    if not (root / "src" / "agent" / "server.py").is_file():
+        raise SystemExit("CoreGeek runtime missing beside entrypoint: " + str(root))
     os.chdir(root)
     sys.path.insert(0, str(root / "src"))
 
