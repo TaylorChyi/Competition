@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "objective": "First survive all ten nights; no three-agent tournament until the survival gate passes.",
+  "nights": 10,
+  "wave": "field",
+  "commerce": true,
+  "opponent": "lab/tournament/round05/alpha",
+  "seats": [
+    "challenger",
+    "defender"
+  ],
+  "development": [
+    {
+      "seed": 22000,
+      "priority": "nearest"
+    },
+    {
+      "seed": 22001,
+      "priority": "nearest"
+    },
+    {
+      "seed": 22002,
+      "priority": "nearest"
+    },
+    {
+      "seed": 26006,
+      "priority": "nearest"
+    }
+  ],
+  "validation": [
+    {
+      "seed": 36000,
+      "priority": "nearest"
+    },
+    {
+      "seed": 36001,
+      "priority": "nearest"
+    },
+    {
+      "seed": 36002,
+      "priority": "nearest"
+    },
+    {
+      "seed": 36003,
+      "priority": "nearest"
+    },
+    {
+      "seed": 36004,
+      "priority": "nearest"
+    },
+    {
+      "seed": 36005,
+      "priority": "nearest"
+    },
+    {
+      "seed": 36006,
+      "priority": "nearest"
+    },
+    {
+      "seed": 36007,
+      "priority": "nearest"
+    },
+    {
+      "seed": 36008,
+      "priority": "nearest"
+    },
+    {
+      "seed": 36009,
+      "priority": "nearest"
+    }
+  ],
+  "pass": "Every episode has a living base after round 1300, ten positive night-end base HP values, zero invalid commands and zero foreign-only shots. Require development pass before validation; both must refer to identical runtime and judge hashes.",
+  "ranking": "No candidate-vs-candidate win rates are calculated. Frozen opponent only maintains the other side of the shared map.",
+  "confirmed": [
+    "Robots may move OR attack per turn, confirmed by user on 2026-09-18.",
+    "Robots attack the nearest unit or a blocking unit, confirmed by user on 2026-09-18."
+  ],
+  "limits": [
+    "Partial local judge; official engine not available.",
+    "Later wave counts, full map, equal-distance tie order, and role-move/attack-lock timing remain hypotheses.",
+    "No official task/news/treasure income is simulated.",
+    "100 percent means the recorded test set, not a guarantee for all games."
+  ],
+  "changeReason": "User confirmed nearest-or-blocker target selection. Previous advance/operators hypotheses do not override this evidence. Preserve their failures separately; they are not required survival acceptance cases.",
+  "developmentRegression": "26006 nearest is an already known operator-mortality regression, added before evaluating current candidates."
+}

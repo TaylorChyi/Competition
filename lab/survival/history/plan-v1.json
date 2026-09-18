@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "objective": "First survive all ten nights; no three-agent tournament until the survival gate passes.",
+  "nights": 10,
+  "wave": "field",
+  "commerce": true,
+  "opponent": "lab/tournament/round05/alpha",
+  "seats": ["challenger", "defender"],
+  "development": [
+    {"seed": 22000, "priority": "nearest"},
+    {"seed": 22001, "priority": "operators"},
+    {"seed": 22002, "priority": "advance"}
+  ],
+  "validation": [
+    {"seed": 36000, "priority": "nearest"},
+    {"seed": 36001, "priority": "operators"},
+    {"seed": 36002, "priority": "advance"},
+    {"seed": 36003, "priority": "nearest"},
+    {"seed": 36004, "priority": "operators"},
+    {"seed": 36005, "priority": "advance"},
+    {"seed": 36006, "priority": "nearest"},
+    {"seed": 36007, "priority": "operators"},
+    {"seed": 36008, "priority": "advance"},
+    {"seed": 36009, "priority": "nearest"}
+  ],
+  "pass": "Every episode has a living base after round 1300, ten positive night-end base HP values, zero invalid commands and zero foreign-only shots. Require development pass before validation; both must refer to identical runtime and judge hashes.",
+  "ranking": "No candidate-vs-candidate win rates are calculated. Frozen opponent only maintains the other side of the shared map.",
+  "confirmed": ["Robots may move OR attack per turn, confirmed by user on 2026-09-18."],
+  "limits": [
+    "Partial local judge; official engine not available.",
+    "Later wave counts, robot target priority, full map, and role-move/attack-lock timing remain hypotheses.",
+    "No official task/news/treasure income is simulated.",
+    "100 percent means the recorded test set, not a guarantee for all games."
+  ]
+}
