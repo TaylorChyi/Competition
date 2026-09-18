@@ -4,9 +4,9 @@
 
 ## 直接下载并上传比赛平台
 
-**[下载最新 CoreGeek.tar.gz](https://github.com/TaylorChyi/Competition/releases/latest/download/CoreGeek.tar.gz)**
+**[下载最新参赛包（文件名含版本号）](https://github.com/TaylorChyi/Competition/releases/latest)**
 
-参赛包统一放在 [GitHub Releases](https://github.com/TaylorChyi/Competition/releases/latest)。下载 Assets 中的 `CoreGeek.tar.gz` 后直接上传，无需编译、安装依赖或重新打包。只保留最新的比赛包 Release，以上下载地址始终指向最新版。
+参赛包统一放在 [GitHub Releases](https://github.com/TaylorChyi/Competition/releases/latest)。下载 Assets 中的 `CoreGeek-v日期-提交号.tar.gz` 后直接上传，无需编译、安装依赖或重新打包。只保留最新的比赛包 Release，以上入口始终指向最新 Release。文件名示例：`CoreGeek-v2026.09.18-ffc174b.tar.gz`。
 
 包内只有 `CoreGeek/` 一个顶层目录。平台将它解压到 `/home/docker` 后，启动命令为：
 
@@ -78,7 +78,7 @@ python3 tools/package_bot.py
 python3 -m unittest discover -s tests -p test_package.py -v
 ```
 
-检查直接使用已生成的产物；包内代码落后于源码时检查失败。然后提交、推送源码，为该提交发布 Release 并上传同一份包。验证新附件可以下载且内容一致后，再清理旧比赛包 Release。具体步骤见 [发布流程](docs/发布流程.md)和 [AGENTS.md](AGENTS.md)。
+检查直接使用已生成的产物；包内代码落后于源码时检查失败。然后提交、推送源码，为该提交发布 Release，将同一份包加上版本号后上传，归档字节保持一致。验证新附件可以下载且内容一致后，再清理旧比赛包 Release。具体步骤见 [发布流程](docs/发布流程.md)和 [AGENTS.md](AGENTS.md)。
 
 本地开发需要 Python 3.11 或以上，无第三方运行依赖。进入本仓库后：
 

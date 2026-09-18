@@ -1,0 +1,4232 @@
+{
+  "judgeHashesMatchR3": {
+    "CoreGeek/src/agent/protocol.py": true,
+    "CoreGeek/src/agent/targeting.py": true,
+    "lab/arena.py": true,
+    "lab/night_sim.py": true
+  },
+  "seed": 28002,
+  "priority": "advance",
+  "seat": "defender",
+  "runs": {
+    "baseline": {
+      "metrics": {
+        "baseDeathRound": 352,
+        "nightHp": [
+          1430,
+          1320,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "nightOperators": [
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "kills": 60,
+        "killPoints": 76,
+        "shots": 314,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 6,
+        "decisionMs": [],
+        "income": 220,
+        "upgrades": [
+          [
+            183,
+            "station",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_20013": [
+              1,
+              1430
+            ],
+            "railgun_41000": [
+              1,
+              1000
+            ],
+            "railgun_41001": [
+              1,
+              1000
+            ],
+            "railgun_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              1320
+            ],
+            "railgun_41000": [
+              1,
+              1000
+            ],
+            "railgun_41001": [
+              1,
+              1000
+            ],
+            "railgun_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              0
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              0
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              0
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              0
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              0
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              0
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              0
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              0
+            ],
+            "railgun_41000": [
+              1,
+              0
+            ],
+            "railgun_41001": [
+              1,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [],
+        "nightRoleMoves": 0,
+        "readyGunsWithoutAttack": 6,
+        "readyGunsWithoutOperator": 0
+      },
+      "score": 106,
+      "events": [
+        {
+          "round": 4,
+          "before": {
+            "cash": 75,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "after": {
+            "cash": 50,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 29,
+                  "y": 11
+                }
+              ],
+              "name": "railgun"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 0
+        },
+        {
+          "round": 6,
+          "before": {
+            "cash": 50,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "after": {
+            "cash": 25,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 29,
+                  "y": 9
+                }
+              ],
+              "name": "railgun"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 0
+        },
+        {
+          "round": 7,
+          "before": {
+            "cash": 25,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "after": {
+            "cash": 0,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "commands": {
+            "20012": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 32,
+                  "y": 9
+                }
+              ],
+              "name": "railgun"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 0
+        },
+        {
+          "round": 28,
+          "before": {
+            "cash": 0,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "after": {
+            "cash": 30,
+            "hp": 1500,
+            "level": 1,
+            "income": 30
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "iron",
+              "num": 10
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 0
+        },
+        {
+          "round": 43,
+          "before": {
+            "cash": 30,
+            "hp": 1500,
+            "level": 1,
+            "income": 30
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1500,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 8
+            },
+            "20012": {
+              "action": "sell",
+              "name": "copper",
+              "num": 3
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 0
+        },
+        {
+          "round": 130,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {},
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 162,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 28,
+                  "y": 12
+                }
+              ],
+              "name": "wall"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 163,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 28,
+                  "y": 11
+                }
+              ],
+              "name": "wall"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 165,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 29,
+                  "y": 12
+                }
+              ],
+              "name": "wall"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 168,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 28,
+                  "y": 10
+                }
+              ],
+              "name": "wall"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 173,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 100,
+            "hp": 1430,
+            "level": 1,
+            "income": 100
+          },
+          "commands": {
+            "20012": {
+              "action": "sell",
+              "name": "copper",
+              "num": 3
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 174,
+          "before": {
+            "cash": 100,
+            "hp": 1430,
+            "level": 1,
+            "income": 100
+          },
+          "after": {
+            "cash": 0,
+            "hp": 1430,
+            "level": 1,
+            "income": 100
+          },
+          "commands": {
+            "20011": {
+              "action": "buy",
+              "name": "StationUpgradeVoucher1",
+              "num": 1
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 183,
+          "before": {
+            "cash": 0,
+            "hp": 1430,
+            "level": 1,
+            "income": 100
+          },
+          "after": {
+            "cash": 0,
+            "hp": 3000,
+            "level": 2,
+            "income": 100
+          },
+          "commands": {
+            "20011": {
+              "action": "use",
+              "name": "StationUpgradeVoucher1",
+              "targetPos": [
+                {
+                  "x": 30,
+                  "y": 10
+                }
+              ]
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 260,
+          "before": {
+            "cash": 0,
+            "hp": 1320,
+            "level": 2,
+            "income": 100
+          },
+          "after": {
+            "cash": 0,
+            "hp": 1320,
+            "level": 2,
+            "income": 100
+          },
+          "commands": {},
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 248
+        },
+        {
+          "round": 272,
+          "before": {
+            "cash": 0,
+            "hp": 1320,
+            "level": 2,
+            "income": 100
+          },
+          "after": {
+            "cash": 3,
+            "hp": 1320,
+            "level": 2,
+            "income": 103
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "iron",
+              "num": 1
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 248
+        },
+        {
+          "round": 289,
+          "before": {
+            "cash": 3,
+            "hp": 1320,
+            "level": 2,
+            "income": 103
+          },
+          "after": {
+            "cash": 30,
+            "hp": 1320,
+            "level": 2,
+            "income": 130
+          },
+          "commands": {
+            "20012": {
+              "action": "sell",
+              "name": "iron",
+              "num": 9
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 248
+        },
+        {
+          "round": 290,
+          "before": {
+            "cash": 30,
+            "hp": 1320,
+            "level": 2,
+            "income": 130
+          },
+          "after": {
+            "cash": 70,
+            "hp": 1320,
+            "level": 2,
+            "income": 170
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 8
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 248
+        },
+        {
+          "round": 305,
+          "before": {
+            "cash": 70,
+            "hp": 1320,
+            "level": 2,
+            "income": 170
+          },
+          "after": {
+            "cash": 115,
+            "hp": 1320,
+            "level": 2,
+            "income": 215
+          },
+          "commands": {
+            "20012": {
+              "action": "sell",
+              "name": "copper",
+              "num": 9
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 248
+        },
+        {
+          "round": 320,
+          "before": {
+            "cash": 115,
+            "hp": 1320,
+            "level": 2,
+            "income": 215
+          },
+          "after": {
+            "cash": 120,
+            "hp": 1320,
+            "level": 2,
+            "income": 220
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 1
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 248
+        },
+        {
+          "round": 352,
+          "before": {
+            "cash": 120,
+            "hp": 30,
+            "level": 2,
+            "income": 220
+          },
+          "after": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 314
+        },
+        {
+          "round": 390,
+          "before": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "after": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 314
+        },
+        {
+          "round": 520,
+          "before": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "after": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 314
+        },
+        {
+          "round": 650,
+          "before": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "after": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 314
+        },
+        {
+          "round": 780,
+          "before": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "after": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 314
+        },
+        {
+          "round": 910,
+          "before": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "after": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 314
+        },
+        {
+          "round": 1040,
+          "before": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "after": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 314
+        },
+        {
+          "round": 1170,
+          "before": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "after": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 314
+        },
+        {
+          "round": 1300,
+          "before": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "after": {
+            "cash": 120,
+            "hp": 0,
+            "level": 2,
+            "income": 220
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 314
+        }
+      ]
+    },
+    "ablation": {
+      "metrics": {
+        "baseDeathRound": 983,
+        "nightHp": [
+          1430,
+          395,
+          380,
+          2180,
+          1495,
+          2600,
+          5,
+          0,
+          0,
+          0
+        ],
+        "nightOperators": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          0,
+          0,
+          0
+        ],
+        "kills": 179,
+        "killPoints": 251,
+        "shots": 864,
+        "foreignOnlyShots": 0,
+        "invalidCommands": 0,
+        "movesBlocked": 45,
+        "decisionMs": [],
+        "income": 516,
+        "upgrades": [
+          [
+            182,
+            "railgun",
+            2
+          ],
+          [
+            426,
+            "station",
+            2
+          ],
+          [
+            692,
+            "station",
+            3
+          ],
+          [
+            842,
+            "railgun",
+            2
+          ]
+        ],
+        "nightEquipment": [
+          {
+            "station_20013": [
+              1,
+              1430
+            ],
+            "railgun_41000": [
+              1,
+              1000
+            ],
+            "railgun_41001": [
+              1,
+              1000
+            ],
+            "railgun_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              395
+            ],
+            "railgun_41000": [
+              2,
+              1500
+            ],
+            "railgun_41001": [
+              1,
+              1000
+            ],
+            "railgun_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              1,
+              380
+            ],
+            "railgun_41000": [
+              2,
+              1500
+            ],
+            "railgun_41001": [
+              1,
+              1000
+            ],
+            "railgun_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              2180
+            ],
+            "railgun_41000": [
+              2,
+              1500
+            ],
+            "railgun_41001": [
+              1,
+              1000
+            ],
+            "railgun_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              2,
+              1495
+            ],
+            "railgun_41000": [
+              2,
+              1500
+            ],
+            "railgun_41001": [
+              1,
+              1000
+            ],
+            "railgun_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              3,
+              2600
+            ],
+            "railgun_41000": [
+              2,
+              1500
+            ],
+            "railgun_41001": [
+              1,
+              1000
+            ],
+            "railgun_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              3,
+              5
+            ],
+            "railgun_41000": [
+              2,
+              1500
+            ],
+            "railgun_41001": [
+              2,
+              1500
+            ],
+            "railgun_41002": [
+              1,
+              1000
+            ]
+          },
+          {
+            "station_20013": [
+              3,
+              0
+            ],
+            "railgun_41000": [
+              2,
+              0
+            ],
+            "railgun_41001": [
+              2,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              3,
+              0
+            ],
+            "railgun_41000": [
+              2,
+              0
+            ],
+            "railgun_41001": [
+              2,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          },
+          {
+            "station_20013": [
+              3,
+              0
+            ],
+            "railgun_41000": [
+              2,
+              0
+            ],
+            "railgun_41001": [
+              2,
+              0
+            ],
+            "railgun_41002": [
+              1,
+              0
+            ]
+          }
+        ],
+        "resourceConflicts": 0,
+        "operatorDeaths": [],
+        "nightRoleMoves": 5,
+        "readyGunsWithoutAttack": 101,
+        "readyGunsWithoutOperator": 5
+      },
+      "score": 531,
+      "events": [
+        {
+          "round": 4,
+          "before": {
+            "cash": 75,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "after": {
+            "cash": 50,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 29,
+                  "y": 11
+                }
+              ],
+              "name": "railgun"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 0
+        },
+        {
+          "round": 6,
+          "before": {
+            "cash": 50,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "after": {
+            "cash": 25,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 29,
+                  "y": 9
+                }
+              ],
+              "name": "railgun"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 0
+        },
+        {
+          "round": 7,
+          "before": {
+            "cash": 25,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "after": {
+            "cash": 0,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "commands": {
+            "20012": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 32,
+                  "y": 9
+                }
+              ],
+              "name": "railgun"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 0
+        },
+        {
+          "round": 28,
+          "before": {
+            "cash": 0,
+            "hp": 1500,
+            "level": 1,
+            "income": 0
+          },
+          "after": {
+            "cash": 30,
+            "hp": 1500,
+            "level": 1,
+            "income": 30
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "iron",
+              "num": 10
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 0
+        },
+        {
+          "round": 43,
+          "before": {
+            "cash": 30,
+            "hp": 1500,
+            "level": 1,
+            "income": 30
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1500,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 8
+            },
+            "20012": {
+              "action": "sell",
+              "name": "copper",
+              "num": 3
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 0
+        },
+        {
+          "round": 130,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {},
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 162,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 28,
+                  "y": 12
+                }
+              ],
+              "name": "wall"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 163,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 28,
+                  "y": 11
+                }
+              ],
+              "name": "wall"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 165,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 29,
+                  "y": 12
+                }
+              ],
+              "name": "wall"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 168,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "commands": {
+            "20010": {
+              "action": "build",
+              "targetPos": [
+                {
+                  "x": 28,
+                  "y": 10
+                }
+              ],
+              "name": "wall"
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 173,
+          "before": {
+            "cash": 85,
+            "hp": 1430,
+            "level": 1,
+            "income": 85
+          },
+          "after": {
+            "cash": 100,
+            "hp": 1430,
+            "level": 1,
+            "income": 100
+          },
+          "commands": {
+            "20012": {
+              "action": "sell",
+              "name": "copper",
+              "num": 3
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 174,
+          "before": {
+            "cash": 100,
+            "hp": 1430,
+            "level": 1,
+            "income": 100
+          },
+          "after": {
+            "cash": 0,
+            "hp": 1430,
+            "level": 1,
+            "income": 100
+          },
+          "commands": {
+            "20011": {
+              "action": "buy",
+              "name": "WeaponUpgradeVoucher1",
+              "num": 1
+            }
+          },
+          "guns": [
+            [
+              41000,
+              1,
+              1000
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 182,
+          "before": {
+            "cash": 0,
+            "hp": 1430,
+            "level": 1,
+            "income": 100
+          },
+          "after": {
+            "cash": 0,
+            "hp": 1430,
+            "level": 1,
+            "income": 100
+          },
+          "commands": {
+            "20011": {
+              "action": "use",
+              "name": "WeaponUpgradeVoucher1",
+              "targetPos": [
+                {
+                  "x": 29,
+                  "y": 11
+                }
+              ]
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 76
+        },
+        {
+          "round": 260,
+          "before": {
+            "cash": 0,
+            "hp": 395,
+            "level": 1,
+            "income": 100
+          },
+          "after": {
+            "cash": 0,
+            "hp": 395,
+            "level": 1,
+            "income": 100
+          },
+          "commands": {},
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 216
+        },
+        {
+          "round": 288,
+          "before": {
+            "cash": 0,
+            "hp": 395,
+            "level": 1,
+            "income": 100
+          },
+          "after": {
+            "cash": 40,
+            "hp": 395,
+            "level": 1,
+            "income": 140
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 8
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 216
+        },
+        {
+          "round": 289,
+          "before": {
+            "cash": 40,
+            "hp": 395,
+            "level": 1,
+            "income": 140
+          },
+          "after": {
+            "cash": 70,
+            "hp": 395,
+            "level": 1,
+            "income": 170
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "iron",
+              "num": 1
+            },
+            "20012": {
+              "action": "sell",
+              "name": "iron",
+              "num": 9
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 216
+        },
+        {
+          "round": 390,
+          "before": {
+            "cash": 70,
+            "hp": 380,
+            "level": 1,
+            "income": 170
+          },
+          "after": {
+            "cash": 70,
+            "hp": 380,
+            "level": 1,
+            "income": 170
+          },
+          "commands": {},
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 279
+        },
+        {
+          "round": 412,
+          "before": {
+            "cash": 70,
+            "hp": 380,
+            "level": 1,
+            "income": 170
+          },
+          "after": {
+            "cash": 85,
+            "hp": 380,
+            "level": 1,
+            "income": 185
+          },
+          "commands": {
+            "20012": {
+              "action": "sell",
+              "name": "copper",
+              "num": 3
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 279
+        },
+        {
+          "round": 416,
+          "before": {
+            "cash": 85,
+            "hp": 380,
+            "level": 1,
+            "income": 185
+          },
+          "after": {
+            "cash": 115,
+            "hp": 380,
+            "level": 1,
+            "income": 215
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 6
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 279
+        },
+        {
+          "round": 417,
+          "before": {
+            "cash": 115,
+            "hp": 380,
+            "level": 1,
+            "income": 215
+          },
+          "after": {
+            "cash": 15,
+            "hp": 380,
+            "level": 1,
+            "income": 215
+          },
+          "commands": {
+            "20011": {
+              "action": "buy",
+              "name": "StationUpgradeVoucher1",
+              "num": 1
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 279
+        },
+        {
+          "round": 426,
+          "before": {
+            "cash": 15,
+            "hp": 380,
+            "level": 1,
+            "income": 215
+          },
+          "after": {
+            "cash": 15,
+            "hp": 3000,
+            "level": 2,
+            "income": 215
+          },
+          "commands": {
+            "20011": {
+              "action": "use",
+              "name": "StationUpgradeVoucher1",
+              "targetPos": [
+                {
+                  "x": 30,
+                  "y": 10
+                }
+              ]
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 279
+        },
+        {
+          "round": 445,
+          "before": {
+            "cash": 15,
+            "hp": 3000,
+            "level": 2,
+            "income": 215
+          },
+          "after": {
+            "cash": 24,
+            "hp": 3000,
+            "level": 2,
+            "income": 224
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "iron",
+              "num": 3
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 279
+        },
+        {
+          "round": 520,
+          "before": {
+            "cash": 24,
+            "hp": 2180,
+            "level": 2,
+            "income": 224
+          },
+          "after": {
+            "cash": 24,
+            "hp": 2180,
+            "level": 2,
+            "income": 224
+          },
+          "commands": {},
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 389
+        },
+        {
+          "round": 529,
+          "before": {
+            "cash": 24,
+            "hp": 2180,
+            "level": 2,
+            "income": 224
+          },
+          "after": {
+            "cash": 44,
+            "hp": 2180,
+            "level": 2,
+            "income": 244
+          },
+          "commands": {
+            "20012": {
+              "action": "sell",
+              "name": "copper",
+              "num": 4
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 389
+        },
+        {
+          "round": 540,
+          "before": {
+            "cash": 44,
+            "hp": 2180,
+            "level": 2,
+            "income": 244
+          },
+          "after": {
+            "cash": 64,
+            "hp": 2180,
+            "level": 2,
+            "income": 264
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 4
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 389
+        },
+        {
+          "round": 576,
+          "before": {
+            "cash": 64,
+            "hp": 2180,
+            "level": 2,
+            "income": 264
+          },
+          "after": {
+            "cash": 76,
+            "hp": 2180,
+            "level": 2,
+            "income": 276
+          },
+          "commands": {
+            "20012": {
+              "action": "sell",
+              "name": "iron",
+              "num": 4
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 389
+        },
+        {
+          "round": 578,
+          "before": {
+            "cash": 76,
+            "hp": 2180,
+            "level": 2,
+            "income": 276
+          },
+          "after": {
+            "cash": 121,
+            "hp": 2180,
+            "level": 2,
+            "income": 321
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 9
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 389
+        },
+        {
+          "round": 650,
+          "before": {
+            "cash": 121,
+            "hp": 1495,
+            "level": 2,
+            "income": 321
+          },
+          "after": {
+            "cash": 121,
+            "hp": 1495,
+            "level": 2,
+            "income": 321
+          },
+          "commands": {},
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 521
+        },
+        {
+          "round": 682,
+          "before": {
+            "cash": 121,
+            "hp": 1495,
+            "level": 2,
+            "income": 321
+          },
+          "after": {
+            "cash": 151,
+            "hp": 1495,
+            "level": 2,
+            "income": 351
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "iron",
+              "num": 10
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 521
+        },
+        {
+          "round": 683,
+          "before": {
+            "cash": 151,
+            "hp": 1495,
+            "level": 2,
+            "income": 351
+          },
+          "after": {
+            "cash": 1,
+            "hp": 1495,
+            "level": 2,
+            "income": 351
+          },
+          "commands": {
+            "20011": {
+              "action": "buy",
+              "name": "StationUpgradeVoucher2",
+              "num": 1
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 521
+        },
+        {
+          "round": 691,
+          "before": {
+            "cash": 1,
+            "hp": 1495,
+            "level": 2,
+            "income": 351
+          },
+          "after": {
+            "cash": 31,
+            "hp": 1495,
+            "level": 2,
+            "income": 381
+          },
+          "commands": {
+            "20012": {
+              "action": "sell",
+              "name": "copper",
+              "num": 6
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 521
+        },
+        {
+          "round": 692,
+          "before": {
+            "cash": 31,
+            "hp": 1495,
+            "level": 2,
+            "income": 381
+          },
+          "after": {
+            "cash": 31,
+            "hp": 4500,
+            "level": 3,
+            "income": 381
+          },
+          "commands": {
+            "20011": {
+              "action": "use",
+              "name": "StationUpgradeVoucher2",
+              "targetPos": [
+                {
+                  "x": 30,
+                  "y": 10
+                }
+              ]
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 521
+        },
+        {
+          "round": 780,
+          "before": {
+            "cash": 31,
+            "hp": 2630,
+            "level": 3,
+            "income": 381
+          },
+          "after": {
+            "cash": 31,
+            "hp": 2600,
+            "level": 3,
+            "income": 381
+          },
+          "commands": {},
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 689
+        },
+        {
+          "round": 825,
+          "before": {
+            "cash": 31,
+            "hp": 2600,
+            "level": 3,
+            "income": 381
+          },
+          "after": {
+            "cash": 51,
+            "hp": 2600,
+            "level": 3,
+            "income": 401
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 4
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 689
+        },
+        {
+          "round": 831,
+          "before": {
+            "cash": 51,
+            "hp": 2600,
+            "level": 3,
+            "income": 401
+          },
+          "after": {
+            "cash": 101,
+            "hp": 2600,
+            "level": 3,
+            "income": 451
+          },
+          "commands": {
+            "20012": {
+              "action": "sell",
+              "name": "copper",
+              "num": 10
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 689
+        },
+        {
+          "round": 832,
+          "before": {
+            "cash": 101,
+            "hp": 2600,
+            "level": 3,
+            "income": 451
+          },
+          "after": {
+            "cash": 1,
+            "hp": 2600,
+            "level": 3,
+            "income": 451
+          },
+          "commands": {
+            "20011": {
+              "action": "buy",
+              "name": "WeaponUpgradeVoucher1",
+              "num": 1
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 689
+        },
+        {
+          "round": 835,
+          "before": {
+            "cash": 1,
+            "hp": 2600,
+            "level": 3,
+            "income": 451
+          },
+          "after": {
+            "cash": 6,
+            "hp": 2600,
+            "level": 3,
+            "income": 456
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 1
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              1,
+              1000
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 689
+        },
+        {
+          "round": 842,
+          "before": {
+            "cash": 6,
+            "hp": 2600,
+            "level": 3,
+            "income": 456
+          },
+          "after": {
+            "cash": 6,
+            "hp": 2600,
+            "level": 3,
+            "income": 456
+          },
+          "commands": {
+            "20011": {
+              "action": "use",
+              "name": "WeaponUpgradeVoucher1",
+              "targetPos": [
+                {
+                  "x": 29,
+                  "y": 9
+                }
+              ]
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              2,
+              1500
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 689
+        },
+        {
+          "round": 910,
+          "before": {
+            "cash": 6,
+            "hp": 5,
+            "level": 3,
+            "income": 456
+          },
+          "after": {
+            "cash": 6,
+            "hp": 5,
+            "level": 3,
+            "income": 456
+          },
+          "commands": {},
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              2,
+              1500
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 855
+        },
+        {
+          "round": 921,
+          "before": {
+            "cash": 6,
+            "hp": 5,
+            "level": 3,
+            "income": 456
+          },
+          "after": {
+            "cash": 11,
+            "hp": 5,
+            "level": 3,
+            "income": 461
+          },
+          "commands": {
+            "20012": {
+              "action": "sell",
+              "name": "copper",
+              "num": 1
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              2,
+              1500
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 855
+        },
+        {
+          "round": 933,
+          "before": {
+            "cash": 11,
+            "hp": 5,
+            "level": 3,
+            "income": 461
+          },
+          "after": {
+            "cash": 51,
+            "hp": 5,
+            "level": 3,
+            "income": 501
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 8
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              2,
+              1500
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 855
+        },
+        {
+          "round": 965,
+          "before": {
+            "cash": 51,
+            "hp": 5,
+            "level": 3,
+            "income": 501
+          },
+          "after": {
+            "cash": 66,
+            "hp": 5,
+            "level": 3,
+            "income": 516
+          },
+          "commands": {
+            "20010": {
+              "action": "sell",
+              "name": "copper",
+              "num": 3
+            }
+          },
+          "guns": [
+            [
+              41000,
+              2,
+              1500
+            ],
+            [
+              41001,
+              2,
+              1500
+            ],
+            [
+              41002,
+              1,
+              1000
+            ]
+          ],
+          "operators": [
+            [
+              20010,
+              220
+            ],
+            [
+              20011,
+              200
+            ],
+            [
+              20012,
+              220
+            ]
+          ],
+          "shots": 855
+        },
+        {
+          "round": 983,
+          "before": {
+            "cash": 66,
+            "hp": 5,
+            "level": 3,
+            "income": 516
+          },
+          "after": {
+            "cash": 66,
+            "hp": 0,
+            "level": 3,
+            "income": 516
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 864
+        },
+        {
+          "round": 1040,
+          "before": {
+            "cash": 66,
+            "hp": 0,
+            "level": 3,
+            "income": 516
+          },
+          "after": {
+            "cash": 66,
+            "hp": 0,
+            "level": 3,
+            "income": 516
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 864
+        },
+        {
+          "round": 1170,
+          "before": {
+            "cash": 66,
+            "hp": 0,
+            "level": 3,
+            "income": 516
+          },
+          "after": {
+            "cash": 66,
+            "hp": 0,
+            "level": 3,
+            "income": 516
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 864
+        },
+        {
+          "round": 1300,
+          "before": {
+            "cash": 66,
+            "hp": 0,
+            "level": 3,
+            "income": 516
+          },
+          "after": {
+            "cash": 66,
+            "hp": 0,
+            "level": 3,
+            "income": 516
+          },
+          "commands": {},
+          "guns": [],
+          "operators": [
+            [
+              20010,
+              0
+            ],
+            [
+              20011,
+              0
+            ],
+            [
+              20012,
+              0
+            ]
+          ],
+          "shots": 864
+        }
+      ]
+    }
+  }
+}

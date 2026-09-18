@@ -1,0 +1,65 @@
+import unittest
+from dataclasses import replace
+from .economy import prepare_medicine,use_carried
+from .brain import _worker_day
+from .test_field_regressions import unit,observation
+from .protocol import Pos
+
+
+class PreNightMedicine(unittest.TestCase):
+    def test_injured_worker_gets_medicine_with_ten_real_gold_and_healthy_base(self):
+        r=unit(20010,'worker',(24,20),125)
+        t=observation(r,gold=10,base_health=1500)
+        c={};self.assertTrue(prepare_medicine(t,r,set(),c))
+        self.assertEqual(c[r.unit_id],{'action':'buy','name':'Medicine','num':1})
+        r=replace(r,backpack=('Medicine',));t=replace(t,ours=(t.station(),r))
+        c={};self.assertTrue(use_carried(t,r,set(),c))
+        self.assertEqual(c[r.unit_id],{'action':'use','name':'Medicine'})
+
+    def test_urgent_base_voucher_budget_cannot_be_spent_on_worker(self):
+        r=unit(20010,'worker',(24,20),125)
+        for level,hp,gold in ((1,500,100),(2,1800,150)):
+            t=observation(r,gold=gold,base_health=hp,base_level=level)
+            self.assertFalse(prepare_medicine(t,r,set(),{}))
+            t=replace(t,gold=gold+10);self.assertTrue(prepare_medicine(t,r,set(),{}))
+
+    def test_no_future_ore_money_or_healthy_purchase_or_night_trip(self):
+        r=unit(20010,'worker',(24,20),125,backpack=('copper',)*10)
+        self.assertFalse(prepare_medicine(observation(r,gold=9,base_health=1500),r,set(),{}))
+        r=replace(r,health=220)
+        self.assertFalse(prepare_medicine(observation(r,gold=500,base_health=1500),r,set(),{}))
+        r=replace(r,health=125)
+        self.assertFalse(prepare_medicine(observation(r,day=False,gold=500),r,set(),{}))
+
+    def test_too_late_or_full_backpack_does_not_depart(self):
+        r=unit(20010,'worker',(19,15),125)
+        t=replace(observation(r,gold=10,base_health=1500),round_no=199)
+        self.assertFalse(prepare_medicine(t,r,set(),{}))
+        r=replace(r,capacity=1,backpack=('copper',))
+        self.assertFalse(prepare_medicine(observation(r,gold=500),r,set(),{}))
+
+    def test_medicine_precedes_optional_wall_stone_trip(self):
+        r=unit(20010,'worker',(24,20),125)
+        t=observation(r,gold=10,base_health=1500)
+        c={};_worker_day(t,r,(),[],[],set(),c,('railgun',)*3,True,4)
+        self.assertEqual(c[r.unit_id]['name'],'Medicine')
+
+    def test_vendor_stock_is_sold_before_critical_medical_trip(self):
+        r=unit(20010,'worker',(20,15),40,backpack=('copper',)*7)
+        t=observation(r,gold=10,base_health=1500)
+        c={};self.assertTrue(prepare_medicine(t,r,set(),c))
+        self.assertEqual(c[r.unit_id],{'action':'sell','name':'copper','num':7})
+
+    def test_moderately_injured_worker_does_not_cross_map_for_medicine(self):
+        r=unit(20010,'worker',(5,24),125)
+        self.assertFalse(prepare_medicine(observation(r,gold=100,base_health=1500),r,set(),{}))
+
+    def test_rear_tower_return_is_checked_beyond_base_arrival(self):
+        r=unit(20010,'worker',(24,20),125)
+        t=observation(r,gold=10,base_health=1500)
+        base=replace(t.station(),pos=Pos(24,18))
+        rear=unit(40001,'railgun',(23,16),1000)
+        t=replace(t,round_no=197,ours=(base,r,rear))
+        self.assertFalse(prepare_medicine(t,r,set(),{}))
+
+if __name__=='__main__':unittest.main()
