@@ -1,0 +1,260 @@
+[
+  {
+    "seed": 22001,
+    "priority": "nearest",
+    "seat": "challenger",
+    "gamma": {
+      "score": 928,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1470,
+        3000,
+        2990,
+        2830,
+        2830,
+        2830,
+        2810,
+        2785,
+        2655
+      ],
+      "income": 688,
+      "shots": 1235
+    },
+    "champion": {
+      "score": 944,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1495,
+        1495,
+        1495,
+        3000,
+        2665,
+        1905,
+        1905,
+        4500,
+        4500,
+        4500
+      ],
+      "income": 597,
+      "shots": 1357
+    }
+  },
+  {
+    "seed": 22001,
+    "priority": "nearest",
+    "seat": "defender",
+    "gamma": {
+      "score": 957,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1490,
+        3000,
+        2965,
+        2245,
+        4500,
+        4500,
+        4500,
+        4500
+      ],
+      "income": 744,
+      "shots": 1136
+    },
+    "champion": {
+      "score": 985,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1495,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        2190,
+        2190,
+        4500
+      ],
+      "income": 741,
+      "shots": 1255
+    }
+  },
+  {
+    "seed": 22001,
+    "priority": "operators",
+    "seat": "challenger",
+    "gamma": {
+      "score": 960,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1470,
+        3000,
+        2990,
+        2850,
+        2850,
+        2850,
+        2835,
+        2815,
+        2815
+      ],
+      "income": 699,
+      "shots": 1313
+    },
+    "champion": {
+      "score": 949,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1495,
+        1495,
+        1495,
+        3000,
+        2665,
+        1905,
+        1905,
+        4500,
+        4500,
+        4500
+      ],
+      "income": 585,
+      "shots": 1352
+    }
+  },
+  {
+    "seed": 22001,
+    "priority": "operators",
+    "seat": "defender",
+    "gamma": {
+      "score": 957,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1490,
+        3000,
+        2965,
+        2245,
+        4500,
+        4500,
+        4500,
+        4500
+      ],
+      "income": 744,
+      "shots": 1136
+    },
+    "champion": {
+      "score": 985,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1495,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        2190,
+        2190,
+        4500
+      ],
+      "income": 741,
+      "shots": 1254
+    }
+  },
+  {
+    "seed": 22002,
+    "priority": "advance",
+    "seat": "challenger",
+    "gamma": {
+      "score": 244,
+      "rounds": 639,
+      "invalid": 0,
+      "nightHp": [
+        890,
+        2920,
+        1545,
+        2585,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 340,
+      "shots": 741
+    },
+    "champion": {
+      "score": 66,
+      "rounds": 229,
+      "invalid": 0,
+      "nightHp": [
+        1035,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 97,
+      "shots": 250
+    }
+  },
+  {
+    "seed": 22002,
+    "priority": "advance",
+    "seat": "defender",
+    "gamma": {
+      "score": 112,
+      "rounds": 350,
+      "invalid": 0,
+      "nightHp": [
+        995,
+        1390,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 192,
+      "shots": 389
+    },
+    "champion": {
+      "score": 159,
+      "rounds": 496,
+      "invalid": 0,
+      "nightHp": [
+        915,
+        2850,
+        1480,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 245,
+      "shots": 535
+    }
+  }
+]

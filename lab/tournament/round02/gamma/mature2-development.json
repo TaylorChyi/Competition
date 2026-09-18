@@ -1,0 +1,404 @@
+[
+  {
+    "seed": 22001,
+    "priority": "nearest",
+    "seat": "challenger",
+    "gamma": {
+      "score": 970,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1495,
+        3000,
+        2755,
+        2595,
+        2595,
+        2595,
+        2595,
+        2595,
+        2595
+      ],
+      "income": 757,
+      "shots": 1276,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        1,
+        3,
+        3,
+        3,
+        2,
+        2
+      ]
+    },
+    "champion": {
+      "score": 928,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1495,
+        1465,
+        2955,
+        2235,
+        3790,
+        3790,
+        3790,
+        3780
+      ],
+      "income": 619,
+      "shots": 1200,
+      "operators": [
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        1,
+        3,
+        2,
+        2
+      ]
+    }
+  },
+  {
+    "seed": 22001,
+    "priority": "nearest",
+    "seat": "defender",
+    "gamma": {
+      "score": 964,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1495,
+        1460,
+        2890,
+        2450,
+        2450,
+        2450,
+        2450,
+        2015
+      ],
+      "income": 814,
+      "shots": 1131,
+      "operators": [
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        1
+      ]
+    },
+    "champion": {
+      "score": 987,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1495,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        2310,
+        2310,
+        2290
+      ],
+      "income": 717,
+      "shots": 1363,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        3,
+        2
+      ]
+    }
+  },
+  {
+    "seed": 22001,
+    "priority": "operators",
+    "seat": "challenger",
+    "gamma": {
+      "score": 961,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1495,
+        3000,
+        2735,
+        2615,
+        2615,
+        2615,
+        2100,
+        2100,
+        4500
+      ],
+      "income": 853,
+      "shots": 1310,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        1,
+        3,
+        2,
+        3,
+        2,
+        3
+      ]
+    },
+    "champion": {
+      "score": 975,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1495,
+        1465,
+        2950,
+        2230,
+        4500,
+        4500,
+        4500,
+        4500
+      ],
+      "income": 733,
+      "shots": 1244,
+      "operators": [
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  {
+    "seed": 22001,
+    "priority": "operators",
+    "seat": "defender",
+    "gamma": {
+      "score": 987,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1500,
+        1495,
+        1460,
+        2890,
+        2450,
+        2450,
+        2450,
+        2450,
+        2450
+      ],
+      "income": 814,
+      "shots": 1189,
+      "operators": [
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    "champion": {
+      "score": 987,
+      "rounds": 1300,
+      "invalid": 0,
+      "nightHp": [
+        1500,
+        1495,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        2310,
+        2310,
+        2290
+      ],
+      "income": 717,
+      "shots": 1363,
+      "operators": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        3,
+        2
+      ]
+    }
+  },
+  {
+    "seed": 22002,
+    "priority": "advance",
+    "seat": "challenger",
+    "gamma": {
+      "score": 159,
+      "rounds": 496,
+      "invalid": 0,
+      "nightHp": [
+        915,
+        2850,
+        1480,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 245,
+      "shots": 535,
+      "operators": [
+        3,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "champion": {
+      "score": 112,
+      "rounds": 350,
+      "invalid": 0,
+      "nightHp": [
+        995,
+        1390,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 192,
+      "shots": 389,
+      "operators": [
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "seed": 22002,
+    "priority": "advance",
+    "seat": "defender",
+    "gamma": {
+      "score": 112,
+      "rounds": 350,
+      "invalid": 0,
+      "nightHp": [
+        995,
+        1390,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 192,
+      "shots": 389,
+      "operators": [
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "champion": {
+      "score": 159,
+      "rounds": 496,
+      "invalid": 0,
+      "nightHp": [
+        915,
+        2850,
+        1480,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "income": 245,
+      "shots": 535,
+      "operators": [
+        3,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  }
+]

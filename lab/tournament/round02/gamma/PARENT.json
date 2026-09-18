@@ -1,0 +1,16 @@
+{
+  "round": 1,
+  "champion": "alpha",
+  "results": "lab/tournament/round01/results.json",
+  "sourceHashes": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "brain.py": "e271c8c0c5e652fd4330cf9e03b84a665998b59ba490dcd4f4bb9bc1905b7ca7",
+    "economy.py": "ffe63f229d019a821067884329c84186902e030f64b4efb4263ff7ca0e5291c2",
+    "fire_control.py": "7710c742fc27129d6904bdd9068aa231f866f955e87e17d44c14061a4a0e1ce3",
+    "grid.py": "a7365590c8cd016c581e510cd1665407e3783500fe5d9efbcafb4408cea92e88",
+    "guard.py": "5a2408aad1bc556a6ff0435350143b2c5c7a73a83484612d82bb4e7dd65b1939",
+    "protocol.py": "772a3dbb892731fbe2a3421d1b533a61c43b3155d71756afe3b43c192d27848c",
+    "server.py": "2fa0cf82f002f8cf51e7abc185f70477380952057fb5c32fb615aefe098f8854",
+    "targeting.py": "1277caa5e76d16585685f2b439b16dd405ac8c3cc5aef97344bdf435a2658132"
+  }
+}
